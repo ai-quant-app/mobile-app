@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../widgets/fab_bottom_app_bar.dart';
+import '../widgets/fab_bottom_app_bar_widget.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -7,21 +7,21 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: new ThemeData(primaryColor: Color(0xFFF0F2FC)),
-        home: MyHomePage(
+        home: MyHomeScreen(
           icon: new Icon(Icons.access_alarm),
         ));
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.icon}) : super(key: key);
+class MyHomeScreen extends StatefulWidget {
+  MyHomeScreen({Key key, this.icon}) : super(key: key);
 
   final Icon icon;
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MyHomeScreenState createState() => _MyHomeScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
+class _MyHomeScreenState extends State<MyHomeScreen> with TickerProviderStateMixin {
   String _lastSelected = 'TAB: 0';
 
   void selectedTAB(int index) {
