@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ai_quant/modules/company-analysic/screens/companies.screen.dart';
 import '../widgets/fab_bottom_app_bar_widget.dart';
 
 class MyApp extends StatelessWidget {
@@ -7,9 +8,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: new ThemeData(primaryColor: Color(0xFFF0F2FC)),
-        home: MyHomeScreen(
-          icon: new Icon(Icons.access_alarm),
-        ));
+        home: CompaniesScreen());
   }
 }
 
@@ -21,7 +20,8 @@ class MyHomeScreen extends StatefulWidget {
   _MyHomeScreenState createState() => _MyHomeScreenState();
 }
 
-class _MyHomeScreenState extends State<MyHomeScreen> with TickerProviderStateMixin {
+class _MyHomeScreenState extends State<MyHomeScreen>
+    with TickerProviderStateMixin {
   String _lastSelected = 'TAB: 0';
 
   void selectedTAB(int index) {
