@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ai_quant/modules/company-analysic/screens/companies.screen.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/screens/companies.screen.dart';
+
 import '../widgets/fab_bottom_app_bar_widget.dart';
 
 class MyApp extends StatelessWidget {
@@ -7,7 +8,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: new ThemeData(primaryColor: Color(0xFFF0F2FC)),
+        theme: new ThemeData(
+            primaryColor: Color(0xFFF0F2FC),
+            textTheme: TextTheme(bodyText2: TextStyle(color: Colors.white))),
         home: CompaniesScreen());
   }
 }
@@ -16,6 +19,7 @@ class MyHomeScreen extends StatefulWidget {
   MyHomeScreen({Key key, this.icon}) : super(key: key);
 
   final Icon icon;
+
   @override
   _MyHomeScreenState createState() => _MyHomeScreenState();
 }
