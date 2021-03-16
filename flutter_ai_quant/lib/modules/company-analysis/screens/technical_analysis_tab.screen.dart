@@ -10,7 +10,7 @@ import 'package:flutter_ai_quant/modules/company-analysis/widgets/two_sections_c
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/two_sections_table.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 
-class PricingTab extends StatefulWidget {
+class TechnicalAnalysisTab extends StatefulWidget {
   final Map<String, String> sectionData = {
     "Sector": "Industrials",
     "Sub Sector": "Construction & Materials",
@@ -81,7 +81,7 @@ class PricingTab extends StatefulWidget {
   _PricingTabState createState() => _PricingTabState();
 }
 
-class _PricingTabState extends State<PricingTab> {
+class _PricingTabState extends State<TechnicalAnalysisTab> {
   @override
   Widget build(BuildContext context) {
     ResponsiveWidgets.init(

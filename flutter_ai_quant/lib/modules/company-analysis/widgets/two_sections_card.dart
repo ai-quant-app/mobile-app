@@ -34,13 +34,13 @@ class _TwoSectionsCardState extends State<TwoSectionsCard> {
              children: [
                Expanded(
                    child: Align(
-                     child: Text(item.key),
+                     child: Text(item.key, style: TextStyle(color: item.keyColor)),
                      alignment: Alignment.centerLeft,
                    )
                ),
                Expanded(
                    child: Align(
-                     child: item.highlightValue ? Text(item.value, style: TextStyle(color: Colors.blue)) : Text(item.value),
+                     child: Text(item.value, style: TextStyle(color: item.valueColor)),
                      alignment: Alignment.centerRight,
                    )
                )
