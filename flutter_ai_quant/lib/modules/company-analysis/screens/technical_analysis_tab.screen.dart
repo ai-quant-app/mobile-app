@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ai_quant/common/constants/app-dimension.constant.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/models/two-sections-card.model.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/models/two-sections-table.model.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/widgets/info_table.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/smooth-line.chart.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/two_columns_card.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/two_sections_card.dart';
@@ -22,60 +21,49 @@ class TechnicalAnalysisTab extends StatefulWidget {
     TwoSectionsTableModel("Day’s Low","76","AvgVol/1l","161"),
   ];
 
-  final List<String> matrixColumnHeaders = ['Model', 'Weight', 'Price', 'Note'];
-
-  final List<List<String>> matrixColumnData = [
-    ['Forward P/E Valuation', '10%', '174,372','Relative method based on comparation average industries and market'],
-    ['Forward P/BV Model', '25%', '47,900', 'Relative method based on forward P/BV'],
-    ['Residual Income Valuation', '25%', '94,906', 'Net income valuation'],
-    ['Intrinsic Valuation', '0%', '', 'Net assest valuation'],
-    ['FCFE', '40%', '78,333', 'DFCF based on estimated growth sale, financial ratios, …in firm view'],
-    ['FCFF', '0%', '', 'DFCF based on estimated growth sale, financial ratios, …in firm view'],
-    ['Average price', '100%', '84,472', ''],
-  ];
-  final String matrixColumnDataFooterNote = "Due to different levels of uncertainty in the forecast of future cash flows (dividend, FCFE, FCFF), justified P/E and P/B based on fundamentals are assigned higher weights, followed by DDM, FCFF and FCFE model. Composite intrinsic value is estimated at 84,472 VND per share.";
-
-  final List<String> moneyColumnHeaders = ['', 'Stock', 'Sector', 'Market'];
-
-  final List<List<String>> moneyColumnData = [
-    ['Price', '76,000', '',''],
-    ['P/E Ratio', '4.81', '3.99', '28.77'],
-    ['P/BV', '1.31', '2.03', '1.39'],
-    ['Book value', '36,574', '21,516', '20,224'],
-    ['ROE', '27.23%', '16.95%', '29.18%'],
-    ['ROA', '7.07%', '6.71%', '3.44%'],
-    ['ROIC', '13.07%', '8.95%', '6.93%'],
-    ['D/E', '54.28%', '41.14%', '45.49%'],
-  ];
-
   final List<TwoSectionsCardModel> forwardData = [
-    TwoSectionsCardModel("", "Q4"),
-    TwoSectionsCardModel("12m forward EPS", "6,828"),
-    TwoSectionsCardModel("Estimated PE stock", "4.0"),
-    TwoSectionsCardModel("Model price", "27,221", valueColor: Colors.blue),
-    TwoSectionsCardModel("12m forward EPS", "17,437"),
-    TwoSectionsCardModel("Avg PE sector", "10.0"),
-    TwoSectionsCardModel("Model price", "174,372", valueColor: Colors.blue),
+    TwoSectionsCardModel("P(t)", "287.41", keyColor: Colors.orange),
+    TwoSectionsCardModel("P(t+1) -0.3%", "286.64", keyColor: Colors.blue, valueColor: Colors.red),
+    TwoSectionsCardModel("P(t+2) 3.9%", "297.87", keyColor: Colors.blue, valueColor: Colors.blue),
+    TwoSectionsCardModel("P(t+3) -1.4%", "293.65", keyColor: Colors.blue, valueColor: Colors.blue),
   ];
 
-  final List<TwoSectionsCardModel> pbvData = [
-    TwoSectionsCardModel("Book value", "36,574"),
-    TwoSectionsCardModel("P/BV forward", "1.31"),
-    TwoSectionsCardModel("Model price", "47,900", valueColor: Colors.blue),
-    TwoSectionsCardModel("Book value", "36,574"),
-    TwoSectionsCardModel("Avg P/BV sector", "2.03"),
-    TwoSectionsCardModel("Model price", "74,153", valueColor: Colors.blue),
+  final List<TwoSectionsCardModel> pivotData = [
+    TwoSectionsCardModel("R3", "287.41", valueColor: Colors.red),
+    TwoSectionsCardModel("P(t)", "0"),
+    TwoSectionsCardModel("S3", "0.00", valueColor: Colors.blue),
+    TwoSectionsCardModel("SMA(3)", "426.882", valueColor: Colors.blue),
+    TwoSectionsCardModel("SMA(30)", "440.67", valueColor: Colors.blue),
+    TwoSectionsCardModel("SMA(200)", "330.28", valueColor: Colors.blue),
   ];
-  final List<TwoSectionsCardModel> epsData = [
-    TwoSectionsCardModel("EPS Forward Y1", "24,910"),
-    TwoSectionsCardModel("EPS Forward Y2", "25,216"),
-    TwoSectionsCardModel("EPS Forward Y3", "27,517"),
-    TwoSectionsCardModel("Growth rate", "0.00%"),
-    TwoSectionsCardModel("Growth years 9 years", "1%"),
-    TwoSectionsCardModel("Payout during growth years", "20%"),
-    TwoSectionsCardModel("Payout at maturity", "10%"),
-    TwoSectionsCardModel("Growth at maturity", "1%"),
-    TwoSectionsCardModel("Model price", "94,906", valueColor: Colors.blue),
+
+  final List<TwoSectionsCardModel> signalData = [
+    TwoSectionsCardModel("P(t)", "0", keyColor: Colors.orange),
+    TwoSectionsCardModel("P(Max90)", "461.37"),
+    TwoSectionsCardModel("Margin Price", "0.00%", valueColor: Colors.red),
+    TwoSectionsCardModel("Signal", "= = = = - - +"),
+    TwoSectionsCardModel("Return/Rish", "#VALUE!"),
+    TwoSectionsCardModel("%Return*", "#VALUE!"),
+  ];
+
+  final List<TwoSectionsCardModel> trendData = [
+    TwoSectionsCardModel("RAVI", "Trend Up", valueColor: Colors.blue),
+    TwoSectionsCardModel("Vol", "Constant"),
+    TwoSectionsCardModel("MACD", "Down", valueColor: Colors.red),
+    TwoSectionsCardModel("StochRSI", "Up", valueColor: Colors.blue),
+    TwoSectionsCardModel("CCI", "0"),
+    TwoSectionsCardModel("ADX", "Down", valueColor: Colors.red),
+  ];
+  final List<TwoSectionsCardModel> taData = [
+    TwoSectionsCardModel("Williams%", "-2,905.29", valueIcon: Icons.crop_square ),
+    TwoSectionsCardModel("Stoch RSI", "24.23", valueIcon: Icons.crop_square),
+    TwoSectionsCardModel("MFI", "0.32", valueIcon: Icons.arrow_drop_down),
+    TwoSectionsCardModel("MACD", "7.92", valueIcon: Icons.arrow_drop_down),
+    TwoSectionsCardModel("ADX", "46.71", valueIcon: Icons.arrow_drop_down),
+    TwoSectionsCardModel("CCI", ""),
+    TwoSectionsCardModel("Chaikin", "0", valueColor: Colors.red, valueIcon: Icons.crop_square),
+    TwoSectionsCardModel("KST", ""),
+    TwoSectionsCardModel("DMI", "46.71", valueIcon: Icons.arrow_drop_up),
   ];
   @override
   _PricingTabState createState() => _PricingTabState();
@@ -106,11 +94,12 @@ class _PricingTabState extends State<TechnicalAnalysisTab> {
                 TwoColumnsCard(widget.sectionData),
                 TwoSectionsTable("PRICE", "P/E", widget.dataTable1),
                 LineChartSample7(),
-                InfoTable("MATRIX VALUATION", widget.matrixColumnHeaders, widget.matrixColumnData, widget.matrixColumnDataFooterNote),
-                InfoTable("DÒNG TIỀN CỦA MỘT SỐ PHƯƠNG PHÁP", widget.moneyColumnHeaders, widget.moneyColumnData),
-                TwoSectionsCard("FORWARD P/E VALUATION", widget.forwardData),
-                TwoSectionsCard("P/BV VALUATION", widget.pbvData),
-                TwoSectionsCard("EPS MODEL", widget.epsData),
+                LineChartSample7(),
+                TwoSectionsCard("FORECAST", widget.forwardData),
+                TwoSectionsCard("PIVOT", widget.pivotData),
+                TwoSectionsCard("SIGNAL", widget.signalData),
+                TwoSectionsCard("TREND", widget.trendData),
+                TwoSectionsCard("TA INDICATOR", widget.taData),
               ],
             ),
           ),

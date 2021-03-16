@@ -7,5 +7,6 @@ class TwoSectionsCardModel {
   final String value;
   final Color keyColor;
   final Color valueColor;
-  TwoSectionsCardModel(this.key, this.value, {this.keyColor = Colors.white, this.valueColor = Colors.white});
+  final IconData valueIcon;
+  TwoSectionsCardModel(this.key, this.value, {this.keyColor = Colors.white, this.valueColor = Colors.white, this.valueIcon});
 }

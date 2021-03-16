@@ -38,12 +38,29 @@ class _TwoSectionsCardState extends State<TwoSectionsCard> {
                      alignment: Alignment.centerLeft,
                    )
                ),
+               item.valueIcon != null ?
                Expanded(
+                   // child: Align(
+                     child: Row(
+                         children: [
+                           Expanded(
+                              child: Align(
+                                alignment: Alignment.centerRight,
+                                child:Text(item.value, style: TextStyle(color: item.valueColor))
+                              )
+                           ),
+                           Icon(item.valueIcon, color: Colors.white)
+                         ]
+                     ),
+                     // alignment: Alignment.centerRight,
+                   // )
+               ) : Expanded(
                    child: Align(
                      child: Text(item.value, style: TextStyle(color: item.valueColor)),
                      alignment: Alignment.centerRight,
                    )
                )
+
              ],
            )
        )
