@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import '../widgets/fab_bottom_app_bar_widget.dart';
 
@@ -6,6 +7,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
+        locale: DevicePreview.locale(context), // Add the locale here
+        builder: DevicePreview.appBuilder,
         theme: new ThemeData(primaryColor: Color(0xFFF0F2FC)),
         home: MyHomeScreen(
           icon: new Icon(Icons.access_alarm),
@@ -25,9 +28,7 @@ class _MyHomeScreenState extends State<MyHomeScreen> with TickerProviderStateMix
   String _lastSelected = 'TAB: 0';
 
   void selectedTAB(int index) {
-    setState(() {
-      _lastSelected = 'TAB: $index';
-    });
+    setState(() => _lastSelected = 'TAB: $index');
   }
 
   @override
