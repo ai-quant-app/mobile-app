@@ -1,15 +1,18 @@
-import 'dart:collection';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 
-class TwoColumnsCard extends StatelessWidget {
+class TwoColumnsCard extends StatefulWidget {
   final Map<String, String> data;
-  TwoColumnsCard(this.data);
+  TwoColumnsCard(this.data, {Key key}): super(key: key);
+  @override
+  _TwoColumnsCardState createState() => _TwoColumnsCardState();
+}
+
+class _TwoColumnsCardState extends State<TwoColumnsCard> {
    List<Widget> _generate() {
      List<Widget> ret = [];
-     data.forEach((key, value) {
+     widget.data.forEach((key, value) {
        ret.add(Padding(
          padding: EdgeInsetsResponsive.only(top: 30.sp, bottom: 30.sp),
          child: Row(

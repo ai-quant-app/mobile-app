@@ -1,25 +1,29 @@
-import 'dart:collection';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/models/two-sections-table.model.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 
-class TwoSectionsTable extends StatelessWidget {
+class TwoSectionsTable extends StatefulWidget {
   final List<TwoSectionsTableModel> data;
   final String firstSectionTitle;
   final String secondSectionTitle;
-  TwoSectionsTable(this.firstSectionTitle, this.secondSectionTitle, this.data);
+  TwoSectionsTable(this.firstSectionTitle, this.secondSectionTitle, this.data, {Key key}) : super(key: key);
+  @override
+  _TwoSectionsTableState createState() => _TwoSectionsTableState();
+}
+
+class _TwoSectionsTableState extends State<TwoSectionsTable> {
+
    List<TableRow> _generate() {
      List<TableRow> ret = [];
      ret.add(
        TableRow( children: [
-         TableCell(child: Text(firstSectionTitle, style: TextStyle(fontSize: 50.sp, color: Color(0xff26B1FB)))),
-         TableCell(child: Text(secondSectionTitle, style: TextStyle(fontSize: 50.sp, color: Color(0xff26B1FB)))),
+         TableCell(child: Text(widget.firstSectionTitle, style: TextStyle(fontSize: 50.sp, color: Color(0xff26B1FB)))),
+         TableCell(child: Text(widget.secondSectionTitle, style: TextStyle(fontSize: 50.sp, color: Color(0xff26B1FB)))),
       ])
      );
 
-     data.forEach((TwoSectionsTableModel item) {
+     widget.data.forEach((TwoSectionsTableModel item) {
        ret.add(TableRow(children: [
          Container(
              margin: EdgeInsetsResponsive.only(top: 20.sp),
