@@ -2,7 +2,6 @@ import 'package:device_preview/device_preview.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 import 'package:flutter/material.dart';
 import '../widgets/fab_bottom_app_bar_widget.dart';
-
 import '../modules/home_screens/screens/home.dart';
 
 class MyApp extends StatelessWidget {
