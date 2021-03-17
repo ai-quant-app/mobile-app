@@ -7,7 +7,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:flutter_ai_quant/screens/home_screen.dart';
+import 'package:flutter_ai_quant/screens/main_screen.dart';
 
 import 'package:flutter_ai_quant/main.dart';
 

@@ -1,85 +1,117 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:responsive_widgets/responsive_widgets.dart';
 import 'package:flutter/material.dart';
 import '../widgets/fab_bottom_app_bar_widget.dart';
+
+import '../modules/layout/index.dart';
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         locale: DevicePreview.locale(context), // Add the locale here
         builder: DevicePreview.appBuilder,
         theme: new ThemeData(primaryColor: Color(0xFFF0F2FC)),
-        home: MyHomeScreen(
+        home: MainScreen(
           icon: new Icon(Icons.access_alarm),
         ));
   }
 }
 
-class MyHomeScreen extends StatefulWidget {
-  MyHomeScreen({Key key, this.icon}) : super(key: key);
+class MainScreen extends StatefulWidget {
+  MainScreen({Key key, this.icon}) : super(key: key);
 
   final Icon icon;
   @override
-  _MyHomeScreenState createState() => _MyHomeScreenState();
+  _MainScreenState createState() => _MainScreenState();
 }
 
-class _MyHomeScreenState extends State<MyHomeScreen> with TickerProviderStateMixin {
-  String _lastSelected = 'TAB: 0';
+class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
+  int _lastSelected = 0;
 
   void selectedTAB(int index) {
-    setState(() => _lastSelected = 'TAB: $index');
+    setState(() => _lastSelected = index);
+  }
+
+  Widget renderScreen() {
+    switch(_lastSelected) {
+      case 0: {
+        // statements;
+        return Text("$_lastSelected, Danh mục");
+      }
+      case 1: {
+        //statements;
+        return Text("$_lastSelected, Bảng giá");
+      }
+      case 2:{
+        return Text("$_lastSelected, Biểu đồ");
+      }
+      case 3:{
+        return Text("$_lastSelected, Đặt lệnh");
+      }
+      default: {
+        //statements;
+        return Text("$_lastSelected, home");
+      }
+    }
   }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: new Image.asset(
-          'assets/logo_transparent.png',
-          fit: BoxFit.contain,
-          height: 55,
+    ResponsiveWidgets.init(context,
+      height: 1920,
+      width: 1080,
+      allowFontScaling: false,
+    );
+
+    return ResponsiveWidgets.builder(
+      height: 1920,
+      width: 1080,
+      allowFontScaling: false,
+      child: Scaffold(
+        appBar: AppBar(
+          title: new Image.asset(
+            'assets/logo_transparent.png',
+            fit: BoxFit.contain,
+            height: 70.sp,
+          ),
+          centerTitle: true,
+          backgroundColor: Color(0xFFeff1fd),
+          iconTheme: new IconThemeData(color: Color(0xFF074986)),
+          actions: [
+            new Icon(
+              Icons.search,
+              size: 32,
+            )
+          ],
         ),
-        centerTitle: true,
-        backgroundColor: Color(0xFFeff1fd),
-        iconTheme: new IconThemeData(color: Color(0xFF074986)),
-        actions: [
-          new Icon(
-            Icons.search,
-            size: 32,
-          )
-        ],
-      ),
-      drawer: _buildDrawer(context),
-      body: Center(
-        child: Text(
-          _lastSelected,
-          style: TextStyle(fontSize: 32),
+        drawer: _buildDrawer(context),
+        body: renderScreen(),
+        bottomNavigationBar: FABBottomAppBar(
+          color: Color(0xFF6c9dcd),
+          selectedColor: Colors.white,
+          notchedShape: CircularNotchedRectangle(),
+          backgroundColor: Color(0xFF074784),
+          onTabSelected: selectedTAB,
+          items: [
+            FABBottomAppBarItem(iconData: Icons.menu, text: 'Danh mục'),
+            FABBottomAppBarItem(iconData: Icons.layers, text: 'Bảng giá'),
+            FABBottomAppBarItem(iconData: Icons.dashboard, text: 'Biểu đồ'),
+            FABBottomAppBarItem(iconData: Icons.info, text: 'Đặt lệnh'),
+          ],
         ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        floatingActionButton: _buildFab(context, selectedTAB), // This trailing comma makes auto-formatting nicer for build methods.
       ),
-      bottomNavigationBar: FABBottomAppBar(
-        color: Color(0xFF6c9dcd),
-        selectedColor: Colors.white,
-        notchedShape: CircularNotchedRectangle(),
-        backgroundColor: Color(0xFF074784),
-        onTabSelected: selectedTAB,
-        items: [
-          FABBottomAppBarItem(iconData: Icons.menu, text: 'Danh mục'),
-          FABBottomAppBarItem(iconData: Icons.layers, text: 'Bảng giá'),
-          FABBottomAppBarItem(iconData: Icons.dashboard, text: 'Biểu đồ'),
-          FABBottomAppBarItem(iconData: Icons.info, text: 'Đặt lệnh'),
-        ],
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      floatingActionButton: _buildFab(
-          context), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 
-  Widget _buildFab(BuildContext context) {
+  Widget _buildFab(BuildContext context, Function selectedTAB) {
     return FloatingActionButton(
-      onPressed: () {},
-      tooltip: 'Increment',
+      onPressed: () { selectedTAB(4); },
+      tooltip: 'main_screen',
       child: Icon(Icons.home),
       elevation: 2.0,
       backgroundColor: Color(0xFF26b6fe),
