@@ -3,7 +3,7 @@ import 'package:responsive_widgets/responsive_widgets.dart';
 import 'package:flutter/material.dart';
 import '../widgets/fab_bottom_app_bar_widget.dart';
 
-import '../modules/layout/index.dart';
+import '../modules/home_screens/screens/home.dart';
 
 class MyApp extends StatelessWidget {
   @override
@@ -13,7 +13,10 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         locale: DevicePreview.locale(context), // Add the locale here
         builder: DevicePreview.appBuilder,
-        theme: new ThemeData(primaryColor: Color(0xFFF0F2FC)),
+        theme: new ThemeData(
+            primaryColor: Color(0xFFF0F2FC),
+            backgroundColor: Color(0xFF062D52),
+        ),
         home: MainScreen(
           icon: new Icon(Icons.access_alarm),
         ));
@@ -38,11 +41,9 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
   Widget renderScreen() {
     switch(_lastSelected) {
       case 0: {
-        // statements;
         return Text("$_lastSelected, Danh mục");
       }
       case 1: {
-        //statements;
         return Text("$_lastSelected, Bảng giá");
       }
       case 2:{
@@ -52,8 +53,7 @@ class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
         return Text("$_lastSelected, Đặt lệnh");
       }
       default: {
-        //statements;
-        return Text("$_lastSelected, home");
+        return HomeScreen();
       }
     }
   }

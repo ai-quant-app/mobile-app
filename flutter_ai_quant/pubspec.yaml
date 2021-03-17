@@ -9,6 +9,7 @@ dependencies:
     sdk: flutter
   cupertino_icons: ^0.1.3
   fl_chart: ^0.12.3
+  flutter_charts: ^0.1.10
 
   # Responsive Layout
   device_preview: ^0.5.5

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
-import '../components/chart.dart';
 
-class HomePage extends StatelessWidget {
+class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -16,17 +15,17 @@ class HomePage extends StatelessWidget {
         width: 1080,
         allowFontScaling: true,
         child: Scaffold(
-            backgroundColor: Theme.of(context).primaryColor,
+            backgroundColor: Theme.of(context).backgroundColor,
             body: Column(
               children: <Widget>[
                 Container(
                   child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Row(
                         children: [
                           Container(
-                            padding: EdgeInsetsResponsive.all(16),
+                            padding: EdgeInsetsResponsive.fromLTRB(30, 50, 20, 50),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
@@ -34,47 +33,44 @@ class HomePage extends StatelessWidget {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Container(
-                                      padding: EdgeInsetsResponsive.fromLTRB(0.0, 0.0, 0.0, 5.0),
+                                      margin: EdgeInsetsResponsive.fromLTRB(0.0, 0.0, 0.0, 15.0),
                                       child: Text("S&P 500 Fut",
                                           style: TextStyle(
                                             color: Color(0xff539BDC),
                                             fontFamily: 'Helvetica Neue',
-                                            fontSize: 18.sp,
+                                            fontSize: 45.sp,
                                             letterSpacing: 0,
                                           )),
                                     ),
                                     Container(
-                                      padding: EdgeInsetsResponsive.fromLTRB(0.0, 0.0, 0.0, 5.0),
+                                      margin: EdgeInsetsResponsive.fromLTRB(0.0, 0.0, 0.0, 15.0),
                                       child: Text("3,367.75",
                                           style: TextStyle(
                                             color: Color(0xffFFFFFF),
                                             fontFamily: 'Helvetica Neue',
-                                            fontSize: 13.sp,
+                                            fontSize: 35.sp,
                                             letterSpacing: 0,
                                           )),
                                     ),
                                     Container(
-                                      padding: EdgeInsetsResponsive.fromLTRB(0.0, 0.0, 0.0, 5.0),
+                                      margin: EdgeInsetsResponsive.fromLTRB(0.0, 0.0, 0.0, 5.0),
                                       child: Text("-15.35 (-0.45%)",
                                           style: TextStyle(
                                             color: Color(0xffED6060),
                                             fontFamily: 'Helvetica Neue',
-                                            fontSize: 16.sp,
+                                            fontSize: 40.sp,
                                             letterSpacing: 0,
                                           )),
                                     ),
                                   ],
                                 ),
                                 SizedBoxResponsive(width: 50),
-                                Container(
-                                  height: 150.sp, child: LineChartSample2()
-                                ),
                               ],
                             ),
                           ),
                         ],
                       ),
-                      Text("Hello", style: TextStyle(color: Colors.black))
+                      Text("Hello", style: TextStyle(color: Colors.white))
                     ],
                   ),
                 ),
