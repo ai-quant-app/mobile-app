@@ -4,25 +4,32 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/models/chart-data.model.dart';
 
 /// Example of a line chart rendered with dash patterns.
-class MultiLineChart extends StatelessWidget {
-  final Map<String, List<ChartData>> data;
+class DotLineChart extends StatelessWidget {
+  final String title;
+  final String dotTitle;
+  final List<ChartData> data;
+  final List<ChartData> dotData;
   final bool animate;
 
-  MultiLineChart(this.data, {this.animate});
+  DotLineChart(this.title, this.dotTitle, this.data, this.dotData, {this.animate});
   List<charts.Series<ChartData, int>> _generateData() {
-    List<charts.Series<ChartData, int>> ret = [];
-    this.data.forEach((key, value) {
-      ret.add(
-        new charts.Series<ChartData, int>(
-          id: key,
-          colorFn: (ChartData dt, __) => dt.color,
-          domainFn: (ChartData dt, _) => dt.x,
-          measureFn: (ChartData dt, _) => dt.y,
-          data: value,
-        ),
-      );
-    });
-    return ret;
+    return [
+      new charts.Series<ChartData, int>(
+        id: title,
+        colorFn: (ChartData dt, __) => dt.color,
+        domainFn: (ChartData dt, _) => dt.x,
+        measureFn: (ChartData dt, _) => dt.y,
+        data: data,
+      ),
+      new charts.Series<ChartData, int>(
+        id: dotTitle,
+        colorFn: (ChartData dt, __) => dt.color,
+        dashPatternFn: (_, __) => [1, 1],
+        domainFn: (ChartData dt, _) => dt.x,
+        measureFn: (ChartData dt, _) => dt.y,
+        data: dotData,
+      ),
+    ];
   }
 
   @override

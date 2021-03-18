@@ -1,13 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ai_quant/common/constants/app-dimension.constant.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/models/chart-data.model.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/models/two-sections-card.model.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/models/two-sections-table.model.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/widgets/dot-line.chart.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/widgets/fixed-one-hundred-measure-axis-line.chart.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/widgets/multi-line.chart.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/smooth-line.chart.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/two_columns_card.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/two_sections_card.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/two_sections_table.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
+import 'package:charts_flutter/flutter.dart' as charts;
 
 class TechnicalAnalysisTab extends StatefulWidget {
   final Map<String, String> sectionData = {
@@ -65,6 +70,41 @@ class TechnicalAnalysisTab extends StatefulWidget {
     TwoSectionsCardModel("KST", ""),
     TwoSectionsCardModel("DMI", "46.71", valueIcon: Icons.arrow_drop_up),
   ];
+  final dataMultiLineChart = {
+    'Desktop': [
+      new ChartData(0, 0, charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(1, 10, charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(2, 20, charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(3, 30, charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(4, 40, charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(5, 50, charts.MaterialPalette.blue.shadeDefault),
+    ],
+    'Tablet': [
+      new ChartData(0, 0, charts.MaterialPalette.red.shadeDefault),
+      new ChartData(1, 15, charts.MaterialPalette.red.shadeDefault),
+      new ChartData(2, 25, charts.MaterialPalette.red.shadeDefault),
+      new ChartData(3, 35, charts.MaterialPalette.red.shadeDefault),
+      new ChartData(4, 46, charts.MaterialPalette.red.shadeDefault),
+      new ChartData(5, 57, charts.MaterialPalette.red.shadeDefault),
+    ]
+  };
+  final dataDotChart1 = [
+      new ChartData(0, 0, charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(1, 10, charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(2, 20, charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(3, 30, charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(4, 40, charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(5, 50, charts.MaterialPalette.blue.shadeDefault),
+    ];
+  final dataDotChart2 = [
+      new ChartData(0, 0, charts.MaterialPalette.red.shadeDefault),
+      new ChartData(1, 15, charts.MaterialPalette.red.shadeDefault),
+      new ChartData(2, 25, charts.MaterialPalette.red.shadeDefault),
+      new ChartData(3, 35, charts.MaterialPalette.red.shadeDefault),
+      new ChartData(4, 46, charts.MaterialPalette.red.shadeDefault),
+      new ChartData(5, 57, charts.MaterialPalette.red.shadeDefault),
+    ];
+
   @override
   _PricingTabState createState() => _PricingTabState();
 }
@@ -90,11 +130,26 @@ class _PricingTabState extends State<TechnicalAnalysisTab> {
             padding: EdgeInsetsResponsive.all(30.sp),
             child: Column(
               children: [
-                LineChartSample7(),
+                SizedBox(
+                    width: 1100.sp,
+                    height: 500.sp,
+                    child:
+                    FixedOneHundredMeasureAxisLineChart(widget.dataMultiLineChart)
+                ),
                 TwoColumnsCard(widget.sectionData),
                 TwoSectionsTable("PRICE", "P/E", widget.dataTable1),
-                LineChartSample7(),
-                LineChartSample7(),
+                SizedBox(
+                    width: 1100.sp,
+                    height: 500.sp,
+                    child:
+                    DotLineChart("Destop", "Table", widget.dataDotChart1, widget.dataDotChart2)
+                ),
+                SizedBox(
+                    width: 1100.sp,
+                    height: 500.sp,
+                    child:
+                    MultiLineChart(widget.dataMultiLineChart)
+                ),
                 TwoSectionsCard("FORECAST", widget.forwardData),
                 TwoSectionsCard("PIVOT", widget.pivotData),
                 TwoSectionsCard("SIGNAL", widget.signalData),

@@ -1,14 +1,18 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ai_quant/common/constants/app-dimension.constant.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/models/chart-data.model.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/models/two-sections-card.model.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/models/two-sections-table.model.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/widgets/info_table.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/widgets/fixed-one-hundred-measure-axis-line.chart.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/widgets/info-table.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/widgets/multi-line.chart.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/smooth-line.chart.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/two_columns_card.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/two_sections_card.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/two_sections_table.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
+import 'package:charts_flutter/flutter.dart' as charts;
 
 class PricingTab extends StatefulWidget {
   final Map<String, String> sectionData = {
@@ -77,6 +81,37 @@ class PricingTab extends StatefulWidget {
     TwoSectionsCardModel("Growth at maturity", "1%"),
     TwoSectionsCardModel("Model price", "94,906", valueColor: Colors.blue),
   ];
+
+  final dataMultiLineChart = {
+    'Desktop': [
+      new ChartData(0, 0, charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(1, 10, charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(2, 20, charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(3, 30, charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(4, 40, charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(5, 50, charts.MaterialPalette.blue.shadeDefault),
+    ],
+    'Tablet': [
+      new ChartData(0, 0, charts.MaterialPalette.red.shadeDefault),
+      new ChartData(1, 15, charts.MaterialPalette.red.shadeDefault),
+      new ChartData(2, 25, charts.MaterialPalette.red.shadeDefault),
+      new ChartData(3, 35, charts.MaterialPalette.red.shadeDefault),
+      new ChartData(4, 46, charts.MaterialPalette.red.shadeDefault),
+      new ChartData(5, 57, charts.MaterialPalette.red.shadeDefault),
+    ]
+  };
+
+  final dataOneLineChart =  {
+    'Desktop': [
+      new ChartData(0, 0, charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(1, 10, charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(2, 20, charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(3, 30, charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(4, 40, charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(5, 50, charts.MaterialPalette.blue.shadeDefault),
+    ],
+  };
+
   @override
   _PricingTabState createState() => _PricingTabState();
 }
@@ -99,13 +134,23 @@ class _PricingTabState extends State<PricingTab> {
         backgroundColor: Color(0xff062D52),
         body: SingleChildScrollView(
           child: Container(
-            padding: EdgeInsetsResponsive.all(30.sp),
+            // padding: EdgeInsetsResponsive.all(30.sp),
             child: Column(
               children: [
-                LineChartSample7(),
+                SizedBox(
+                    width: 1100.sp,
+                    height: 500.sp,
+                    child:
+                    FixedOneHundredMeasureAxisLineChart(widget.dataMultiLineChart)
+                ),
                 TwoColumnsCard(widget.sectionData),
                 TwoSectionsTable("PRICE", "P/E", widget.dataTable1),
-                LineChartSample7(),
+                SizedBox(
+                    width: 1100.sp,
+                    height: 500.sp,
+                    child:
+                    MultiLineChart(widget.dataOneLineChart)
+                ),
                 InfoTable("MATRIX VALUATION", widget.matrixColumnHeaders, widget.matrixColumnData, widget.matrixColumnDataFooterNote),
                 InfoTable("DÒNG TIỀN CỦA MỘT SỐ PHƯƠNG PHÁP", widget.moneyColumnHeaders, widget.moneyColumnData),
                 TwoSectionsCard("FORWARD P/E VALUATION", widget.forwardData),
