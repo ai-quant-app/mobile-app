@@ -17,9 +17,8 @@ class FABBottomAppBar extends StatefulWidget {
     this.selectedColor,
     this.notchedShape,
     this.onTabSelected,
-  }) {
-    assert(this.items.length == 2 || this.items.length == 4);
-  }
+  });
+
   final List<FABBottomAppBarItem> items;
   final String centerItemText;
   final double height;

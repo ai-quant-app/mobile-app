@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'package:responsive_widgets/responsive_widgets.dart';
 
-class ChartScreen extends StatefulWidget {
+class CategoryScreen extends StatefulWidget {
   @override
-  _ChartScreenState createState() => _ChartScreenState();
+  _CategoryScreenState createState() => _CategoryScreenState();
 }
 
-class _ChartScreenState extends State<ChartScreen> {
+class _CategoryScreenState extends State<CategoryScreen> {
   @override
   Widget build(BuildContext context) {
     ResponsiveWidgets.init(
@@ -21,7 +21,7 @@ class _ChartScreenState extends State<ChartScreen> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.amber,
-          title: Text("hello"),
+          title: Text("Category Screen"),
         ),
       ),
     );

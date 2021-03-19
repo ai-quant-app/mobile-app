@@ -63,7 +63,7 @@ class HighLightStocks extends StatelessWidget {
                           ],
                         ),
                         SizedBoxResponsive(width: 50),
-                        SimpleLineChart([],true),
+                        // SimpleLineChart([],true),
                       ],
                     ),
                   ),
