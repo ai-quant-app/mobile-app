@@ -7,6 +7,7 @@ import 'package:flutter_ai_quant/modules/company-analysis/models/two-sections-ta
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/dot-line.chart.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/fixed-one-hundred-measure-axis-line.chart.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/multi-line.chart.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/widgets/second-multi-line.chart.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/smooth-line.chart.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/two_columns_card.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/two_sections_card.dart';
@@ -105,6 +106,16 @@ class TechnicalAnalysisTab extends StatefulWidget {
       new ChartData(5, 57, charts.MaterialPalette.red.shadeDefault),
     ];
 
+  final secondData = {
+    "Chair": [
+    new ChartData(0, 0.05, charts.MaterialPalette.yellow.shadeDefault),
+    new ChartData(1, 0.04, charts.MaterialPalette.yellow.shadeDefault),
+    new ChartData(2, 0.1, charts.MaterialPalette.yellow.shadeDefault),
+    new ChartData(3, 0.7, charts.MaterialPalette.yellow.shadeDefault),
+    new ChartData(4, 0.9, charts.MaterialPalette.yellow.shadeDefault),
+    new ChartData(5, 0.03, charts.MaterialPalette.yellow.shadeDefault),
+    ]
+  };
   @override
   _PricingTabState createState() => _PricingTabState();
 }
@@ -148,7 +159,7 @@ class _PricingTabState extends State<TechnicalAnalysisTab> {
                     width: 1100.sp,
                     height: 500.sp,
                     child:
-                    MultiLineChart(widget.dataMultiLineChart)
+                    SecondMultiLineChart(widget.dataMultiLineChart, widget.secondData)
                 ),
                 TwoSectionsCard("FORECAST", widget.forwardData),
                 TwoSectionsCard("PIVOT", widget.pivotData),

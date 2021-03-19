@@ -24,11 +24,11 @@ class DotLineChart extends StatelessWidget {
       new charts.Series<ChartData, int>(
         id: dotTitle,
         colorFn: (ChartData dt, __) => dt.color,
-        dashPatternFn: (_, __) => [1, 1],
+        // dashPatternFn: (_, __) => [1, 1],
         domainFn: (ChartData dt, _) => dt.x,
         measureFn: (ChartData dt, _) => dt.y,
         data: dotData,
-      ),
+      )..setAttribute(charts.rendererIdKey, 'customDot'),
     ];
   }
 
@@ -59,7 +59,13 @@ class DotLineChart extends StatelessWidget {
             )
         ),
       ),
-      behaviors: [new charts.SeriesLegend()],
+      customSeriesRenderers: [
+        charts.PointRendererConfig(
+          // ID used to link series to this renderer.
+            customRendererId: 'customDot',
+        )
+      ],
+      // behaviors: [new charts.SeriesLegend()],
     );
   }
 }
