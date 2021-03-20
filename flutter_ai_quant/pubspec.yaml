@@ -12,7 +12,7 @@ dependencies:
   google_fonts: ^1.1.2
 
   # Responsive Layout
-  device_preview: ^0.5.5
+  device_preview: ^0.6.2-beta
   responsive_widgets: ^2.0.1
 
   # Management State
