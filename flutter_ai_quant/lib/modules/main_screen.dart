@@ -9,14 +9,12 @@ import 'package:flutter_ai_quant/widgets/bottom_navigation_bar_widget.dart';
 
 import 'package:responsive_widgets/responsive_widgets.dart';
 
-import '../widgets/fab_bottom_app_bar_widget.dart';
-
 class MainScreen extends StatefulWidget {
   @override
   _MainScreenState createState() => _MainScreenState();
 }
 
-class _MainScreenState extends State<MainScreen> with TickerProviderStateMixin {
+class _MainScreenState extends State<MainScreen> {
   int selectedIndex = 0;
 
   void changeIndex(int index) {

@@ -21,10 +21,9 @@ class HomeScreen extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Theme.of(context).backgroundColor,
         appBar: AppBar(
-          title: new Image.asset(
+          title: Image.asset(
             'assets/logo_transparent.png',
-            fit: BoxFit.contain,
-            height: 70.sp,
+            height: 180.sp,
           ),
           centerTitle: true,
           backgroundColor: Color(0xFFeff1fd),
@@ -32,7 +31,7 @@ class HomeScreen extends StatelessWidget {
           actions: [
             Icon(
               Icons.search,
-              size: 32,
+              size: 80.sp,
             )
           ],
         ),
