@@ -4,6 +4,7 @@ import 'package:responsive_widgets/responsive_widgets.dart';
 
 import '../components/high_light_stocks.dart';
 import 'package:flutter_ai_quant/modules/home/components/drawer.dart';
+import 'package:flutter_ai_quant/modules/home/components/categories.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -39,7 +40,7 @@ class HomeScreen extends StatelessWidget {
         body: Column(
           children: <Widget>[
             HighLightStocks(),
-            Text("Row for danh mục", style: TextStyle(color: Colors.white)),
+            Categories(),
             Text("Row for mã khuyến nghị",
                 style: TextStyle(color: Colors.white)),
             Text("Row for tin tức", style: TextStyle(color: Colors.white)),

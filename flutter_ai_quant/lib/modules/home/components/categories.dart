@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
+import 'package:flutter_ai_quant/modules/home/components/UI/TableCellCustom.dart';
 
 class Categories extends StatelessWidget {
   @override
@@ -35,52 +36,49 @@ class Categories extends StatelessWidget {
               border: TableBorder(horizontalInside: BorderSide(width: 1, color: Colors.white, style: BorderStyle.solid)),
               defaultVerticalAlignment: TableCellVerticalAlignment.middle,
               columnWidths: const <int, TableColumnWidth>{
-                0: FixedColumnWidth(30),
+                0: FixedColumnWidth(33),
               },
               children: <TableRow>[
                 TableRow(
                   children: <Widget>[
-                    Container(
-                      child: Center( child: Text("Mã", style: TextStyle(color: Colors.white, fontSize: 42.sp))),
-                    ),
-                    Container(
-                      child: Center(child: Text("Giá", style: TextStyle(color: Colors.white, fontSize: 42.sp ))),
-                    ),
-                    Container(
-                      child: Center(child: Text("+/-", style: TextStyle(color: Colors.white, fontSize: 42.sp))),
-                    ),
-                    Container(
-                      child: Center(child: Text("Xu thế", style: TextStyle(color: Colors.white, fontSize: 42.sp))),
-                    ),
-                    Container(
-                      child: Center(child: Text("Xếp hạng", style: TextStyle(color: Colors.white, fontSize: 42.sp))),
-                    ),
-                    Container(
-                      child: Center(child: Text("Đồ thị", style: TextStyle(color: Colors.white, fontSize: 42.sp))),
-                    ),
+                    TableCellCustom(title: "Mã"),
+                    TableCellCustom(title: "Giá"),
+                    TableCellCustom(title: "+/-"),
+                    TableCellCustom(title: "Xu thế"),
+                    TableCellCustom(title: "Xếp hạng"),
+                    TableCellCustom(title: "Đồ thị"),
                   ],
                 ),
                 TableRow(
                   children: <Widget>[
-                    Container(
-                      child: Center(child: Text("LCG", style: TextStyle(color: Colors.white))),
-                    ),
-                    Container(
-                      child: Center(child: Text("10.15", style: TextStyle(color: Colors.white))),
-                    ),
-                    Container(
-                      child: Center(child: Text("+8%", style: TextStyle(color: Colors.white))),
-                    ),
-                    Container(
-                      child: Center(child: Text("Tăng", style: TextStyle(color: Colors.white))),
-                    ),
-                    Container(
-                      child: Center(child: Text("123", style: TextStyle(color: Colors.white))),
-                    ),
-                    Container(
-                      child: Center(child: Text("Đồ thị", style: TextStyle(color: Colors.white))),
-                    ),
+                    TableCellCustom(title: "LCG"),
+                    TableCellCustom(title: "10.15"),
+                    TableCellCustom(title: "+8%"),
+                    TableCellCustom(title: "Tăng"),
+                    TableCellCustom(title: "123"),
+                    TableCellCustom(title: "Đồ thị"),
+                  ],
+                ),
 
+                TableRow(
+                  children: <Widget>[
+                    TableCellCustom(title: "BBC"),
+                    TableCellCustom(title: "10.15"),
+                    TableCellCustom(title: "+8%"),
+                    TableCellCustom(title: "Tăng"),
+                    TableCellCustom(title: "123"),
+                    TableCellCustom(title: "Đồ thị"),
+                  ],
+                ),
+
+                TableRow(
+                  children: <Widget>[
+                    TableCellCustom(title: "BID"),
+                    TableCellCustom(title: "10.15"),
+                    TableCellCustom(title: "+8%"),
+                    TableCellCustom(title: "Tăng"),
+                    TableCellCustom(title: "123"),
+                    TableCellCustom(title: "Đồ thị"),
                   ],
                 ),
               ],
