@@ -37,7 +37,7 @@ class HighLightStocks extends StatelessWidget {
                                 style: TextStyle(
                                   color: Color(0xff539BDC),
                                   fontFamily: 'Helvetica Neue',
-                                  fontSize: 45.sp,
+                                  fontSize: 35.sp,
                                   letterSpacing: 0,
                                 )),
                           ),
@@ -48,7 +48,7 @@ class HighLightStocks extends StatelessWidget {
                                 style: TextStyle(
                                   color: Color(0xffFFFFFF),
                                   fontFamily: 'Helvetica Neue',
-                                  fontSize: 35.sp,
+                                  fontSize: 25.sp,
                                   letterSpacing: 0,
                                 )),
                           ),
@@ -59,13 +59,19 @@ class HighLightStocks extends StatelessWidget {
                                 style: TextStyle(
                                   color: Color(0xffED6060),
                                   fontFamily: 'Helvetica Neue',
-                                  fontSize: 40.sp,
+                                  fontSize: 30.sp,
                                   letterSpacing: 0,
                                 )),
                           ),
                         ],
                       ),
-                      SizedBoxResponsive(width: 50),
+                      // SizedBoxResponsive(width: 10),
+                      Container(
+                        width: 100,
+                        height: 80,
+                        child: SimpleLineChart(SimpleLineChart.withSampleData().seriesList),
+                      )
+
                     ],
                   ),
                 ),
@@ -88,7 +94,7 @@ class HighLightStocks extends StatelessWidget {
                                 style: TextStyle(
                                   color: Color(0xff539BDC),
                                   fontFamily: 'Helvetica Neue',
-                                  fontSize: 45.sp,
+                                  fontSize: 35.sp,
                                   letterSpacing: 0,
                                 )),
                           ),
@@ -99,7 +105,7 @@ class HighLightStocks extends StatelessWidget {
                                 style: TextStyle(
                                   color: Color(0xffFFFFFF),
                                   fontFamily: 'Helvetica Neue',
-                                  fontSize: 35.sp,
+                                  fontSize: 25.sp,
                                   letterSpacing: 0,
                                 )),
                           ),
@@ -110,13 +116,17 @@ class HighLightStocks extends StatelessWidget {
                                 style: TextStyle(
                                   color: Color(0xFF25E654),
                                   fontFamily: 'Helvetica Neue',
-                                  fontSize: 40.sp,
+                                  fontSize: 30.sp,
                                   letterSpacing: 0,
                                 )),
                           ),
                         ],
                       ),
-                      SizedBoxResponsive(width: 50),
+                      Container(
+                        width: 100,
+                        height: 100,
+                        child: SimpleLineChart(SimpleLineChart.withSampleData().seriesList),
+                      )
                     ],
                   ),
                 ),
