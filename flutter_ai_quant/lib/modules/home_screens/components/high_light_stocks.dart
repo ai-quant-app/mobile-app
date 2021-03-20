@@ -23,7 +23,7 @@ class HighLightStocks extends StatelessWidget {
               Row(
                 children: [
                   Container(
-                    padding: EdgeInsetsResponsive.fromLTRB(30, 50, 20, 50),
+                    padding: EdgeInsetsResponsive.fromLTRB(30, 50, 20, 0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
@@ -63,7 +63,6 @@ class HighLightStocks extends StatelessWidget {
                           ],
                         ),
                         SizedBoxResponsive(width: 50),
-                        SimpleLineChart([],true),
                       ],
                     ),
                   ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 import '../components/high_light_stocks.dart';
+import '../components/categories.dart';
 
 class HomeScreen extends StatelessWidget {
 
@@ -20,7 +21,7 @@ class HomeScreen extends StatelessWidget {
             body: Column(
               children: <Widget>[
                 HighLightStocks(),
-                Text("Row for danh mục", style: TextStyle(color: Colors.white)),
+                Categories(),
                 Text("Row for mã khuyến nghị",
                     style: TextStyle(color: Colors.white)),
                 Text("Row for tin tức", style: TextStyle(color: Colors.white)),
