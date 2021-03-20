@@ -20,7 +20,34 @@ class SimpleLineChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return new charts.LineChart(seriesList, animate: animate);
+    return new charts.LineChart(seriesList, animate: animate,
+        domainAxis: new charts.NumericAxisSpec(
+          showAxisLine: true,
+            renderSpec: new charts.SmallTickRendererSpec(
+              labelStyle: new charts.TextStyleSpec(
+                fontSize: 10,
+                color: charts.MaterialPalette.white,
+              ),
+              axisLineStyle: charts.LineStyleSpec(
+                color: charts.MaterialPalette.white,
+              ),
+            ),
+
+            tickProviderSpec:
+            new charts.BasicNumericTickProviderSpec(desiredTickCount: 4)
+        ),
+
+        /// Customize the measure axis to have 2 ticks,
+        primaryMeasureAxis: new charts.NumericAxisSpec(
+            renderSpec: new charts.NoneRenderSpec(),
+            // renderSpec: new charts.GridlineRendererSpec(
+            //     lineStyle: new charts.LineStyleSpec(
+            //         color: charts.MaterialPalette.transparent),
+            // ),
+            // tickProviderSpec:
+            // new charts.BasicNumericTickProviderSpec(desiredTickCount: 4)
+      )
+    );
   }
 
   /// Create one series with sample hard coded data.
@@ -35,7 +62,7 @@ class SimpleLineChart extends StatelessWidget {
     return [
       new charts.Series<LinearSales, int>(
         id: 'Sales',
-        colorFn: (_, __) => charts.MaterialPalette.blue.shadeDefault,
+        colorFn: (_, __) => charts.MaterialPalette.green.shadeDefault,
         domainFn: (LinearSales sales, _) => sales.year,
         measureFn: (LinearSales sales, _) => sales.sales,
         data: data,
