@@ -19,6 +19,7 @@ class _ChartScreenState extends State<ChartScreen> {
 
     return ResponsiveWidgets.builder(
       child: Scaffold(
+        backgroundColor: Color(0xFF062D52),
         appBar: AppBar(
           backgroundColor: Color(0xFF062D52),
           title: Row(
@@ -59,14 +60,27 @@ class _ChartScreenState extends State<ChartScreen> {
                 ),
                 style: OutlinedButton.styleFrom(
                   side: BorderSide(
-                    color: Color(0xFF074784),
-                    width: 8.sp,
+                    color: Colors.lightBlue,
+                    width: 3.sp,
                   ),
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(25.sp))),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(25.sp))),
                 ),
                 onPressed: () {},
               ),
             ),
+          ],
+          bottom: PreferredSize(
+            child: Container(
+              color: Colors.lightBlue,
+              height: 5.sp,
+            ),
+            preferredSize: Size.fromHeight(5.sp),
+          ),
+        ),
+        body: Column(
+          children: <Widget>[
+
           ],
         ),
       ),
