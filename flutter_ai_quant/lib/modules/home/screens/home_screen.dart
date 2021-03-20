@@ -5,6 +5,7 @@ import 'package:responsive_widgets/responsive_widgets.dart';
 import '../components/high_light_stocks.dart';
 import 'package:flutter_ai_quant/modules/home/components/drawer.dart';
 import 'package:flutter_ai_quant/modules/home/components/categories.dart';
+import 'package:flutter_ai_quant/modules/home/components/recommended_stocks.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -37,15 +38,16 @@ class HomeScreen extends StatelessWidget {
           ],
         ),
         drawer: DrawerComponent(),
-        body: Column(
-          children: <Widget>[
-            HighLightStocks(),
-            Categories(),
-            Text("Row for mã khuyến nghị",
-                style: TextStyle(color: Colors.white)),
-            Text("Row for tin tức", style: TextStyle(color: Colors.white)),
-            Text("Row for bài báo", style: TextStyle(color: Colors.white)),
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              HighLightStocks(),
+              Categories(),
+              RecommendedStocks(),
+              Text("Row for tin tức", style: TextStyle(color: Colors.white)),
+              Text("Row for bài báo", style: TextStyle(color: Colors.white)),
+            ],
+          ),
         ),
       ),
     );
