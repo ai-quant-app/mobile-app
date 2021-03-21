@@ -37,7 +37,11 @@ class RecommendedStocks extends StatelessWidget {
               border: TableBorder(horizontalInside: BorderSide(width: 1, color: Colors.white, style: BorderStyle.solid)),
               defaultVerticalAlignment: TableCellVerticalAlignment.middle,
               columnWidths: const <int, TableColumnWidth>{
-                0: FixedColumnWidth(33),
+                0: FractionColumnWidth(.1),
+                1: FractionColumnWidth(.2),
+                2: FractionColumnWidth(.2),
+                3: FractionColumnWidth(.3),
+                4: FractionColumnWidth(.2),
               },
               children: <TableRow>[
                 TableRow(
