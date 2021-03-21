@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/screens/companies.screen.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/screens/pricing-tab.screen.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/screens/technical-analysis-tab.screen.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/screens/test.screen.dart';
 
 import '../widgets/fab_bottom_app_bar_widget.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
         theme: new ThemeData(
             primaryColor: Color(0xFFF0F2FC),
             textTheme: TextTheme(bodyText2: TextStyle(color: Colors.white))),
-        home: TechnicalAnalysisTab());
+        home: Test());
   }
 }
 

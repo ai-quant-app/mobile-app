@@ -117,10 +117,10 @@ class TechnicalAnalysisTab extends StatefulWidget {
     ]
   };
   @override
-  _PricingTabState createState() => _PricingTabState();
+  _TechnicalAnalysisTabState createState() => _TechnicalAnalysisTabState();
 }
 
-class _PricingTabState extends State<TechnicalAnalysisTab> {
+class _TechnicalAnalysisTabState extends State<TechnicalAnalysisTab> {
   @override
   Widget build(BuildContext context) {
     ResponsiveWidgets.init(

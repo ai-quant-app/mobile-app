@@ -11,7 +11,7 @@ class DotLineChart extends StatelessWidget {
   final List<ChartData> dotData;
   final bool animate;
 
-  DotLineChart(this.title, this.dotTitle, this.data, this.dotData, {this.animate});
+  DotLineChart(this.title, this.dotTitle, this.data, this.dotData, {this.animate = false});
   List<charts.Series<ChartData, int>> _generateData() {
     return [
       new charts.Series<ChartData, int>(

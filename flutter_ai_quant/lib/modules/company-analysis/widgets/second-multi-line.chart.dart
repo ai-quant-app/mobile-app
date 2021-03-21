@@ -9,7 +9,7 @@ class SecondMultiLineChart extends StatelessWidget {
   final Map<String, List<ChartData>> secondData;
   final bool animate;
 
-  SecondMultiLineChart(this.data, this.secondData, {this.animate});
+  SecondMultiLineChart(this.data, this.secondData, {this.animate = false});
   List<charts.Series<ChartData, int>> _generateData() {
     List<charts.Series<ChartData, int>> ret = [];
     this.data.forEach((key, value) {

@@ -5,7 +5,7 @@ class GridlineDashPattern extends StatelessWidget {
   final List<charts.Series> seriesList;
   final bool animate;
 
-  GridlineDashPattern(this.seriesList, {this.animate});
+  GridlineDashPattern(this.seriesList, {this.animate = false});
 
   /// Creates a [TimeSeriesChart] with sample data and no transition.
   factory GridlineDashPattern.withSampleData() {

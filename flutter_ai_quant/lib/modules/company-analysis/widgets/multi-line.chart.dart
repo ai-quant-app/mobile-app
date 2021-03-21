@@ -8,7 +8,7 @@ class MultiLineChart extends StatelessWidget {
   final Map<String, List<ChartData>> data;
   final bool animate;
 
-  MultiLineChart(this.data, {this.animate});
+  MultiLineChart(this.data, {this.animate = false});
   List<charts.Series<ChartData, int>> _generateData() {
     List<charts.Series<ChartData, int>> ret = [];
     this.data.forEach((key, value) {

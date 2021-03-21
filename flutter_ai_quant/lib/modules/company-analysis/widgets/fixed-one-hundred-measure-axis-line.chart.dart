@@ -8,7 +8,7 @@ class FixedOneHundredMeasureAxisLineChart extends StatelessWidget {
   final Map<String, List<ChartData>> data;
   final bool animate;
 
-  FixedOneHundredMeasureAxisLineChart(this.data, {this.animate});
+  FixedOneHundredMeasureAxisLineChart(this.data, {this.animate = false});
   final staticTicks = <charts.TickSpec<num>>[
     charts.TickSpec(0),
     charts.TickSpec(10),
