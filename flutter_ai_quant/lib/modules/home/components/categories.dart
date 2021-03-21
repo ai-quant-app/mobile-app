@@ -30,6 +30,31 @@ class Categories extends StatelessWidget {
                         color: Color(0xFF219EE3),
                         fontSize: 42.sp,
                       )),
+                  Container(
+                    padding:EdgeInsetsResponsive.fromLTRB(0, 10, 0, 10),
+                    width: 200,
+                    height: 40,
+                    decoration: new BoxDecoration(
+                        color: Color(0xFF405F7B),
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10.0)
+                        )
+                    ),
+                    child: TextField(
+                      style: TextStyle(
+                        color: Colors.white,
+                      ),
+                      decoration: InputDecoration(
+                        fillColor: Colors.red,
+                        border: InputBorder.none,
+                        hintStyle: TextStyle(
+                          color: Colors.white,
+                        ),
+                        hintText: 'Nhập mã',
+                        contentPadding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                      ),
+                    ),
+                  ),
                 ],
               ),
             ),
