@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
-import './line_chart.dart';
+import 'UI/line_chart.dart';
 
 class HighLightStocks extends StatelessWidget {
   @override
