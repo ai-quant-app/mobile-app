@@ -34,6 +34,6 @@ class BottomNavigationBarWidget extends StatelessWidget {
 BottomNavigationBarItem bottomNavigationBarItem(IconData icon, String title) {
   return BottomNavigationBarItem(
     icon: Center(child: Icon(icon)),
-    title: Center(child: Text(title)),
+    label: title,
   );
 }
