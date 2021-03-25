@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
+import 'package:flutter_ai_quant/commons/common_widgets/bottom_navigation_bar_widget.dart';
 import 'package:flutter_ai_quant/modules/category/screens/category_screen.dart';
 import 'package:flutter_ai_quant/modules/chart/screens/chart_screen.dart';
 import 'package:flutter_ai_quant/modules/home/screens/home_screen.dart';
 import 'package:flutter_ai_quant/modules/price_list/screens/price_list.dart';
 import 'package:flutter_ai_quant/modules/set_command/screens/set_command_screen.dart';
-import 'package:flutter_ai_quant/widgets/bottom_navigation_bar_widget.dart';
 
 import 'package:responsive_widgets/responsive_widgets.dart';
 

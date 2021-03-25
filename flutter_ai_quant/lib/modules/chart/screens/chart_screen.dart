@@ -14,7 +14,7 @@ class ChartScreen extends StatefulWidget {
 }
 
 class _ChartScreenState extends State<ChartScreen> {
-  List<KLineEntity> datas;
+  List<KLineEntity> data;
   bool showLoading = true;
   MainState _mainState = MainState.MA;
   bool _volHidden = false;
@@ -177,7 +177,7 @@ class _ChartScreenState extends State<ChartScreen> {
                       height: 450,
                       width: double.infinity,
                       child: KChartWidget(
-                        datas,
+                        data,
                         isLine: isLine,
                         mainState: _mainState,
                         volHidden: _volHidden,
@@ -271,13 +271,13 @@ class _ChartScreenState extends State<ChartScreen> {
     future.then((result) {
       Map parseJson = json.decode(result);
       List list = parseJson['data'];
-      datas = list
+      data = list
           .map((item) => KLineEntity.fromJson(item))
           .toList()
           .reversed
           .toList()
           .cast<KLineEntity>();
-      DataUtil.calculate(datas);
+      DataUtil.calculate(data);
       showLoading = false;
       setState(() {});
     }).catchError((_) {
@@ -287,7 +287,6 @@ class _ChartScreenState extends State<ChartScreen> {
     });
   }
 
-  //获取火币数据，需要翻墙
   Future<String> getIPAddress(String period) async {
     var url =
         'https://api.huobi.br.com/market/history/kline?period=${period ?? '1day'}&size=300&symbol=btcusdt';
