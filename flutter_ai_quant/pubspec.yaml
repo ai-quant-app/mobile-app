@@ -25,7 +25,7 @@ dependencies:
   flutter_bloc: ^6.1.0
 
   # Management Route
-  fluro: ^1.7.7
+  fluro: ^2.0.3
 
   # Call API, Parse JSON
   http: ^0.12.2
@@ -37,6 +37,8 @@ dependencies:
   hive: ^1.4.4+1
   hive_flutter: ^0.3.1
 
+  # Dependency Injection
+  get_it: ^6.0.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
