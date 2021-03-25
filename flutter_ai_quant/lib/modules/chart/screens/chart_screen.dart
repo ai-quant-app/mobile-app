@@ -44,12 +44,8 @@ class _ChartScreenState extends State<ChartScreen> {
 
   @override
   Widget build(BuildContext context) {
-    ResponsiveWidgets.init(
-      context,
-      height: 1920,
-      width: 1080,
-      allowFontScaling: true,
-    );
+    ResponsiveWidgets.init(context,
+        height: 1920, width: 1080, allowFontScaling: false);
 
     return ResponsiveWidgets.builder(
       child: Scaffold(
@@ -128,7 +124,7 @@ class _ChartScreenState extends State<ChartScreen> {
                           backgroundColor: Color(0xFF1ACB45),
                         ),
                         onPressed: () {
-                          print('Pressed');
+                          Navigator.pushNamed(context, "/BuyScreen");
                         },
                       ),
                       SizedBoxResponsive(width: 25),
@@ -168,7 +164,8 @@ class _ChartScreenState extends State<ChartScreen> {
                   ),
                 ),
               ),
-              //
+
+              // CandleStick Chart
               ListView(
                 shrinkWrap: true,
                 children: <Widget>[

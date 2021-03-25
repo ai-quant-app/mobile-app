@@ -9,14 +9,13 @@ class BuyScreen extends StatefulWidget {
 class _BuyScreenState extends State<BuyScreen> {
   @override
   Widget build(BuildContext context) {
-    ResponsiveWidgets.init(
-      context,
-      height: 1920,
-      width: 1080,
-      allowFontScaling: true,
-    );
+    ResponsiveWidgets.init(context,
+        height: 1920, width: 1080, allowFontScaling: false);
 
     return ResponsiveWidgets.builder(
+      height: 1920,
+      width: 1080,
+      allowFontScaling: false,
       child: Scaffold(
         backgroundColor: Color(0xFF062D52),
         appBar: AppBar(
