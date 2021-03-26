@@ -13,36 +13,35 @@ class ChartRoutes {
       "buy_screen",
       transitionType: TransitionType.fadeIn,
       handler: Handler(
-          handlerFunc: (BuildContext context, Map<String, dynamic> params) {
-        return BuyScreen();
-      }),
+          handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+              BuyScreen()),
     );
 
     router.define(
       "sell_screen",
       transitionType: TransitionType.fadeIn,
       handler: Handler(
-          handlerFunc: (BuildContext context, Map<String, dynamic> params) {
-        return SellScreen();
-      }),
+        handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+            SellScreen(),
+      ),
     );
 
     router.define(
       "condition_command_screen",
       transitionType: TransitionType.fadeIn,
       handler: Handler(
-          handlerFunc: (BuildContext context, Map<String, dynamic> params) {
-        return ConditionCommandScreen();
-      }),
+        handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+            ConditionCommandScreen(),
+      ),
     );
 
     router.define(
       "algorithm_trading_screen",
       transitionType: TransitionType.fadeIn,
       handler: Handler(
-          handlerFunc: (BuildContext context, Map<String, dynamic> params) {
-        return AlgorithmTradingScreen();
-      }),
+        handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+            AlgorithmTradingScreen(),
+      ),
     );
   }
 }
