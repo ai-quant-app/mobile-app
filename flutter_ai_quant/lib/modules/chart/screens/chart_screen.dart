@@ -118,48 +118,40 @@ class _ChartScreenState extends State<ChartScreen> {
                   child: Row(
                     children: <Widget>[
                       OutlinedButton(
-                        child: Text("Mua"),
-                        style: OutlinedButton.styleFrom(
-                          primary: Colors.white,
-                          backgroundColor: Color(0xFF1ACB45),
-                        ),
-                        onPressed: () {
-                          Navigator.pushNamed(context, "/BuyScreen");
-                        },
-                      ),
+                          child: Text("Mua"),
+                          style: OutlinedButton.styleFrom(
+                            primary: Colors.white,
+                            backgroundColor: Color(0xFF1ACB45),
+                          ),
+                          onPressed: () =>
+                              Navigator.pushNamed(context, "buy_screen")),
                       SizedBoxResponsive(width: 25),
                       OutlinedButton(
-                        child: Text("Bán"),
-                        style: OutlinedButton.styleFrom(
-                          primary: Colors.white,
-                          backgroundColor: Color(0xFFED6060),
-                        ),
-                        onPressed: () {
-                          print('Pressed');
-                        },
-                      ),
+                          child: Text("Bán"),
+                          style: OutlinedButton.styleFrom(
+                            primary: Colors.white,
+                            backgroundColor: Color(0xFFED6060),
+                          ),
+                          onPressed: () =>
+                              Navigator.pushNamed(context, "sell_screen")),
                       SizedBoxResponsive(width: 25),
                       OutlinedButton(
-                        child: Text("Lệnh Điều Kiện"),
-                        style: OutlinedButton.styleFrom(
-                          primary: Colors.white,
-                          backgroundColor: Color(0xFF26B1FB),
-                        ),
-                        onPressed: () {
-                          print('Pressed');
-                        },
-                      ),
+                          child: Text("Lệnh Điều Kiện"),
+                          style: OutlinedButton.styleFrom(
+                            primary: Colors.white,
+                            backgroundColor: Color(0xFF26B1FB),
+                          ),
+                          onPressed: () => Navigator.pushNamed(
+                              context, "condition_command_screen")),
                       SizedBoxResponsive(width: 25),
                       OutlinedButton(
-                        child: Text("GD Theo Thuật Toán"),
-                        style: OutlinedButton.styleFrom(
-                          primary: Colors.white,
-                          backgroundColor: Color(0xFF26B1FB),
-                        ),
-                        onPressed: () {
-                          print('Pressed');
-                        },
-                      ),
+                          child: Text("GD Theo Thuật Toán"),
+                          style: OutlinedButton.styleFrom(
+                            primary: Colors.white,
+                            backgroundColor: Color(0xFF26B1FB),
+                          ),
+                          onPressed: () => Navigator.pushNamed(
+                              context, "algorithm_trading_screen")),
                     ],
                   ),
                 ),

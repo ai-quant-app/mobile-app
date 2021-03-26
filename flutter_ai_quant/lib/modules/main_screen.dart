@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'package:flutter_ai_quant/commons/common_widgets/bottom_navigation_bar_widget.dart';
+import 'package:flutter_ai_quant/commons/widgets/bottom_navigation_bar_widget.dart';
 import 'package:flutter_ai_quant/modules/category/screens/category_screen.dart';
 import 'package:flutter_ai_quant/modules/chart/screens/chart_screen.dart';
 import 'package:flutter_ai_quant/modules/home/screens/home_screen.dart';

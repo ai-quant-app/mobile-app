@@ -8,37 +8,41 @@ import 'package:flutter_ai_quant/modules/chart/screens/algorithm_trading_screen.
 import 'package:flutter_ai_quant/modules/chart/screens/condition_command_screen.dart';
 
 class ChartRoutes {
-  // static Future setupChartRoutes(FluroRouter router) async {
-  //   router.define(
-  //     "buy_screen",
-  //     handler: Handler(
-  //         handlerFunc: (BuildContext context, Map<String, dynamic> params) {
-  //       return BuyScreen();
-  //     }),
-  //   );
-  //
-  //   router.define(
-  //     "sell_screen",
-  //     handler: Handler(
-  //         handlerFunc: (BuildContext context, Map<String, dynamic> params) {
-  //       return SellScreen();
-  //     }),
-  //   );
-  //
-  //   router.define(
-  //     "condition_command_screen",
-  //     handler: Handler(
-  //         handlerFunc: (BuildContext context, Map<String, dynamic> params) {
-  //       return ConditionCommandScreen();
-  //     }),
-  //   );
-  //
-  //   router.define(
-  //     "algorithm_trading_screen",
-  //     handler: Handler(
-  //         handlerFunc: (BuildContext context, Map<String, dynamic> params) {
-  //       return AlgorithmTradingScreen();
-  //     }),
-  //   );
-  // }
+  static Future setupChartRoutes(FluroRouter router) async {
+    router.define(
+      "buy_screen",
+      transitionType: TransitionType.fadeIn,
+      handler: Handler(
+          handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+        return BuyScreen();
+      }),
+    );
+
+    router.define(
+      "sell_screen",
+      transitionType: TransitionType.fadeIn,
+      handler: Handler(
+          handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+        return SellScreen();
+      }),
+    );
+
+    router.define(
+      "condition_command_screen",
+      transitionType: TransitionType.fadeIn,
+      handler: Handler(
+          handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+        return ConditionCommandScreen();
+      }),
+    );
+
+    router.define(
+      "algorithm_trading_screen",
+      transitionType: TransitionType.fadeIn,
+      handler: Handler(
+          handlerFunc: (BuildContext context, Map<String, dynamic> params) {
+        return AlgorithmTradingScreen();
+      }),
+    );
+  }
 }
