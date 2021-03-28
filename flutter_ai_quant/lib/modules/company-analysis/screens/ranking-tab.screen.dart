@@ -5,13 +5,10 @@ import 'package:flutter_ai_quant/modules/company-analysis/models/chart-data.mode
 import 'package:flutter_ai_quant/modules/company-analysis/models/two-sections-card.model.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/models/two-sections-table.model.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/fixed-one-hundred-measure-axis-line.chart.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/widgets/horizontal-bar-label.chart.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/horizontal-charts-card.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/widgets/horizontal-one-hundred-bar-label.chart.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/info-table.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/widgets/multi-line.chart.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/widgets/smooth-line.chart.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/two_columns_card.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/widgets/two_sections_card.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/two_sections_table.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
@@ -34,60 +31,14 @@ class RankingTab extends StatefulWidget {
     TwoSectionsTableModel("Day’s Low","76","AvgVol/1l","161"),
   ];
 
-  final List<String> matrixColumnHeaders = ['Model', 'Weight', 'Price', 'Note'];
+  final List<String> goalColumnHeaders = ['ID', 'Stock', 'Price', 'TotalS', 'ValueS', 'GrowthS', 'ProfitS', 'FinS', 'AssetS', 'ManageS', 'MarketCap*'];
 
-  final List<List<String>> matrixColumnData = [
-    ['Forward P/E Valuation', '10%', '174,372','Relative method based on comparation average industries and market'],
-    ['Forward P/BV Model', '25%', '47,900', 'Relative method based on forward P/BV'],
-    ['Residual Income Valuation', '25%', '94,906', 'Net income valuation'],
-    ['Intrinsic Valuation', '0%', '', 'Net assest valuation'],
-    ['FCFE', '40%', '78,333', 'DFCF based on estimated growth sale, financial ratios, …in firm view'],
-    ['FCFF', '0%', '', 'DFCF based on estimated growth sale, financial ratios, …in firm view'],
-    ['Average price', '100%', '84,472', ''],
-  ];
-  final String matrixColumnDataFooterNote = "Due to different levels of uncertainty in the forecast of future cash flows (dividend, FCFE, FCFF), justified P/E and P/B based on fundamentals are assigned higher weights, followed by DDM, FCFF and FCFE model. Composite intrinsic value is estimated at 84,472 VND per share.";
-
-  final List<String> moneyColumnHeaders = ['', 'Stock', 'Sector', 'Market'];
-
-  final List<List<String>> moneyColumnData = [
-    ['Price', '76,000', '',''],
-    ['P/E Ratio', '4.81', '3.99', '28.77'],
-    ['P/BV', '1.31', '2.03', '1.39'],
-    ['Book value', '36,574', '21,516', '20,224'],
-    ['ROE', '27.23%', '16.95%', '29.18%'],
-    ['ROA', '7.07%', '6.71%', '3.44%'],
-    ['ROIC', '13.07%', '8.95%', '6.93%'],
-    ['D/E', '54.28%', '41.14%', '45.49%'],
-  ];
-
-  final List<TwoSectionsCardModel> forwardData = [
-    TwoSectionsCardModel("", "Q4"),
-    TwoSectionsCardModel("12m forward EPS", "6,828"),
-    TwoSectionsCardModel("Estimated PE stock", "4.0"),
-    TwoSectionsCardModel("Model price", "27,221", valueColor: Colors.blue),
-    TwoSectionsCardModel("12m forward EPS", "17,437"),
-    TwoSectionsCardModel("Avg PE sector", "10.0"),
-    TwoSectionsCardModel("Model price", "174,372", valueColor: Colors.blue),
-  ];
-
-  final List<TwoSectionsCardModel> pbvData = [
-    TwoSectionsCardModel("Book value", "36,574"),
-    TwoSectionsCardModel("P/BV forward", "1.31"),
-    TwoSectionsCardModel("Model price", "47,900", valueColor: Colors.blue),
-    TwoSectionsCardModel("Book value", "36,574"),
-    TwoSectionsCardModel("Avg P/BV sector", "2.03"),
-    TwoSectionsCardModel("Model price", "74,153", valueColor: Colors.blue),
-  ];
-  final List<TwoSectionsCardModel> epsData = [
-    TwoSectionsCardModel("EPS Forward Y1", "24,910"),
-    TwoSectionsCardModel("EPS Forward Y2", "25,216"),
-    TwoSectionsCardModel("EPS Forward Y3", "27,517"),
-    TwoSectionsCardModel("Growth rate", "0.00%"),
-    TwoSectionsCardModel("Growth years 9 years", "1%"),
-    TwoSectionsCardModel("Payout during growth years", "20%"),
-    TwoSectionsCardModel("Payout at maturity", "10%"),
-    TwoSectionsCardModel("Growth at maturity", "1%"),
-    TwoSectionsCardModel("Model price", "94,906", valueColor: Colors.blue),
+  final List<List<String>> goalColumnData = [
+    ['ID', 'Stock', 'Price', 'TotalS', 'ValueS', 'GrowthS', 'ProfitS', 'FinS', 'AssetS', 'ManageS', 'MarketCap*'],
+    ['ID', 'Stock', 'Price', 'TotalS', 'ValueS', 'GrowthS', 'ProfitS', 'FinS', 'AssetS', 'ManageS', 'MarketCap*'],
+    ['ID', 'Stock', 'Price', 'TotalS', 'ValueS', 'GrowthS', 'ProfitS', 'FinS', 'AssetS', 'ManageS', 'MarketCap*'],
+    ['ID', 'Stock', 'Price', 'TotalS', 'ValueS', 'GrowthS', 'ProfitS', 'FinS', 'AssetS', 'ManageS', 'MarketCap*'],
+    ['ID', 'Stock', 'Price', 'TotalS', 'ValueS', 'GrowthS', 'ProfitS', 'FinS', 'AssetS', 'ManageS', 'MarketCap*'],
   ];
 
   final dataMultiLineChart = {
@@ -109,17 +60,28 @@ class RankingTab extends StatefulWidget {
     ]
   };
 
-  final dataOneLineChart =  {
-    'Desktop': [
-      new ChartData(0, 0, charts.MaterialPalette.blue.shadeDefault),
-      new ChartData(1, 10, charts.MaterialPalette.blue.shadeDefault),
-      new ChartData(2, 20, charts.MaterialPalette.blue.shadeDefault),
-      new ChartData(3, 30, charts.MaterialPalette.blue.shadeDefault),
-      new ChartData(4, 40, charts.MaterialPalette.blue.shadeDefault),
-      new ChartData(5, 50, charts.MaterialPalette.blue.shadeDefault),
-    ],
-  };
 
+  final peerTick = <charts.TickSpec<num>>[
+    charts.TickSpec(0, label: ""),
+    charts.TickSpec(20, label: "Very"),
+    charts.TickSpec(40,label: "Lowe"),
+    charts.TickSpec(60, label: "Average"),
+    charts.TickSpec(80, label: "High"),
+    charts.TickSpec(100, label: "Very"),
+  ];
+
+  final Map<String, ChartData> peerData = {
+    "LCG": ChartData("LCG", 61.13, charts.Color.fromHex(code: "#FD7F7D")),
+    "DIG": ChartData("DIG", 28.65, charts.Color.fromHex(code: "#FECD95")),
+    "D2D": ChartData("D2D", 29.13, charts.Color.fromHex(code: "#FFFE93")),
+    "CII": ChartData("CII", 54.60, charts.Color.fromHex(code: "#CAFFFF")),
+    "CNT": ChartData("CNT", 51.37, charts.Color.fromHex(code: "#60D6BB")),
+    "SC5": ChartData("SC5", 30.77, charts.Color.fromHex(code: "#FD7F7D")),
+    "BT6": ChartData("BT6", 38.70, charts.Color.fromHex(code: "#0E62CF")),
+    "VNE": ChartData("VNE", 15.87, charts.Color.fromHex(code: "#CCCBFE")),
+    "L10": ChartData("L10", 48.27, charts.Color.fromHex(code: "#676FC9")),
+    "DCC": ChartData("DCC", 31.73, charts.Color.fromHex(code: "#F89AC6")),
+  };
   @override
   _RankingTabState createState() => _RankingTabState();
 }
@@ -198,42 +160,46 @@ class _RankingTabState extends State<RankingTab> {
                     "The Than Kinh AI Fundamental Score is the broad measure of a company’s financial health, including its balance sheet, cash flow, revenue, and earnings quality. With a Than Kinh AI Fundamental Score of 46.67, is moderately higher than the average of its industry group, which carries a Than Kinh AI Fundamental Score of 21.67.",
                     widget.totalScoreData
                 ),
-                // Container(
-                //   width: 1100.sp,
-                //   child: Column(
-                //     children: [
-                //       Align(
-                //         child: Text("Total Score (TotalS)", style: TextStyle(color: Colors.green),),
-                //         alignment: Alignment.topLeft,
-                //       ),
-                //       Row(
-                //         children: [
-                //           Expanded(
-                //             flex: 4,
-                //             child: Container(
-                //               height: 500.sp,
-                //               child: HorizontalBarLabelChart(widget.totalScoreData),
-                //             )
-                //           ),
-                //           Expanded(child: Text("123"), flex: 6,),
-                //         ],
-                //       )
-                //     ],
-                //   ),
-                // )
-
-
-                // SizedBox(
-                //     width: 1100.sp,
-                //     height: 500.sp,
-                //     child:
-                //     MultiLineChart(widget.dataOneLineChart)
-                // ),
-                // InfoTable("MATRIX VALUATION", widget.matrixColumnHeaders, widget.matrixColumnData, widget.matrixColumnDataFooterNote),
-                // InfoTable("DÒNG TIỀN CỦA MỘT SỐ PHƯƠNG PHÁP", widget.moneyColumnHeaders, widget.moneyColumnData),
-                // TwoSectionsCard("FORWARD P/E VALUATION", widget.forwardData),
-                // TwoSectionsCard("P/BV VALUATION", widget.pbvData),
-                // TwoSectionsCard("EPS MODEL", widget.epsData),
+                InfoTable("SORT ĐA MỤC TIÊU Ở NHIỀU CHỨC NĂNG", widget.goalColumnHeaders, widget.goalColumnData,
+                    footerNote:'* This table compares LCG with other companies in the same industry group.\n** Phân loại MarketCap theo chỉ tiêu như đã nói',
+                    footerColor: Color(0xFFFFFFFF).withOpacity(.58)
+                ),
+                Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        padding: EdgeInsetsResponsive.only(top: 50.sp),
+                        child: Align(
+                          child: Text("PEER GROUNP", style: TextStyle(color: Colors.blue),),
+                          alignment: Alignment.topLeft,
+                        ),
+                      ),
+                      Container(
+                        height: 500.sp,
+                        child: HorizontalOneHundredBarLabelChart(widget.peerData, widget.peerTick),
+                      ),
+                      Container(
+                        padding: EdgeInsetsResponsive.only(top: 50.sp),
+                        child: Align(
+                          child: Text("COMPARE STOCK, INDUSTRY AND MARKET", style: TextStyle(color: Colors.blue),),
+                          alignment: Alignment.topLeft,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                InfoTable("", widget.goalColumnHeaders, widget.goalColumnData,
+                    hasTopBorder: false, hasBottomBorder: false,
+                ),
+                InfoTable("", widget.goalColumnHeaders, widget.goalColumnData,
+                  hasTopBorder: false, hasBottomBorder: false,
+                ),
+                InfoTable("", widget.goalColumnHeaders, widget.goalColumnData,
+                  hasTopBorder: false, hasBottomBorder: false,
+                ),
+                InfoTable("", widget.goalColumnHeaders, widget.goalColumnData,
+                  hasTopBorder: false, hasBottomBorder: false,
+                )
               ],
             ),
           ),

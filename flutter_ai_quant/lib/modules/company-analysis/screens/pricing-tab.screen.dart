@@ -151,7 +151,7 @@ class _PricingTabState extends State<PricingTab> {
                     child:
                     MultiLineChart(widget.dataOneLineChart)
                 ),
-                InfoTable("MATRIX VALUATION", widget.matrixColumnHeaders, widget.matrixColumnData, widget.matrixColumnDataFooterNote),
+                InfoTable("MATRIX VALUATION", widget.matrixColumnHeaders, widget.matrixColumnData, footerNote: widget.matrixColumnDataFooterNote),
                 InfoTable("DÒNG TIỀN CỦA MỘT SỐ PHƯƠNG PHÁP", widget.moneyColumnHeaders, widget.moneyColumnData),
                 TwoSectionsCard("FORWARD P/E VALUATION", widget.forwardData),
                 TwoSectionsCard("P/BV VALUATION", widget.pbvData),
