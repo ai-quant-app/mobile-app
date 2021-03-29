@@ -20,7 +20,7 @@ class _SetCommandScreenState extends State<SetCommandScreen> {
     return ResponsiveWidgets.builder(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.amber,
+          backgroundColor: Color(0xFF062D52),
           title: Text("Set Command Screen"),
         ),
       ),

@@ -25,16 +25,24 @@ class RecommendedStocks extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Mã khuyến nghị",
-                      style: TextStyle(
-                        color: Color(0xFF219EE3),
-                        fontSize: 42.sp,
-                      )),
+                  Text(
+                    "Mã khuyến nghị",
+                    style: TextStyle(
+                      color: Color(0xFF219EE3),
+                      fontSize: 42.sp,
+                    ),
+                  ),
                 ],
               ),
             ),
             Table(
-              border: TableBorder(horizontalInside: BorderSide(width: 1, color: Colors.white, style: BorderStyle.solid)),
+              border: TableBorder(
+                horizontalInside: BorderSide(
+                  width: 1,
+                  color: Colors.white,
+                  style: BorderStyle.solid,
+                ),
+              ),
               defaultVerticalAlignment: TableCellVerticalAlignment.middle,
               columnWidths: const <int, TableColumnWidth>{
                 0: FractionColumnWidth(.1),
@@ -67,7 +75,6 @@ class RecommendedStocks extends StatelessWidget {
                     ),
                   ],
                 ),
-
                 TableRow(
                   children: <Widget>[
                     TableCellCustom(title: "BBC"),
@@ -82,7 +89,6 @@ class RecommendedStocks extends StatelessWidget {
                     ),
                   ],
                 ),
-
                 TableRow(
                   children: <Widget>[
                     TableCellCustom(title: "BID"),

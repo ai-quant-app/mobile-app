@@ -20,8 +20,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
     return ResponsiveWidgets.builder(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.amber,
-          title: Text("Category Screen"),
+          backgroundColor: Color(0xFF062D52),
         ),
       ),
     );

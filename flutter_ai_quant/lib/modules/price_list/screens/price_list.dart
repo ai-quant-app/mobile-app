@@ -20,7 +20,7 @@ class _PriceListScreenState extends State<PriceListScreen> {
     return ResponsiveWidgets.builder(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.amber,
+          backgroundColor: Color(0xFF062D52),
           title: Text("Price List Screen"),
         ),
       ),
