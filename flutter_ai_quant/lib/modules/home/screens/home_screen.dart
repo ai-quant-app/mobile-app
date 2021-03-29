@@ -44,7 +44,6 @@ class HomeScreen extends StatelessWidget {
               HighLightStocks(),
               Categories(),
               RecommendedStocks(),
-              Text("Row for tin tức", style: TextStyle(color: Colors.white)),
               Text("Row for bài báo", style: TextStyle(color: Colors.white)),
             ],
           ),
