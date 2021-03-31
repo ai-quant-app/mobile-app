@@ -6,6 +6,7 @@ import '../components/high_light_stocks.dart';
 import 'package:flutter_ai_quant/modules/home/components/drawer.dart';
 import 'package:flutter_ai_quant/modules/home/components/categories.dart';
 import 'package:flutter_ai_quant/modules/home/components/recommended_stocks.dart';
+import 'package:flutter_ai_quant/modules/home/components/news.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -44,7 +45,7 @@ class HomeScreen extends StatelessWidget {
               HighLightStocks(),
               Categories(),
               RecommendedStocks(),
-              Text("Row for bài báo", style: TextStyle(color: Colors.white)),
+              News(),
             ],
           ),
         ),
