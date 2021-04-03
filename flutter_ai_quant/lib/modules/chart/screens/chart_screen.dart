@@ -14,6 +14,23 @@ class ChartScreen extends StatefulWidget {
 }
 
 class _ChartScreenState extends State<ChartScreen> {
+  // Dropdown Button Variables
+  String firstStock = "BSR - HÓA DẦU BÌNH SƠN";
+  List<String> stocks = [
+    "BSR - HÓA DẦU BÌNH SƠN",
+    "BID - Ngân hàng BIDV",
+    "EIB - Eximbank",
+    "FPT - CTCP FPT",
+    "GAS - TCT Khí Việt Nam",
+    "MBB - Ngân hàng Quận đội",
+    "MWG - Thế Giới Di Động",
+    "VRE - Vincom Retail",
+    "VJC - VIETJETAIR",
+    "HPG - Hòa Phát",
+    "PNJ - Vàng Phú Nhuận",
+  ];
+
+  // Candle Stick Chart Variables
   List<KLineEntity> data;
   bool showLoading = true;
   MainState _mainState = MainState.MA;
@@ -113,8 +130,8 @@ class _ChartScreenState extends State<ChartScreen> {
             children: <Widget>[
               FittedBox(
                 child: Container(
-                  margin: EdgeInsetsResponsive.only(
-                      left: 25, right: 25, top: 25, bottom: 50),
+                  margin:
+                      EdgeInsetsResponsive.only(left: 25, right: 25, top: 25),
                   child: Row(
                     children: <Widget>[
                       OutlinedButton(
@@ -154,6 +171,32 @@ class _ChartScreenState extends State<ChartScreen> {
                               context, "algorithm_trading_screen")),
                     ],
                   ),
+                ),
+              ),
+
+              // Dropdown Button
+              Container(
+                margin: EdgeInsetsResponsive.only(left: 25),
+                alignment: Alignment.centerLeft,
+                child: DropdownButton<String>(
+                  value: firstStock,
+                  icon: const Icon(Icons.arrow_drop_down, color: Colors.white),
+                  iconSize: 100.sp,
+                  elevation: 20,
+                  style: TextStyle(color: Colors.white, fontSize: 45.sp),
+                  dropdownColor: Color(0xFF405F7B),
+                  underline: Container(color: Colors.transparent),
+                  onChanged: (String newStock) {
+                    setState(() {
+                      firstStock = newStock;
+                    });
+                  },
+                  items: stocks.map<DropdownMenuItem<String>>((String stock) {
+                    return DropdownMenuItem<String>(
+                      value: stock,
+                      child: Text(stock),
+                    );
+                  }).toList(),
                 ),
               ),
 

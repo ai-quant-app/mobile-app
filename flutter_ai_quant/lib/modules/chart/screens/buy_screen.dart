@@ -23,8 +23,9 @@ class _BuyScreenState extends State<BuyScreen> {
           backgroundColor: Color(0xFF074784),
           title: Text(
             "Giao Dịch",
-            style: TextStyle(fontSize: 65.sp),
+            style: TextStyle(fontSize: 65.sp, color: Colors.white),
           ),
+          iconTheme: IconThemeData(color: Colors.white),
         ),
       ),
     );
