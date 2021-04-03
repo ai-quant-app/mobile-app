@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
-import 'package:flutter_ai_quant/modules/home/components/UI/TableCellCustom.dart';
-import 'package:flutter_ai_quant/modules/home/components/UI/line_chart_v2.dart';
+import 'package:flutter_ai_quant/modules/home/widgets/UI/table_cell_custom.dart';
+import 'package:flutter_ai_quant/modules/home/widgets/UI/line_chart_v2.dart';
 
-class Categories extends StatelessWidget {
+class RecommendedStocks extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ResponsiveWidgets.init(
@@ -25,62 +25,45 @@ class Categories extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Danh mục",
-                      style: TextStyle(
-                        color: Color(0xFF219EE3),
-                        fontSize: 42.sp,
-                      )),
-                  Container(
-                    padding:EdgeInsetsResponsive.fromLTRB(0, 10, 0, 10),
-                    width: 200,
-                    height: 40,
-                    decoration: new BoxDecoration(
-                        color: Color(0xFF405F7B),
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10.0)
-                        )
-                    ),
-                    child: TextField(
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),
-                      decoration: InputDecoration(
-                        fillColor: Colors.red,
-                        border: InputBorder.none,
-                        hintStyle: TextStyle(
-                          color: Colors.white,
-                        ),
-                        hintText: 'Nhập mã',
-                        contentPadding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                      ),
+                  Text(
+                    "Mã khuyến nghị",
+                    style: TextStyle(
+                      color: Color(0xFF219EE3),
+                      fontSize: 42.sp,
                     ),
                   ),
                 ],
               ),
             ),
             Table(
-              border: TableBorder(horizontalInside: BorderSide(width: 1, color: Colors.white, style: BorderStyle.solid)),
+              border: TableBorder(
+                horizontalInside: BorderSide(
+                  width: 1,
+                  color: Colors.white,
+                  style: BorderStyle.solid,
+                ),
+              ),
               defaultVerticalAlignment: TableCellVerticalAlignment.middle,
               columnWidths: const <int, TableColumnWidth>{
                 0: FractionColumnWidth(.1),
                 1: FractionColumnWidth(.2),
-                2: FractionColumnWidth(.1),
+                2: FractionColumnWidth(.2),
+                3: FractionColumnWidth(.3),
+                4: FractionColumnWidth(.2),
               },
               children: <TableRow>[
                 TableRow(
                   children: <Widget>[
                     TableCellCustom(title: "Mã"),
-                    TableCellCustom(title: "Giá"),
                     TableCellCustom(title: "+/-"),
                     TableCellCustom(title: "Xu thế"),
-                    TableCellCustom(title: "Xếp hạng"),
+                    TableCellCustom(title: "Điểm xếp hạng"),
                     TableCellCustom(title: "Đồ thị"),
                   ],
                 ),
                 TableRow(
                   children: <Widget>[
                     TableCellCustom(title: "LCG"),
-                    TableCellCustom(title: "10.15"),
                     TableCellCustom(title: "+8%"),
                     TableCellCustom(title: "Tăng"),
                     TableCellCustom(title: "123"),
@@ -92,11 +75,9 @@ class Categories extends StatelessWidget {
                     ),
                   ],
                 ),
-
                 TableRow(
                   children: <Widget>[
                     TableCellCustom(title: "BBC"),
-                    TableCellCustom(title: "10.15"),
                     TableCellCustom(title: "+8%"),
                     TableCellCustom(title: "Tăng"),
                     TableCellCustom(title: "123"),
@@ -108,11 +89,9 @@ class Categories extends StatelessWidget {
                     ),
                   ],
                 ),
-
                 TableRow(
                   children: <Widget>[
                     TableCellCustom(title: "BID"),
-                    TableCellCustom(title: "10.15"),
                     TableCellCustom(title: "+8%"),
                     TableCellCustom(title: "Tăng"),
                     TableCellCustom(title: "123"),

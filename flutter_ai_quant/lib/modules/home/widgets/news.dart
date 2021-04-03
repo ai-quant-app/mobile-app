@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
-import 'UI/CarouselNews.dart';
+import 'UI/carousel_news.dart';
 
 class News extends StatelessWidget {
   @override

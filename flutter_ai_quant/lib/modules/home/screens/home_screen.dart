@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 import 'package:responsive_widgets/responsive_widgets.dart';
 
-import '../components/high_light_stocks.dart';
-import 'package:flutter_ai_quant/modules/home/components/drawer.dart';
-import 'package:flutter_ai_quant/modules/home/components/categories.dart';
-import 'package:flutter_ai_quant/modules/home/components/recommended_stocks.dart';
-import 'package:flutter_ai_quant/modules/home/components/news.dart';
+import 'package:flutter_ai_quant/modules/home/widgets/high_light_stocks.dart';
+import 'package:flutter_ai_quant/modules/home/widgets/drawer.dart';
+import 'package:flutter_ai_quant/modules/home/widgets/categories.dart';
+import 'package:flutter_ai_quant/modules/home/widgets/recommended_stocks.dart';
+import 'package:flutter_ai_quant/modules/home/widgets/news.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
@@ -45,7 +45,7 @@ class HomeScreen extends StatelessWidget {
               HighLightStocks(),
               Categories(),
               RecommendedStocks(),
-              News(),
+              // News(),
             ],
           ),
         ),
