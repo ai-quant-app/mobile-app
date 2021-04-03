@@ -19,7 +19,8 @@ class _BuyScreenState extends State<BuyScreen> {
       child: Scaffold(
         backgroundColor: Color(0xFF062D52),
         appBar: AppBar(
-          backgroundColor: Color(0xFF062D52),
+          centerTitle: true,
+          backgroundColor: Color(0xFF074784),
           title: Text(
             "Giao Dịch",
             style: TextStyle(fontSize: 65.sp),
