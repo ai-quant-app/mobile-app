@@ -14,9 +14,10 @@ class News extends StatelessWidget {
     return ResponsiveWidgets.builder(
       height: 1920,
       width: 1080,
-      allowFontScaling: true,
+      allowFontScaling: false,
       child: Container(
-        child: News(),
+        height: 1000.sp,
+        child: CarouselNews(),
       ),
     );
   }

@@ -45,7 +45,7 @@ class HomeScreen extends StatelessWidget {
               HighLightStocks(),
               Categories(),
               RecommendedStocks(),
-              // News(),
+              News(),
             ],
           ),
         ),
