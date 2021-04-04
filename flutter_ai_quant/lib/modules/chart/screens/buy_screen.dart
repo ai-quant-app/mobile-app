@@ -31,13 +31,99 @@ class _BuyScreenState extends State<BuyScreen> {
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              Row(
-                children: <Widget>[
-                  Text("Loại Lệnh"),
-                  Expanded(
-                    child: CustomTextFieldWidget(),
-                  ),
-                ],
+              Container(
+                margin: EdgeInsetsResponsive.only(bottom: 50),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsetsResponsive.only(left: 20, right: 150),
+                      child: Text(
+                        "Mã CK",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 55.sp,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                    Expanded(
+                      flex: 1,
+                      child: Container(
+                        margin: EdgeInsetsResponsive.only(right: 20),
+                        child: CustomTextFieldWidget(),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsetsResponsive.only(bottom: 50),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsetsResponsive.only(left: 20, right: 230),
+                      child: Text(
+                        "Giá",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 55.sp,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                          margin: EdgeInsetsResponsive.only(right: 20),
+                          child: CustomTextFieldWidget()),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsetsResponsive.only(bottom: 50),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsetsResponsive.only(left: 20, right: 50),
+                      child: Text(
+                        "Khối lượng",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 55.sp,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                          margin: EdgeInsetsResponsive.only(right: 20),
+                          child: CustomTextFieldWidget()),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsetsResponsive.only(bottom: 50),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsetsResponsive.only(left: 20, right: 20),
+                      child: Text(
+                        "KL chia lệnh",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 55.sp,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                          margin: EdgeInsetsResponsive.only(right: 20),
+                          child: CustomTextFieldWidget()),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
