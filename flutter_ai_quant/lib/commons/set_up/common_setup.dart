@@ -9,6 +9,7 @@ class CommonSetup {
   static Future manageRoutes() async {
     final FluroRouter router = getIt.get<FluroRouter>();
     await ChartRoutes.setupChartRoutes(router);
+
   }
 
   static Future manageGetIt() async {

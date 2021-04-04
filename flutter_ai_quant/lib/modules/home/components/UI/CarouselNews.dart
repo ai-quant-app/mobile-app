@@ -9,15 +9,6 @@ final List<String> imgList = [
   'https://images.unsplash.com/photo-1519125323398-675f0ddb6308?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=94a1e718d89ca60a6337a6008341ca50&auto=format&fit=crop&w=1950&q=80',
 ];
 
-// class News extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return  Container(
-//       child: Text("Row for bài báo", style: TextStyle(color: Colors.white)),
-//     );
-//   }
-// }
-
 final List<Widget> imageSliders = imgList.map((item) => Container(
   child: Container(
     margin: EdgeInsets.all(5.0),
@@ -58,12 +49,12 @@ final List<Widget> imageSliders = imgList.map((item) => Container(
   ),
 )).toList();
 
-class News extends StatefulWidget {
+class CarouselNews extends StatefulWidget {
   @override
-  _NewsState createState() => _NewsState();
+  _CarouselNewsState createState() => _CarouselNewsState();
 }
 
-class _NewsState extends State<News> {
+class _CarouselNewsState extends State<CarouselNews> {
   int _current = 0;
 
   @override
