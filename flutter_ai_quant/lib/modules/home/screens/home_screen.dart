@@ -20,7 +20,7 @@ class HomeScreen extends StatelessWidget {
     return ResponsiveWidgets.builder(
       height: 1920,
       width: 1080,
-      allowFontScaling: true,
+      allowFontScaling: false,
       child: Scaffold(
         backgroundColor: Theme.of(context).backgroundColor,
         appBar: AppBar(

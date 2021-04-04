@@ -5,7 +5,6 @@ import 'UI/carousel_news.dart';
 class News extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    print("hello");
     ResponsiveWidgets.init(
       context,
       height: 1920,
