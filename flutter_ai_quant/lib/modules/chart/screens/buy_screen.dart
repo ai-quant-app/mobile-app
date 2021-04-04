@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ai_quant/modules/chart/widgets/custom_textfield_widget.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 
 class BuyScreen extends StatefulWidget {
@@ -26,6 +27,20 @@ class _BuyScreenState extends State<BuyScreen> {
             style: TextStyle(fontSize: 65.sp, color: Colors.white),
           ),
           iconTheme: IconThemeData(color: Colors.white),
+        ),
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Row(
+                children: <Widget>[
+                  Text("Loại Lệnh"),
+                  Expanded(
+                    child: CustomTextFieldWidget(),
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

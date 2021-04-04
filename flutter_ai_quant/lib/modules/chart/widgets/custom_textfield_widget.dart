@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
+// import 'package:google_fonts/google_fonts.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
-class LoginTextFieldWidget extends StatelessWidget {
+
+class CustomTextFieldWidget extends StatelessWidget {
   final bool obscure;
-  final String title;
   final IconData icon;
   final TextInputType keyboardType;
   final TextEditingController controller;
-  LoginTextFieldWidget({
+
+  CustomTextFieldWidget({
     this.obscure = false,
-    this.title,
     this.icon,
     this.keyboardType,
     this.controller,
   });
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,19 +27,6 @@ class LoginTextFieldWidget extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Container(
-            margin: EdgeInsetsResponsive.only(
-              bottom: 20,
-            ),
-            child: Text(
-              title,
-              style: GoogleFonts.varelaRound(
-                color: Colors.black54,
-                fontSize: 50.sp,
-                fontWeight: FontWeight.w600,
-              ),
-            ),
-          ),
-          Container(
             width: double.infinity,
             constraints: BoxConstraints(
               maxHeight: 100.sp,
@@ -46,25 +34,23 @@ class LoginTextFieldWidget extends StatelessWidget {
             ),
             child: TextField(
               cursorWidth: 5.sp,
-              style: GoogleFonts.varelaRound(
-                fontSize: 55.sp,
-              ),
+              style: TextStyle(fontSize: 55.sp),
               obscureText: obscure,
               controller: controller,
               keyboardType: keyboardType,
-              cursorColor: Colors.lightGreen,
+              cursorColor: Color(0xFF405F7B),
               textAlignVertical: TextAlignVertical.center,
               decoration: InputDecoration(
                 focusedBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.lightGreen, width: 5.sp),
+                  borderSide: BorderSide(color: Color(0xFF405F7B), width: 5.sp),
                   borderRadius: BorderRadius.all(Radius.circular(25.sp)),
                 ),
                 enabledBorder: OutlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey[200], width: 5.sp),
+                  borderSide: BorderSide(color: Color(0xFF405F7B), width: 5.sp),
                   borderRadius: BorderRadius.all(Radius.circular(25.sp)),
                 ),
-                prefixIcon: Icon(icon, color: Colors.lightGreen, size: 70.sp),
-                fillColor: Colors.white,
+                prefixIcon: Icon(icon, color: Color(0xFF405F7B), size: 70.sp),
+                fillColor: Color(0xFF405F7B),
                 isDense: false,
                 filled: true,
               ),

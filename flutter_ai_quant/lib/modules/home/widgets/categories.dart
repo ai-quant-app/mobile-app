@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+
 import 'package:responsive_widgets/responsive_widgets.dart';
+
 import 'package:flutter_ai_quant/modules/home/widgets/UI/table_cell_custom.dart';
 import 'package:flutter_ai_quant/modules/home/widgets/UI/line_chart_v2.dart';
 
@@ -15,7 +17,7 @@ class Categories extends StatelessWidget {
     return ResponsiveWidgets.builder(
       height: 1920,
       width: 1080,
-      allowFontScaling: true,
+      allowFontScaling: false,
       child: Container(
         padding: EdgeInsetsResponsive.fromLTRB(30, 0.0, 20, 50),
         child: Column(
