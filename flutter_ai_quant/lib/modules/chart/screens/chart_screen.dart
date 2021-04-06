@@ -35,7 +35,7 @@ class _ChartScreenState extends State<ChartScreen> {
   bool showLoading = true;
   MainState _mainState = MainState.MA;
   bool _volHidden = false;
-  SecondaryState _secondaryState = SecondaryState.MACD;
+  SecondaryState _secondaryState = SecondaryState.NONE;
   bool isLine = true;
   bool isChinese = true;
   List<DepthEntity> _bids, _asks;
@@ -206,27 +206,27 @@ class _ChartScreenState extends State<ChartScreen> {
                 children: <Widget>[
                   Stack(children: <Widget>[
                     Container(
-                      height: 450,
+                      height: 500,
                       width: double.infinity,
                       child: KChartWidget(
                         data,
-                        isLine: isLine,
+                        isLine: false,
                         mainState: _mainState,
                         volHidden: _volHidden,
                         secondaryState: _secondaryState,
                         fixedLength: 2,
                         timeFormat: TimeFormat.YEAR_MONTH_DAY,
-                        isChinese: isChinese,
+                        isChinese: false,
                       ),
                     ),
                     if (showLoading)
                       Container(
                           width: double.infinity,
-                          height: 450,
+                          height: 500,
                           alignment: Alignment.center,
                           child: CircularProgressIndicator()),
                   ]),
-                  buildButtons(),
+                  // buildButtons(),
                   Container(
                     height: 230,
                     width: double.infinity,
