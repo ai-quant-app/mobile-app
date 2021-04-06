@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ai_quant/modules/chart/widgets/custom_textfield_widget.dart';
+
 import 'package:responsive_widgets/responsive_widgets.dart';
+
+import 'package:flutter_ai_quant/modules/chart/widgets/custom_textfield_widget.dart';
 
 class BuyScreen extends StatefulWidget {
   @override
@@ -8,6 +10,8 @@ class BuyScreen extends StatefulWidget {
 }
 
 class _BuyScreenState extends State<BuyScreen> {
+  bool checkedValue = false;
+
   @override
   Widget build(BuildContext context) {
     ResponsiveWidgets.init(context,
@@ -179,30 +183,143 @@ class _BuyScreenState extends State<BuyScreen> {
                 ),
               ),
 
+              // Check Box
+              Row(
+                children: [
+                  Transform.scale(
+                    scale: 4.sp,
+                    child: Checkbox(
+                        value: checkedValue,
+                        checkColor: Colors.black,
+                        onChanged: (value) {
+                          setState(() => checkedValue = !checkedValue);
+                        }),
+                  ),
+                  SizedBoxResponsive(width: 25),
+                  Text(
+                    "KL mặc định",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 50.sp,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  )
+                ],
+              ),
+
               // Line
               Divider(color: Color(0xFF405F7B), thickness: 3.sp),
 
               // Infomation
-              Column(
-                children: <Widget>[
-                  Text("Thông Tin Tài KHoản"),
-                  Text("Tiền mặt và tiền NH"),
-                  Text("Tiền có thể ứng trước"),
-                  Text("Sức mua tối ưu"),
-                  Text("SL mua tối đa"),
-                  Text("Tỷ lệ ký quỹ thực tế"),
-                  Text("Tỷ lệ an toàn"),
-                ],
+              Container(
+                alignment: Alignment.topLeft,
+                margin:
+                    EdgeInsetsResponsive.only(left: 20, top: 25, bottom: 25),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      "Thông Tin Tài Khoản",
+                      style: TextStyle(
+                        color: Color(0xFF1F95D7),
+                        fontSize: 60.sp,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(
+                      "Tiền mặt và tiền NH",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 50.sp,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Text(
+                      "Tiền có thể ứng trước",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 50.sp,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Text(
+                      "Sức mua tối ưu",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 50.sp,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Text(
+                      "SL mua tối đa",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 50.sp,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Text(
+                      "Tỷ lệ ký quỹ thực tế",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 50.sp,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Text(
+                      "Tỷ lệ an toàn",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 50.sp,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
               ),
 
               //
-              Column(
-                children: <Widget>[
-                  Text("CK hiện có"),
-                  Text("CK chở về"),
-                  Text("CK phong tỏa"),
-                  Text("Ck cầm cố"),
-                ],
+              Container(
+                alignment: Alignment.topLeft,
+                margin:
+                    EdgeInsetsResponsive.only(left: 20, top: 25, bottom: 25),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Text(
+                      "CK hiện có",
+                      style: TextStyle(
+                        color: Color(0xFF1F95D7),
+                        fontSize: 60.sp,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(
+                      "CK chở về",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 50.sp,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Text(
+                      "CK phong tỏa",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 50.sp,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Text(
+                      "CK cầm cố",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 50.sp,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
