@@ -31,6 +31,7 @@ class _BuyScreenState extends State<BuyScreen> {
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
+              // Group Text Field
               Container(
                 margin: EdgeInsetsResponsive.only(bottom: 50),
                 child: Row(
@@ -124,6 +125,84 @@ class _BuyScreenState extends State<BuyScreen> {
                     ),
                   ],
                 ),
+              ),
+
+              // Group Button
+              Container(
+                margin: EdgeInsetsResponsive.only(
+                    left: 20, right: 20, top: 25, bottom: 25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    OutlinedButton(
+                        child: Text("Mua", style: TextStyle(fontSize: 45.sp)),
+                        style: OutlinedButton.styleFrom(
+                          primary: Colors.black,
+                          backgroundColor: Color(0xFF1ACB45),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.sp)),
+                        ),
+                        onPressed: () {}),
+                    SizedBoxResponsive(width: 20),
+                    OutlinedButton(
+                        child: Text("Bán", style: TextStyle(fontSize: 45.sp)),
+                        style: OutlinedButton.styleFrom(
+                          primary: Colors.black,
+                          backgroundColor: Color(0xFFED6060),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.sp)),
+                        ),
+                        onPressed: () {}),
+                    SizedBoxResponsive(width: 20),
+                    OutlinedButton(
+                        child:
+                            Text("Làm Lại", style: TextStyle(fontSize: 45.sp)),
+                        style: OutlinedButton.styleFrom(
+                          primary: Colors.black,
+                          backgroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.sp)),
+                        ),
+                        onPressed: () {}),
+                    SizedBoxResponsive(width: 20),
+                    OutlinedButton(
+                        child:
+                            Text("Giỏ Lệnh", style: TextStyle(fontSize: 45.sp)),
+                        style: OutlinedButton.styleFrom(
+                          primary: Colors.white,
+                          backgroundColor: Color(0xFF26B1FB),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.sp)),
+                        ),
+                        onPressed: () {}),
+                  ],
+                ),
+              ),
+
+              // Line
+              Divider(color: Color(0xFF405F7B), thickness: 3.sp),
+
+              // Infomation
+              Column(
+                children: <Widget>[
+                  Text("Thông Tin Tài KHoản"),
+                  Text("Tiền mặt và tiền NH"),
+                  Text("Tiền có thể ứng trước"),
+                  Text("Sức mua tối ưu"),
+                  Text("SL mua tối đa"),
+                  Text("Tỷ lệ ký quỹ thực tế"),
+                  Text("Tỷ lệ an toàn"),
+                ],
+              ),
+
+              //
+              Column(
+                children: <Widget>[
+                  Text("CK hiện có"),
+                  Text("CK chở về"),
+                  Text("CK phong tỏa"),
+                  Text("Ck cầm cố"),
+                ],
               ),
             ],
           ),
