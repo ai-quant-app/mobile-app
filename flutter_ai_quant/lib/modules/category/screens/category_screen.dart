@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:responsive_widgets/responsive_widgets.dart';
+import 'package:flutter_ai_quant/modules/chart/widgets/horizontal_chart.dart';
 
 class CategoryScreen extends StatefulWidget {
   @override
@@ -21,6 +22,11 @@ class _CategoryScreenState extends State<CategoryScreen> {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Color(0xFF062D52),
+        ),
+        body: Container(
+          child: HorizontalBarChart(
+              HorizontalBarChart.withSampleData().seriesList
+          ),
         ),
       ),
     );
