@@ -73,47 +73,47 @@ class TechnicalAnalysisTab extends StatefulWidget {
   ];
   final dataMultiLineChart = {
     'Desktop': [
-      new ChartData(0, 0, charts.MaterialPalette.blue.shadeDefault),
-      new ChartData(1, 10, charts.MaterialPalette.blue.shadeDefault),
-      new ChartData(2, 20, charts.MaterialPalette.blue.shadeDefault),
-      new ChartData(3, 30, charts.MaterialPalette.blue.shadeDefault),
-      new ChartData(4, 40, charts.MaterialPalette.blue.shadeDefault),
-      new ChartData(5, 50, charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(0, 0, color: charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(1, 10, color: charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(2, 20, color: charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(3, 30, color: charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(4, 40, color: charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(5, 50, color: charts.MaterialPalette.blue.shadeDefault),
     ],
     'Tablet': [
-      new ChartData(0, 0, charts.MaterialPalette.red.shadeDefault),
-      new ChartData(1, 15, charts.MaterialPalette.red.shadeDefault),
-      new ChartData(2, 25, charts.MaterialPalette.red.shadeDefault),
-      new ChartData(3, 35, charts.MaterialPalette.red.shadeDefault),
-      new ChartData(4, 46, charts.MaterialPalette.red.shadeDefault),
-      new ChartData(5, 57, charts.MaterialPalette.red.shadeDefault),
+      new ChartData(0, 0, color: charts.MaterialPalette.red.shadeDefault),
+      new ChartData(1, 15, color: charts.MaterialPalette.red.shadeDefault),
+      new ChartData(2, 25, color: charts.MaterialPalette.red.shadeDefault),
+      new ChartData(3, 35, color: charts.MaterialPalette.red.shadeDefault),
+      new ChartData(4, 46, color: charts.MaterialPalette.red.shadeDefault),
+      new ChartData(5, 57, color: charts.MaterialPalette.red.shadeDefault),
     ]
   };
   final dataDotChart1 = [
-      new ChartData(0, 0, charts.MaterialPalette.blue.shadeDefault),
-      new ChartData(1, 10, charts.MaterialPalette.blue.shadeDefault),
-      new ChartData(2, 20, charts.MaterialPalette.blue.shadeDefault),
-      new ChartData(3, 30, charts.MaterialPalette.blue.shadeDefault),
-      new ChartData(4, 40, charts.MaterialPalette.blue.shadeDefault),
-      new ChartData(5, 50, charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(0, 0, color: charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(1, 10, color: charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(2, 20, color: charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(3, 30, color: charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(4, 40, color: charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(5, 50, color: charts.MaterialPalette.blue.shadeDefault),
     ];
   final dataDotChart2 = [
-      new ChartData(0, 0, charts.MaterialPalette.red.shadeDefault),
-      new ChartData(1, 15, charts.MaterialPalette.red.shadeDefault),
-      new ChartData(2, 25, charts.MaterialPalette.red.shadeDefault),
-      new ChartData(3, 35, charts.MaterialPalette.red.shadeDefault),
-      new ChartData(4, 46, charts.MaterialPalette.red.shadeDefault),
-      new ChartData(5, 57, charts.MaterialPalette.red.shadeDefault),
+      new ChartData(0, 0, color: charts.MaterialPalette.red.shadeDefault),
+      new ChartData(1, 15, color: charts.MaterialPalette.red.shadeDefault),
+      new ChartData(2, 25, color: charts.MaterialPalette.red.shadeDefault),
+      new ChartData(3, 35, color: charts.MaterialPalette.red.shadeDefault),
+      new ChartData(4, 46, color: charts.MaterialPalette.red.shadeDefault),
+      new ChartData(5, 57, color: charts.MaterialPalette.red.shadeDefault),
     ];
 
   final secondData = {
     "Chair": [
-    new ChartData(0, 0.05, charts.MaterialPalette.yellow.shadeDefault),
-    new ChartData(1, 0.04, charts.MaterialPalette.yellow.shadeDefault),
-    new ChartData(2, 0.1, charts.MaterialPalette.yellow.shadeDefault),
-    new ChartData(3, 0.7, charts.MaterialPalette.yellow.shadeDefault),
-    new ChartData(4, 0.9, charts.MaterialPalette.yellow.shadeDefault),
-    new ChartData(5, 0.03, charts.MaterialPalette.yellow.shadeDefault),
+    new ChartData(0, 0.05, color: charts.MaterialPalette.yellow.shadeDefault),
+    new ChartData(1, 0.04, color: charts.MaterialPalette.yellow.shadeDefault),
+    new ChartData(2, 0.1, color: charts.MaterialPalette.yellow.shadeDefault),
+    new ChartData(3, 0.7, color: charts.MaterialPalette.yellow.shadeDefault),
+    new ChartData(4, 0.9, color: charts.MaterialPalette.yellow.shadeDefault),
+    new ChartData(5, 0.03, color: charts.MaterialPalette.yellow.shadeDefault),
     ]
   };
   @override

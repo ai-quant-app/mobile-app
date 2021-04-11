@@ -4,17 +4,20 @@ import 'package:flutter_ai_quant/common/constants/app-dimension.constant.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/models/chart-data.model.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/models/two-sections-card.model.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/models/two-sections-table.model.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/widgets/bar-gradient.chart.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/widgets/bullet.chart.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/fixed-one-hundred-measure-axis-line.chart.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/info-table.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/widgets/line-annotation.chart.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/multi-line.chart.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/widgets/smooth-line.chart.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/widgets/ordinal-combo-bar-line.chart.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/two_columns_card.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/two_sections_card.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/two_sections_table.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 
-class PricingTab extends StatefulWidget {
+class SummaryTab extends StatefulWidget {
   final Map<String, String> sectionData = {
     "Sector": "Industrials",
     "Sub Sector": "Construction & Materials",
@@ -25,7 +28,11 @@ class PricingTab extends StatefulWidget {
     TwoSectionsTableModel("Day’s High","76","52W Low","24.40"),
     TwoSectionsTableModel("Day’s Low","76","AvgVol/1l","161"),
   ];
-
+  final List<TwoSectionsTableModel> dataTable2 = [
+    TwoSectionsTableModel("Val Score","76", "Stock/Sector", "Cty>Nganh"),
+    TwoSectionsTableModel("G Score","62.50","Stock/Market","Stock>Market"),
+    TwoSectionsTableModel("P Score","60.50","Sector/Market","Sector>Market"),
+  ];
   final List<String> matrixColumnHeaders = ['Model', 'Weight', 'Price', 'Note'];
 
   final List<List<String>> matrixColumnData = [
@@ -112,11 +119,12 @@ class PricingTab extends StatefulWidget {
     ],
   };
 
+
   @override
-  _PricingTabState createState() => _PricingTabState();
+  _SummaryTabState createState() => _SummaryTabState();
 }
 
-class _PricingTabState extends State<PricingTab> {
+class _SummaryTabState extends State<SummaryTab> {
   @override
   Widget build(BuildContext context) {
     ResponsiveWidgets.init(
@@ -144,18 +152,98 @@ class _PricingTabState extends State<PricingTab> {
                     FixedOneHundredMeasureAxisLineChart(widget.dataMultiLineChart)
                 ),
                 TwoColumnsCard(widget.sectionData),
-                TwoSectionsTable("PRICE", "P/E", widget.dataTable1),
+                TwoSectionsTable("PRICE", "P/E", widget.dataTable1, hasMarginBottom: false,),
+                TwoSectionsTable("FA_Score", "FA_Score", widget.dataTable2, leftFlex: 1, rightFlex: 1.5, isShowTopBorder: false,),
+                
                 SizedBox(
                     width: 1100.sp,
-                    height: 500.sp,
-                    child:
-                    MultiLineChart(widget.dataOneLineChart)
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Expanded(child: Container(padding: EdgeInsetsResponsive.only(left: 50.sp), child: Text("%EPS vs EPS(t-1", style: TextStyle(fontSize:  25.sp),))),
+                            Expanded(child: Container(padding: EdgeInsetsResponsive.only(left: 50.sp), child: Text("EPS so với Top 20 EPS cùng ngành", style: TextStyle(fontSize:  25.sp)))),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                                child: Container(
+                                  padding: EdgeInsetsResponsive.zero,
+                                  margin: EdgeInsetsResponsive.zero,
+                                  height: 150.sp,
+                                  child: BulletChart(50, 25, 85, 60),
+                                )
+
+                            ),
+                            Expanded(
+                                child: Container(
+                                  height: 150.sp,
+                                  child: BulletChart(50, 25, 85, 60),
+                                )
+
+                            ),
+                          ],
+                        ),
+                        SizedBox(height: 50.sp),
+                        Row(
+                          children: [
+                            Expanded(child: Container(padding: EdgeInsetsResponsive.only(left: 50.sp), child: Text("EPS Cum vs EPS(4Q) newest", style: TextStyle(fontSize:  25.sp)))),
+                            Expanded(child: Container(padding: EdgeInsetsResponsive.only(left: 50.sp), child: Text("Overall Score stock vs sector, market", style: TextStyle(fontSize:  25.sp)))),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                                child: Container(
+                                  padding: EdgeInsetsResponsive.zero,
+                                  margin: EdgeInsetsResponsive.zero,
+                                  height: 150.sp,
+                                  child: BulletChart(50, 25, 85, 60),
+                                )
+
+                            ),
+                            Expanded(
+                                child: Container(
+                                  height: 150.sp,
+                                  child: BulletChart(50, 25, 85, 60),
+                                )
+
+                            ),
+                          ],
+                        )
+                      ],
+                    )
+
                 ),
-                InfoTable("MATRIX VALUATION", widget.matrixColumnHeaders, widget.matrixColumnData, footerNote: widget.matrixColumnDataFooterNote),
-                InfoTable("DÒNG TIỀN CỦA MỘT SỐ PHƯƠNG PHÁP", widget.moneyColumnHeaders, widget.moneyColumnData),
-                TwoSectionsCard("FORWARD P/E VALUATION", widget.forwardData),
-                TwoSectionsCard("P/BV VALUATION", widget.pbvData),
-                TwoSectionsCard("EPS MODEL", widget.epsData),
+                SizedBox(
+                  width: 1100.sp,
+                  height: 150.sp,
+                  child: BarGradientChart(85, 60),
+                ),
+                SizedBox(
+                  width: 1100.sp,
+                  height: 500.sp,
+                  child: OrdinalComboBarLineChart.withSampleData(),
+                ),
+                SizedBox(
+                  width: 1100.sp,
+                  height: 500.sp,
+                  child: LineAnnotationChart.withSampleData()
+                ),
+
+
+                // SizedBox(
+                //     width: 1100.sp,
+                //     height: 500.sp,
+                //     child:
+                //     MultiLineChart(widget.dataOneLineChart)
+                // ),
+                // InfoTable("MATRIX VALUATION", widget.matrixColumnHeaders, widget.matrixColumnData, footerNote: widget.matrixColumnDataFooterNote),
+                // InfoTable("DÒNG TIỀN CỦA MỘT SỐ PHƯƠNG PHÁP", widget.moneyColumnHeaders, widget.moneyColumnData),
+                // TwoSectionsCard("FORWARD P/E VALUATION", widget.forwardData),
+                // TwoSectionsCard("P/BV VALUATION", widget.pbvData),
+                // TwoSectionsCard("EPS MODEL", widget.epsData),
               ],
             ),
           ),

@@ -2,7 +2,7 @@
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/models/chart-data.model.dart';
-import 'package:charts_common/common.dart' as commoncharts;
+import 'package:charts_common/common.dart' as commonCharts;
 /// Example of a line chart rendered with dash patterns.
 class SecondMultiLineChart extends StatelessWidget {
   final Map<String, List<ChartData>> data;
@@ -79,7 +79,7 @@ class SecondMultiLineChart extends StatelessWidget {
         charts.PointRendererConfig(
           // ID used to link series to this renderer.
           customRendererId: 'customTriangle',
-          symbolRenderer: commoncharts.TriangleSymbolRenderer()
+          symbolRenderer: commonCharts.TriangleSymbolRenderer()
         )
       ],
       behaviors: [new charts.SeriesLegend()],
