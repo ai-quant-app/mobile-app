@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_ai_quant/common/constants/app-dimension.constant.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 
-class LineChartSample7 extends StatelessWidget {
+class SmoothLineChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ResponsiveWidgets.init(
@@ -17,7 +17,7 @@ class LineChartSample7 extends StatelessWidget {
       width: AppDimension.screenWidth,
       allowFontScaling: false,
       child: SizedBox(
-        width: 1100.sp,
+        width: 1000.sp,
         height: 500.sp,
         child: LineChart(
             LineChartData(

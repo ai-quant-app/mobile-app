@@ -6,9 +6,7 @@ import 'package:flutter_ai_quant/modules/company-analysis/models/two-sections-ca
 import 'package:flutter_ai_quant/modules/company-analysis/models/two-sections-table.model.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/dot-line.chart.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/fixed-one-hundred-measure-axis-line.chart.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/widgets/multi-line.chart.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/second-multi-line.chart.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/widgets/smooth-line.chart.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/two_columns_card.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/two_sections_card.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/two_sections_table.dart';
@@ -19,7 +17,7 @@ class TechnicalAnalysisTab extends StatefulWidget {
   final Map<String, String> sectionData = {
     "Sector": "Industrials",
     "Sub Sector": "Construction & Materials",
-    "Industry": "Contruction &Materials",
+    "Industry": "Construction & Materials",
   };
   final List<TwoSectionsTableModel> dataTable1 = [
     TwoSectionsTableModel("Day’s Close","76", "52W High", "106.00"),

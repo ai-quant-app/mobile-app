@@ -11,6 +11,7 @@ dependencies:
   charts_flutter: ^0.10.0
   flutter_speedometer: ^1.0.2
   fl_chart: ^0.20.1
+  syncfusion_flutter_treemap: ^19.1.55-beta
 
   # Responsive Layout
   responsive_widgets: ^2.0.1

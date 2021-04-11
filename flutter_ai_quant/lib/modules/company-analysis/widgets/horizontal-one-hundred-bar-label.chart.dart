@@ -72,7 +72,6 @@ class HorizontalOneHundredBarLabelChart extends StatelessWidget {
               // Set a label accessor to control the text of the bar label.
               labelAccessorFn: (ChartData dt, _) =>
               '${dt.y.toString()}',
-
           )
       );
     });

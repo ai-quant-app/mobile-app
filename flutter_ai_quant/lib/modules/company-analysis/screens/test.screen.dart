@@ -255,7 +255,7 @@ class _TestState extends State<Test> {
                 Expanded(
                   child: DefaultTabController(
                     // The number of tabs / content sections to display.
-                      length: 8,
+                      length: 5,
                       initialIndex: _index,
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -284,9 +284,6 @@ class _TestState extends State<Test> {
                                 CustomTab("P/t kỹ thuật", 2 == this._index),
                                 CustomTab("Định giá", 3 == this._index),
                                 CustomTab("Test", 4 == this._index),
-                                CustomTab("Test", 5 == this._index),
-                                CustomTab("Test", 6 == this._index),
-                                CustomTab("Test", 7 == this._index),
                               ],
                             ),
                             Expanded(child:
@@ -298,9 +295,6 @@ class _TestState extends State<Test> {
                                   TechnicalAnalysisTab(),
                                   PricingTab(),
                                   Icon(Icons.directions_car),
-                                  Icon(Icons.directions_transit),
-                                  Icon(Icons.directions_bike),
-                                  Icon(Icons.directions_bike),
                                 ],
                               ),
                             )

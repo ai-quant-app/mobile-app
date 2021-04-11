@@ -233,7 +233,7 @@ class _CompaniesScreenState extends State<CompaniesScreen> {
                   ],
                 ),
                 SizedBox(height: 100.sp,),
-                LineChartSample7(),
+                SmoothLineChart(),
               ],
             ),
           ),
