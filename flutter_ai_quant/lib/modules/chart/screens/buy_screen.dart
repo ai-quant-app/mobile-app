@@ -37,22 +37,21 @@ class _BuyScreenState extends State<BuyScreen> {
             children: <Widget>[
               // Group Text Field
               Container(
-                margin: EdgeInsetsResponsive.only(bottom: 50),
+                margin: EdgeInsetsResponsive.only(bottom: 50, top: 50),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Container(
-                      margin: EdgeInsetsResponsive.only(left: 20, right: 150),
+                      margin: EdgeInsetsResponsive.only(left: 20, right: 240),
                       child: Text(
                         "Mã CK",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 55.sp,
+                            fontSize: 40.sp,
                             fontWeight: FontWeight.w600),
                       ),
                     ),
                     Expanded(
-                      flex: 1,
                       child: Container(
                         margin: EdgeInsetsResponsive.only(right: 20),
                         child: CustomTextFieldWidget(),
@@ -67,12 +66,12 @@ class _BuyScreenState extends State<BuyScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Container(
-                      margin: EdgeInsetsResponsive.only(left: 20, right: 230),
+                      margin: EdgeInsetsResponsive.only(left: 20, right: 300),
                       child: Text(
                         "Giá",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 55.sp,
+                            fontSize: 40.sp,
                             fontWeight: FontWeight.w600),
                       ),
                     ),
@@ -90,12 +89,12 @@ class _BuyScreenState extends State<BuyScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Container(
-                      margin: EdgeInsetsResponsive.only(left: 20, right: 50),
+                      margin: EdgeInsetsResponsive.only(left: 20, right: 160),
                       child: Text(
                         "Khối lượng",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 55.sp,
+                            fontSize: 40.sp,
                             fontWeight: FontWeight.w600),
                       ),
                     ),
@@ -113,12 +112,12 @@ class _BuyScreenState extends State<BuyScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Container(
-                      margin: EdgeInsetsResponsive.only(left: 20, right: 20),
+                      margin: EdgeInsetsResponsive.only(left: 20, right: 130),
                       child: Text(
                         "KL chia lệnh",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 55.sp,
+                            fontSize: 40.sp,
                             fontWeight: FontWeight.w600),
                       ),
                     ),
