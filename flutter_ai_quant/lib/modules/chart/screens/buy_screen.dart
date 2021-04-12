@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 
 import 'package:flutter_ai_quant/modules/chart/widgets/custom_textfield_widget.dart';
+import 'package:flutter_ai_quant/modules/chart/widgets/custom_select_widget.dart';
 
 class BuyScreen extends StatefulWidget {
   @override
@@ -11,6 +12,15 @@ class BuyScreen extends StatefulWidget {
 
 class _BuyScreenState extends State<BuyScreen> {
   bool checkedValue = false;
+  String commandType = "Thông thường";
+
+  final commandTypes = ["Thông thường", "Điều kiện"];
+
+  void chooseCommandType(String selected) {
+    setState(() {
+      commandType = selected;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +48,34 @@ class _BuyScreenState extends State<BuyScreen> {
               // Group Text Field
               Container(
                 margin: EdgeInsetsResponsive.only(bottom: 50, top: 50),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsetsResponsive.only(left: 20, right: 190),
+                      child: Text(
+                        "Loại lệnh",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 40.sp,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsetsResponsive.only(right: 20),
+                        child: CustomSelectWidget(
+                          list: commandTypes,
+                          selected: commandType,
+                          handleSelect: chooseCommandType,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsetsResponsive.only(bottom: 50),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[

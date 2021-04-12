@@ -31,8 +31,9 @@ class CustomTextFieldWidget extends StatelessWidget {
       textAlignVertical: TextAlignVertical.center,
       decoration: InputDecoration(
         contentPadding: EdgeInsetsResponsive.only(
-          top: 0,
+          top: 35,
           left: 50,
+          bottom: 35,
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(color: Color(0xFF405F7B), width: 5.sp),
