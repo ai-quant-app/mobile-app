@@ -4,6 +4,7 @@ import 'package:responsive_widgets/responsive_widgets.dart';
 
 import 'package:flutter_ai_quant/modules/chart/widgets/custom_textfield_widget.dart';
 import 'package:flutter_ai_quant/modules/chart/widgets/custom_select_widget.dart';
+import 'package:flutter_ai_quant/modules/chart/widgets/confirm_popup_widget.dart';
 
 class BuyScreen extends StatefulWidget {
   @override
@@ -272,15 +273,16 @@ class _BuyScreenState extends State<BuyScreen> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
-                    OutlinedButton(
-                        child: Text("Mua", style: TextStyle(fontSize: 40.sp)),
-                        style: OutlinedButton.styleFrom(
-                          primary: Colors.black,
-                          backgroundColor: Color(0xFF1ACB45),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.sp)),
-                        ),
-                        onPressed: () {}),
+                    ConfirmopUpWidget(),
+                    // OutlinedButton(
+                    //     child: Text("Mua", style: TextStyle(fontSize: 40.sp)),
+                    //     style: OutlinedButton.styleFrom(
+                    //       primary: Colors.black,
+                    //       backgroundColor: Color(0xFF1ACB45),
+                    //       shape: RoundedRectangleBorder(
+                    //           borderRadius: BorderRadius.circular(15.sp)),
+                    //     ),
+                    //     onPressed: () {}),
                     SizedBoxResponsive(width: 20),
                     OutlinedButton(
                         child: Text("Bán", style: TextStyle(fontSize: 40.sp)),
