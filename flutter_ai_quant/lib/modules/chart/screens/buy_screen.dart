@@ -63,9 +63,64 @@ class _BuyScreenState extends State<BuyScreen> {
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
+              // Group Button
+              Container(
+                margin: EdgeInsetsResponsive.only(
+                    left: 20, right: 20, top: 25, bottom: 25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    OutlinedButton(
+                        child: Text("Mua", style: TextStyle(fontSize: 40.sp)),
+                        style: OutlinedButton.styleFrom(
+                          primary: Colors.black,
+                          backgroundColor: Color(0xFF1ACB45),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.sp)),
+                        ),
+                        onPressed: () =>
+                            Navigator.pushNamed(context, "buy_screen")),
+                    SizedBoxResponsive(width: 20),
+                    OutlinedButton(
+                        child: Text("Bán", style: TextStyle(fontSize: 40.sp)),
+                        style: OutlinedButton.styleFrom(
+                          primary: Colors.black,
+                          backgroundColor: Color(0xFFED6060),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.sp)),
+                        ),
+                        onPressed: () =>
+                            Navigator.pushNamed(context, "sell_screen")),
+                    SizedBoxResponsive(width: 20),
+                    OutlinedButton(
+                        child:
+                            Text("Làm Lại", style: TextStyle(fontSize: 40.sp)),
+                        style: OutlinedButton.styleFrom(
+                          primary: Colors.black,
+                          backgroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.sp)),
+                        ),
+                        onPressed: () {}),
+                    SizedBoxResponsive(width: 20),
+                    OutlinedButton(
+                        child:
+                            Text("Giỏ Lệnh", style: TextStyle(fontSize: 40.sp)),
+                        style: OutlinedButton.styleFrom(
+                          primary: Colors.white,
+                          backgroundColor: Color(0xFF26B1FB),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.sp)),
+                        ),
+                        onPressed: () => Navigator.pushNamed(
+                            context, "order_basket_screen")),
+                  ],
+                ),
+              ),
+
               // Group Text Field
               Container(
-                margin: EdgeInsetsResponsive.only(bottom: 50, top: 50),
+                margin: EdgeInsetsResponsive.only(bottom: 50),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -274,47 +329,6 @@ class _BuyScreenState extends State<BuyScreen> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     ConfirmopUpWidget(),
-                    // OutlinedButton(
-                    //     child: Text("Mua", style: TextStyle(fontSize: 40.sp)),
-                    //     style: OutlinedButton.styleFrom(
-                    //       primary: Colors.black,
-                    //       backgroundColor: Color(0xFF1ACB45),
-                    //       shape: RoundedRectangleBorder(
-                    //           borderRadius: BorderRadius.circular(15.sp)),
-                    //     ),
-                    //     onPressed: () {}),
-                    SizedBoxResponsive(width: 20),
-                    OutlinedButton(
-                        child: Text("Bán", style: TextStyle(fontSize: 40.sp)),
-                        style: OutlinedButton.styleFrom(
-                          primary: Colors.black,
-                          backgroundColor: Color(0xFFED6060),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.sp)),
-                        ),
-                        onPressed: () {}),
-                    SizedBoxResponsive(width: 20),
-                    OutlinedButton(
-                        child:
-                            Text("Làm Lại", style: TextStyle(fontSize: 40.sp)),
-                        style: OutlinedButton.styleFrom(
-                          primary: Colors.black,
-                          backgroundColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.sp)),
-                        ),
-                        onPressed: () {}),
-                    SizedBoxResponsive(width: 20),
-                    OutlinedButton(
-                        child:
-                            Text("Giỏ Lệnh", style: TextStyle(fontSize: 40.sp)),
-                        style: OutlinedButton.styleFrom(
-                          primary: Colors.white,
-                          backgroundColor: Color(0xFF26B1FB),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.sp)),
-                        ),
-                        onPressed: () {}),
                   ],
                 ),
               ),

@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 
 import 'package:flutter_ai_quant/modules/chart/widgets/custom_textfield_widget.dart';
+import 'package:flutter_ai_quant/modules/chart/widgets/custom_select_widget.dart';
+import 'package:flutter_ai_quant/modules/chart/widgets/confirm_popup_widget.dart';
 
 class SellScreen extends StatefulWidget {
   @override
@@ -10,7 +12,33 @@ class SellScreen extends StatefulWidget {
 }
 
 class _SellScreenState extends State<SellScreen> {
-  bool checkedValue = false;
+  bool checkedValue = true;
+  String commandType = "Thông thường";
+  final commandTypes = ["Thông thường", "Điều kiện"];
+
+  void changeCommandType(String value) {
+    setState(() {
+      commandType = value;
+    });
+  }
+
+  String type = "Bán";
+  final types = ["Mua", "Bán", "Bán cầm cố"];
+
+  void changeType(String value) {
+    setState(() {
+      type = value;
+    });
+  }
+
+  String command = "LO";
+  final commands = ["LO", "ATO", "ATC", "MP", "MAK", "MOK", "MTL", "PLO"];
+
+  void changeCommand(String value) {
+    setState(() {
+      command = value;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +63,61 @@ class _SellScreenState extends State<SellScreen> {
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
+              // Group Button
+              Container(
+                margin: EdgeInsetsResponsive.only(
+                    left: 20, right: 20, top: 25, bottom: 25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    OutlinedButton(
+                        child: Text("Mua", style: TextStyle(fontSize: 40.sp)),
+                        style: OutlinedButton.styleFrom(
+                          primary: Colors.black,
+                          backgroundColor: Color(0xFF1ACB45),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.sp)),
+                        ),
+                        onPressed: () =>
+                            Navigator.pushNamed(context, "buy_screen")),
+                    SizedBoxResponsive(width: 20),
+                    OutlinedButton(
+                        child: Text("Bán", style: TextStyle(fontSize: 40.sp)),
+                        style: OutlinedButton.styleFrom(
+                          primary: Colors.black,
+                          backgroundColor: Color(0xFFED6060),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.sp)),
+                        ),
+                        onPressed: () =>
+                            Navigator.pushNamed(context, "sell_screen")),
+                    SizedBoxResponsive(width: 20),
+                    OutlinedButton(
+                        child:
+                            Text("Làm Lại", style: TextStyle(fontSize: 40.sp)),
+                        style: OutlinedButton.styleFrom(
+                          primary: Colors.black,
+                          backgroundColor: Colors.white,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.sp)),
+                        ),
+                        onPressed: () {}),
+                    SizedBoxResponsive(width: 20),
+                    OutlinedButton(
+                        child:
+                            Text("Giỏ Lệnh", style: TextStyle(fontSize: 40.sp)),
+                        style: OutlinedButton.styleFrom(
+                          primary: Colors.white,
+                          backgroundColor: Color(0xFF26B1FB),
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(15.sp)),
+                        ),
+                        onPressed: () => Navigator.pushNamed(
+                            context, "order_basket_screen")),
+                  ],
+                ),
+              ),
+
               // Group Text Field
               Container(
                 margin: EdgeInsetsResponsive.only(bottom: 50),
@@ -42,17 +125,72 @@ class _SellScreenState extends State<SellScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Container(
-                      margin: EdgeInsetsResponsive.only(left: 20, right: 150),
+                      margin: EdgeInsetsResponsive.only(left: 20, right: 190),
                       child: Text(
-                        "Mã CK",
+                        "Loại lệnh",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 55.sp,
+                            fontSize: 40.sp,
                             fontWeight: FontWeight.w600),
                       ),
                     ),
                     Expanded(
-                      flex: 1,
+                      child: Container(
+                        margin: EdgeInsetsResponsive.only(right: 20),
+                        child: CustomSelectWidget(
+                          list: commandTypes,
+                          selected: commandType,
+                          handleSelect: changeCommandType,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsetsResponsive.only(bottom: 50),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsetsResponsive.only(left: 20, right: 200),
+                      child: Text(
+                        "Mua bán",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 40.sp,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsetsResponsive.only(right: 20),
+                        child: CustomSelectWidget(
+                          list: types,
+                          selected: type,
+                          handleSelect: changeType,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsetsResponsive.only(bottom: 50),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsetsResponsive.only(left: 20, right: 240),
+                      child: Text(
+                        "Mã CK",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 40.sp,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                    Expanded(
                       child: Container(
                         margin: EdgeInsetsResponsive.only(right: 20),
                         child: CustomTextFieldWidget(),
@@ -67,12 +205,40 @@ class _SellScreenState extends State<SellScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Container(
-                      margin: EdgeInsetsResponsive.only(left: 20, right: 230),
+                      margin: EdgeInsetsResponsive.only(left: 20, right: 270),
+                      child: Text(
+                        "Lệnh",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 40.sp,
+                            fontWeight: FontWeight.w600),
+                      ),
+                    ),
+                    Expanded(
+                      child: Container(
+                        margin: EdgeInsetsResponsive.only(right: 20),
+                        child: CustomSelectWidget(
+                          list: commands,
+                          selected: command,
+                          handleSelect: changeCommand,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                margin: EdgeInsetsResponsive.only(bottom: 50),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Container(
+                      margin: EdgeInsetsResponsive.only(left: 20, right: 300),
                       child: Text(
                         "Giá",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 55.sp,
+                            fontSize: 40.sp,
                             fontWeight: FontWeight.w600),
                       ),
                     ),
@@ -90,12 +256,12 @@ class _SellScreenState extends State<SellScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Container(
-                      margin: EdgeInsetsResponsive.only(left: 20, right: 50),
+                      margin: EdgeInsetsResponsive.only(left: 20, right: 160),
                       child: Text(
                         "Khối lượng",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 55.sp,
+                            fontSize: 40.sp,
                             fontWeight: FontWeight.w600),
                       ),
                     ),
@@ -113,12 +279,12 @@ class _SellScreenState extends State<SellScreen> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Container(
-                      margin: EdgeInsetsResponsive.only(left: 20, right: 20),
+                      margin: EdgeInsetsResponsive.only(left: 20, right: 130),
                       child: Text(
                         "KL chia lệnh",
                         style: TextStyle(
                             color: Colors.white,
-                            fontSize: 55.sp,
+                            fontSize: 40.sp,
                             fontWeight: FontWeight.w600),
                       ),
                     ),
@@ -127,58 +293,6 @@ class _SellScreenState extends State<SellScreen> {
                           margin: EdgeInsetsResponsive.only(right: 20),
                           child: CustomTextFieldWidget()),
                     ),
-                  ],
-                ),
-              ),
-
-              // Group Button
-              Container(
-                margin: EdgeInsetsResponsive.only(
-                    left: 20, right: 20, top: 25, bottom: 25),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    OutlinedButton(
-                        child: Text("Mua", style: TextStyle(fontSize: 45.sp)),
-                        style: OutlinedButton.styleFrom(
-                          primary: Colors.black,
-                          backgroundColor: Color(0xFF1ACB45),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.sp)),
-                        ),
-                        onPressed: () {}),
-                    SizedBoxResponsive(width: 20),
-                    OutlinedButton(
-                        child: Text("Bán", style: TextStyle(fontSize: 45.sp)),
-                        style: OutlinedButton.styleFrom(
-                          primary: Colors.black,
-                          backgroundColor: Color(0xFFED6060),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.sp)),
-                        ),
-                        onPressed: () {}),
-                    SizedBoxResponsive(width: 20),
-                    OutlinedButton(
-                        child:
-                            Text("Làm Lại", style: TextStyle(fontSize: 45.sp)),
-                        style: OutlinedButton.styleFrom(
-                          primary: Colors.black,
-                          backgroundColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.sp)),
-                        ),
-                        onPressed: () {}),
-                    SizedBoxResponsive(width: 20),
-                    OutlinedButton(
-                        child:
-                            Text("Giỏ Lệnh", style: TextStyle(fontSize: 45.sp)),
-                        style: OutlinedButton.styleFrom(
-                          primary: Colors.white,
-                          backgroundColor: Color(0xFF26B1FB),
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(15.sp)),
-                        ),
-                        onPressed: () {}),
                   ],
                 ),
               ),
@@ -200,11 +314,23 @@ class _SellScreenState extends State<SellScreen> {
                     "KL mặc định",
                     style: TextStyle(
                       color: Colors.white,
-                      fontSize: 50.sp,
+                      fontSize: 40.sp,
                       fontWeight: FontWeight.w500,
                     ),
                   )
                 ],
+              ),
+
+              // Group Button
+              Container(
+                margin: EdgeInsetsResponsive.only(
+                    left: 20, right: 20, top: 25, bottom: 25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    ConfirmopUpWidget(),
+                  ],
+                ),
               ),
 
               // Line
@@ -218,60 +344,81 @@ class _SellScreenState extends State<SellScreen> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(
-                      "Thông Tin Tài Khoản",
-                      style: TextStyle(
-                        color: Color(0xFF1F95D7),
-                        fontSize: 60.sp,
-                        fontWeight: FontWeight.w600,
+                    Padding(
+                      padding: EdgeInsetsResponsive.only(bottom: 20),
+                      child: Text(
+                        "Thông Tin Tài Khoản",
+                        style: TextStyle(
+                          color: Color(0xFF1F95D7),
+                          fontSize: 45.sp,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
-                    Text(
-                      "Tiền mặt và tiền NH",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 50.sp,
-                        fontWeight: FontWeight.w500,
+                    Padding(
+                      padding: EdgeInsetsResponsive.only(bottom: 10),
+                      child: Text(
+                        "Tiền mặt và tiền NH",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 40.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
-                    Text(
-                      "Tiền có thể ứng trước",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 50.sp,
-                        fontWeight: FontWeight.w500,
+                    Padding(
+                      padding: EdgeInsetsResponsive.only(bottom: 10),
+                      child: Text(
+                        "Tiền có thể ứng trước",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 40.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
-                    Text(
-                      "Sức mua tối ưu",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 50.sp,
-                        fontWeight: FontWeight.w500,
+                    Padding(
+                      padding: EdgeInsetsResponsive.only(bottom: 10),
+                      child: Text(
+                        "Sức mua tối ưu",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 40.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
-                    Text(
-                      "SL mua tối đa",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 50.sp,
-                        fontWeight: FontWeight.w500,
+                    Padding(
+                      padding: EdgeInsetsResponsive.only(bottom: 10),
+                      child: Text(
+                        "SL mua tối đa",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 40.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
-                    Text(
-                      "Tỷ lệ ký quỹ thực tế",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 50.sp,
-                        fontWeight: FontWeight.w500,
+                    Padding(
+                      padding: EdgeInsetsResponsive.only(bottom: 10),
+                      child: Text(
+                        "Tỷ lệ ký quỹ thực tế",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 40.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
-                    Text(
-                      "Tỷ lệ an toàn",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 50.sp,
-                        fontWeight: FontWeight.w500,
+                    Padding(
+                      padding: EdgeInsetsResponsive.only(bottom: 10),
+                      child: Text(
+                        "Tỷ lệ an toàn",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 40.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
                   ],
@@ -282,40 +429,52 @@ class _SellScreenState extends State<SellScreen> {
               Container(
                 alignment: Alignment.topLeft,
                 margin:
-                    EdgeInsetsResponsive.only(left: 20, top: 25, bottom: 25),
+                    EdgeInsetsResponsive.only(left: 20, top: 10, bottom: 25),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(
-                      "CK hiện có",
-                      style: TextStyle(
-                        color: Color(0xFF1F95D7),
-                        fontSize: 60.sp,
-                        fontWeight: FontWeight.w600,
+                    Padding(
+                      padding: EdgeInsetsResponsive.only(bottom: 20),
+                      child: Text(
+                        "CK hiện có",
+                        style: TextStyle(
+                          color: Color(0xFF1F95D7),
+                          fontSize: 50.sp,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
-                    Text(
-                      "CK chở về",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 50.sp,
-                        fontWeight: FontWeight.w500,
+                    Padding(
+                      padding: EdgeInsetsResponsive.only(bottom: 20),
+                      child: Text(
+                        "CK chờ về",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 40.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
-                    Text(
-                      "CK phong tỏa",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 50.sp,
-                        fontWeight: FontWeight.w500,
+                    Padding(
+                      padding: EdgeInsetsResponsive.only(bottom: 20),
+                      child: Text(
+                        "CK phong tỏa",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 40.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
-                    Text(
-                      "CK cầm cố",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 50.sp,
-                        fontWeight: FontWeight.w500,
+                    Padding(
+                      padding: EdgeInsetsResponsive.only(bottom: 20),
+                      child: Text(
+                        "CK cầm cố",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 40.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
                   ],
