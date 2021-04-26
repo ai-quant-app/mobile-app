@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 
-class CustomTextFieldWidget extends StatelessWidget {
+class LoginTextFieldWidget extends StatelessWidget {
   final bool obscure;
-  final IconData icon;
+  final String hintText;
+  final IconData prefixIcon;
+  final IconData suffixIcon;
   final TextInputType keyboardType;
   final TextEditingController controller;
 
-  CustomTextFieldWidget({
+  LoginTextFieldWidget({
     this.obscure = false,
-    this.icon,
+    this.hintText,
+    this.prefixIcon,
+    this.suffixIcon,
     this.keyboardType,
     this.controller,
   });
@@ -30,15 +34,18 @@ class CustomTextFieldWidget extends StatelessWidget {
       textAlignVertical: TextAlignVertical.center,
       decoration: InputDecoration(
         focusedBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Color(0xFF405F7B), width: 5.sp),
+          borderSide: BorderSide(color: Color(0xFF1F4364), width: 5.sp),
           borderRadius: BorderRadius.all(Radius.circular(50.sp)),
         ),
         enabledBorder: OutlineInputBorder(
-          borderSide: BorderSide(color: Color(0xFF405F7B), width: 5.sp),
+          borderSide: BorderSide(color: Color(0xFF1F4364), width: 5.sp),
           borderRadius: BorderRadius.all(Radius.circular(50.sp)),
         ),
-        prefixIcon: Icon(icon, color: Color(0xFF405F7B), size: 70.sp),
-        fillColor: Color(0xFF405F7B),
+        hintText: hintText,
+        hintStyle: TextStyle(fontSize: 50.sp, color: Colors.white),
+        prefixIcon: Icon(prefixIcon, color: Colors.white, size: 70.sp),
+        suffixIcon: Icon(suffixIcon, color: Colors.white, size: 70.sp),
+        fillColor: Color(0xFF1F4364),
         isDense: false,
         filled: true,
       ),
