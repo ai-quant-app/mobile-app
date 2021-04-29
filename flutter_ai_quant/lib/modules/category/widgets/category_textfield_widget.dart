@@ -43,7 +43,6 @@ class CategoryTextFieldWidget extends StatelessWidget {
         ),
         hintText: hintText,
         hintStyle: TextStyle(fontSize: 50.sp, color: Colors.white),
-        // prefixIcon: Icon(prefixIcon, color: Colors.white, size: 70.sp),
         suffixIcon: Icon(suffixIcon, color: Colors.white, size: 70.sp),
         fillColor: Color(0xFF1F4364),
         isDense: false,

@@ -96,6 +96,7 @@ class _SetCommandScreenState extends State<SetCommandScreen> {
                       ),
                     ),
                     Container(
+                      margin: EdgeInsetsResponsive.only(bottom: 35),
                       child: LoginTextFieldWidget(
                         prefixIcon: Icons.code,
                         hintText: "Pass code",
@@ -122,13 +123,37 @@ class _SetCommandScreenState extends State<SetCommandScreen> {
                         ),
                       ),
                     ),
-
-                    // Row(
-                    //   children: <Widget>[
-
-                    //   ],
-                    // ),
-
+                    Container(
+                      margin: EdgeInsetsResponsive.only(bottom: 35),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Container(
+                            child: Image.asset(
+                              "assets/images/face_id.png",
+                              color: Colors.white,
+                              height: 200.sp,
+                            ),
+                          ),
+                          Container(
+                            child: Text(
+                              "Hoặc",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 55.sp,
+                              ),
+                            ),
+                          ),
+                          Container(
+                            child: Image.asset(
+                              "assets/images/finger_print.png",
+                              // color: Colors.white,
+                              height: 200.sp,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
                     GestureDetector(
                       onTap: () {},
                       child: Container(
