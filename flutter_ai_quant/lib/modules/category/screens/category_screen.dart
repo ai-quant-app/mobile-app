@@ -65,7 +65,8 @@ class _CategoryScreenState extends State<CategoryScreen> {
 
               // Text Field
               Container(
-                margin: EdgeInsetsResponsive.only(left: 35, bottom: 35),
+                margin:
+                    EdgeInsetsResponsive.only(left: 35, right: 35, bottom: 35),
                 child: Column(
                   children: <Widget>[
                     Container(
@@ -109,7 +110,7 @@ class _CategoryScreenState extends State<CategoryScreen> {
                 ),
               ),
 
-              // TableData
+              // Table Data
               Container(
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
@@ -128,15 +129,27 @@ class _CategoryScreenState extends State<CategoryScreen> {
                         )),
                     child: DataTable(
                       columns: [
-                        DataColumn(label: Text("Mã")),
-                        DataColumn(label: Text("Đặt lệnh")),
-                        DataColumn(label: Text("SL TP")),
-                        DataColumn(label: Text("Số lượng")),
-                        DataColumn(label: Text("Giá")),
-                        DataColumn(label: Text("+/-")),
-                        DataColumn(label: Text("Xu thế")),
-                        DataColumn(label: Text("Xếp hạng")),
-                        DataColumn(label: Text("Đồ thị")),
+                        DataColumn(
+                            label: Text("Mã", textAlign: TextAlign.center)),
+                        DataColumn(
+                            label:
+                                Text("Đặt lệnh", textAlign: TextAlign.center)),
+                        DataColumn(
+                            label: Text("SL TP", textAlign: TextAlign.center)),
+                        DataColumn(
+                            label:
+                                Text("Số lượng", textAlign: TextAlign.center)),
+                        DataColumn(
+                            label: Text("Giá", textAlign: TextAlign.center)),
+                        DataColumn(
+                            label: Text("+/-", textAlign: TextAlign.center)),
+                        DataColumn(
+                            label: Text("Xu thế", textAlign: TextAlign.center)),
+                        DataColumn(
+                            label:
+                                Text("Xếp hạng", textAlign: TextAlign.center)),
+                        DataColumn(
+                            label: Text("Đồ thị", textAlign: TextAlign.center)),
                       ],
                       rows: [
                         for (var i = 0; i < 50; i++)

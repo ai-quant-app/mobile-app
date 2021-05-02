@@ -3,13 +3,15 @@ import 'package:responsive_widgets/responsive_widgets.dart';
 
 class CustomTextFieldWidget extends StatelessWidget {
   final bool obscure;
-  final IconData icon;
+  final IconData prefixIcon;
+  final IconData suffixIcon;
   final TextInputType keyboardType;
   final TextEditingController controller;
 
   CustomTextFieldWidget({
     this.obscure = false,
-    this.icon,
+    this.prefixIcon,
+    this.suffixIcon,
     this.keyboardType,
     this.controller,
   });
@@ -37,7 +39,8 @@ class CustomTextFieldWidget extends StatelessWidget {
           borderSide: BorderSide(color: Color(0xFF405F7B), width: 5.sp),
           borderRadius: BorderRadius.all(Radius.circular(50.sp)),
         ),
-        prefixIcon: Icon(icon, color: Color(0xFF405F7B), size: 70.sp),
+        suffixIcon: Icon(suffixIcon, color: Colors.white, size: 70.sp),
+        prefixIcon: Icon(prefixIcon, color: Color(0xFF405F7B), size: 70.sp),
         fillColor: Color(0xFF405F7B),
         isDense: false,
         filled: true,
