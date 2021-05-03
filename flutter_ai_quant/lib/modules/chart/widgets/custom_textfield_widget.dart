@@ -40,7 +40,7 @@ class CustomTextFieldWidget extends StatelessWidget {
           borderRadius: BorderRadius.all(Radius.circular(50.sp)),
         ),
         suffixIcon: Icon(suffixIcon, color: Colors.white, size: 70.sp),
-        prefixIcon: Icon(prefixIcon, color: Color(0xFF405F7B), size: 70.sp),
+        // prefixIcon: Icon(prefixIcon, color: Color(0xFF405F7B), size: 70.sp),
         fillColor: Color(0xFF405F7B),
         isDense: false,
         filled: true,
