@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-
 import 'package:responsive_widgets/responsive_widgets.dart';
 
+import 'package:flutter_ai_quant/modules/chart/widgets/dialog_widget.dart';
 import 'package:flutter_ai_quant/modules/chart/widgets/custom_textfield_widget.dart';
 
 class SellScreen extends StatefulWidget {
@@ -218,30 +218,40 @@ class _SellScreenState extends State<SellScreen> {
                         height: 120.sp,
                         width: 250.sp,
                         child: OutlinedButton(
-                            child:
-                                Text("Mua", style: TextStyle(fontSize: 45.sp)),
-                            style: OutlinedButton.styleFrom(
-                              primary: Colors.black,
-                              backgroundColor: Color(0xFF0DCA70),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(40.sp)),
-                            ),
-                            onPressed: () {}),
+                          child: Text("Mua", style: TextStyle(fontSize: 45.sp)),
+                          style: OutlinedButton.styleFrom(
+                            primary: Colors.black,
+                            backgroundColor: Color(0xFF0DCA70),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(40.sp)),
+                          ),
+                          onPressed: () {
+                            showDialog(
+                              context: context,
+                              builder: (context) => DialogWidget(),
+                            );
+                          },
+                        ),
                       ),
                       SizedBoxResponsive(width: 20),
                       Container(
                         height: 120.sp,
                         width: 250.sp,
                         child: OutlinedButton(
-                            child:
-                                Text("Bán", style: TextStyle(fontSize: 45.sp)),
-                            style: OutlinedButton.styleFrom(
-                              primary: Colors.black,
-                              backgroundColor: Color(0xFFED6060),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(40.sp)),
-                            ),
-                            onPressed: () {}),
+                          child: Text("Bán", style: TextStyle(fontSize: 45.sp)),
+                          style: OutlinedButton.styleFrom(
+                            primary: Colors.black,
+                            backgroundColor: Color(0xFFED6060),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(40.sp)),
+                          ),
+                          onPressed: () {
+                            showDialog(
+                              context: context,
+                              builder: (context) => DialogWidget(),
+                            );
+                          },
+                        ),
                       ),
                       SizedBoxResponsive(width: 20),
                       Container(
