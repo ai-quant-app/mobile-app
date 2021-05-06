@@ -367,7 +367,8 @@ class _BasketTradeScreenState extends State<BasketTradeScreen> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(40.sp)),
                   ),
-                  onPressed: () {},
+                  onPressed: () =>
+                      Navigator.pushNamed(context, "basket_trade_two_screen"),
                 ),
               ),
             ],
