@@ -273,15 +273,17 @@ class _SellScreenState extends State<SellScreen> {
                         height: 120.sp,
                         width: 250.sp,
                         child: OutlinedButton(
-                            child: Text("Giỏ Lệnh",
-                                style: TextStyle(fontSize: 45.sp)),
-                            style: OutlinedButton.styleFrom(
-                              primary: Colors.white,
-                              backgroundColor: Color(0xFF26B1FB),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(40.sp)),
-                            ),
-                            onPressed: () {}),
+                          child: Text("Giỏ Lệnh",
+                              style: TextStyle(fontSize: 45.sp)),
+                          style: OutlinedButton.styleFrom(
+                            primary: Colors.white,
+                            backgroundColor: Color(0xFF26B1FB),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(40.sp)),
+                          ),
+                          onPressed: () => Navigator.pushNamed(
+                              context, "basket_trade_screen"),
+                        ),
                       ),
                     ],
                   ),
