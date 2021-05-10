@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_ai_quant/modules/chart/widgets/dialog_widget.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 
-import 'package:flutter_ai_quant/modules/home/widgets/UI/line_chart_v2.dart';
+import 'package:flutter_ai_quant/modules/chart/widgets/dialog_widget.dart';
 import 'package:flutter_ai_quant/modules/category/widgets/data_table_button_widget.dart';
 
 class BasketTradeTwoScreen extends StatefulWidget {
@@ -11,6 +10,8 @@ class BasketTradeTwoScreen extends StatefulWidget {
 }
 
 class _BasketTradeTwoScreenState extends State<BasketTradeTwoScreen> {
+  bool checkedValue = false;
+
   @override
   Widget build(BuildContext context) {
     ResponsiveWidgets.init(context,
@@ -30,20 +31,58 @@ class _BasketTradeTwoScreenState extends State<BasketTradeTwoScreen> {
             style: TextStyle(fontSize: 65.sp, color: Colors.white),
           ),
           iconTheme: IconThemeData(color: Colors.white),
+          actions: [
+            Container(
+              margin: EdgeInsetsResponsive.only(right: 35),
+              child: Icon(
+                Icons.screen_rotation_outlined,
+                color: Colors.white,
+                size: 70.sp,
+              ),
+            ),
+          ],
         ),
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
               // Group Text
               Container(
+                margin: EdgeInsetsResponsive.only(left: 10, right: 10, top: 25),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
-                    Text("Chẻ lệnh: ngẫu nhiên",
-                        style: TextStyle(color: Colors.white)),
-                    Text("Số lệnh: 10", style: TextStyle(color: Colors.white)),
-                    Text("Lệnh mua: 8", style: TextStyle(color: Colors.white)),
-                    Text("Lệnh bán: 2", style: TextStyle(color: Colors.white)),
+                    Text(
+                      "Chẻ lệnh: Ngẫu nhiên",
+                      style: TextStyle(
+                        color: Color(0xFF26B1FA),
+                        fontSize: 39.sp,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Text(
+                      "Số lệnh: 10",
+                      style: TextStyle(
+                        color: Color(0xFF26B1FA),
+                        fontSize: 39.sp,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Text(
+                      "Lệnh mua: 8",
+                      style: TextStyle(
+                        color: Color(0xFF26B1FA),
+                        fontSize: 39.sp,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Text(
+                      "Lệnh bán: 2",
+                      style: TextStyle(
+                        color: Color(0xFF26B1FA),
+                        fontSize: 39.sp,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
                   ],
                 ),
               ),
@@ -149,86 +188,111 @@ class _BasketTradeTwoScreenState extends State<BasketTradeTwoScreen> {
                             color: Colors.white,
                           ),
                         )),
-                    child: DataTable(
-                      columns: [
-                        DataColumn(
-                            label: Text("Mã", textAlign: TextAlign.center)),
-                        DataColumn(
-                            label:
-                                Text("Đặt lệnh", textAlign: TextAlign.center)),
-                        DataColumn(
-                            label: Text("SL TP", textAlign: TextAlign.center)),
-                        DataColumn(
-                            label:
-                                Text("Số lượng", textAlign: TextAlign.center)),
-                        DataColumn(
-                            label: Text("Giá", textAlign: TextAlign.center)),
-                        DataColumn(
-                            label: Text("+/-", textAlign: TextAlign.center)),
-                        DataColumn(
-                            label: Text("Xu thế", textAlign: TextAlign.center)),
-                        DataColumn(
-                            label:
-                                Text("Xếp hạng", textAlign: TextAlign.center)),
-                        DataColumn(
-                            label: Text("Đồ thị", textAlign: TextAlign.center)),
-                      ],
-                      rows: [
-                        for (var i = 0; i < 10; i++)
-                          DataRow(cells: [
-                            DataCell(
-                              Center(
-                                child: Row(
-                                  children: <Widget>[
-                                    Text("LCG"),
-                                    Icon(
-                                      Icons.star,
-                                      size: 70.sp,
-                                      color: Colors.yellow,
-                                    )
+                    child: IntrinsicWidth(
+                      child: Stack(
+                        children: <Widget>[
+                          Container(
+                            height: 150.sp,
+                            color: Color(0xFF074884),
+                          ),
+                          DataTable(
+                            headingRowHeight: 150.sp,
+                            columns: [
+                              DataColumn(
+                                  label: Text("Mã CK",
+                                      textAlign: TextAlign.center)),
+                              DataColumn(
+                                  label: Text("Thực hiện",
+                                      textAlign: TextAlign.center)),
+                              DataColumn(
+                                  label: Text("Hủy lệnh",
+                                      textAlign: TextAlign.center)),
+                              DataColumn(
+                                  label: Text("Giờ mở",
+                                      textAlign: TextAlign.center)),
+                              DataColumn(
+                                  label: Text("Lệnh",
+                                      textAlign: TextAlign.center)),
+                              DataColumn(
+                                  label: Text("Ngày hiệu lực",
+                                      textAlign: TextAlign.center)),
+                              DataColumn(
+                                  label: Text("Số lượng",
+                                      textAlign: TextAlign.center)),
+                              DataColumn(
+                                  label: Text("Giá mua",
+                                      textAlign: TextAlign.center)),
+                              DataColumn(
+                                  label: Text("Ngày kết thúc",
+                                      textAlign: TextAlign.center)),
+                              DataColumn(
+                                  label: Text("Cận trên ",
+                                      textAlign: TextAlign.center)),
+                              DataColumn(
+                                  label: Text("Cận dưới",
+                                      textAlign: TextAlign.center)),
+                            ],
+                            rows: [
+                              for (var i = 0; i < 50; i++)
+                                DataRow(
+                                  cells: [
+                                    DataCell(
+                                      Center(
+                                        child: Container(
+                                          child: Row(
+                                            children: [
+                                              Transform.scale(
+                                                scale: 4.sp,
+                                                child: Checkbox(
+                                                    value: checkedValue,
+                                                    checkColor: Colors.black,
+                                                    onChanged: (value) {
+                                                      setState(() =>
+                                                          checkedValue =
+                                                              !checkedValue);
+                                                    }),
+                                              ),
+                                              SizedBoxResponsive(width: 25),
+                                              Text(
+                                                "ACB",
+                                              )
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                    DataCell(
+                                      Center(
+                                        child: DataTableButtonWidget(
+                                          title: "Thực Hiện",
+                                          backgroundColor: Color(0xFF26B1FA),
+                                          callbackAction: () {},
+                                        ),
+                                      ),
+                                    ),
+                                    DataCell(
+                                      Center(
+                                        child: DataTableButtonWidget(
+                                          title: "Hủy",
+                                          backgroundColor: Colors.white,
+                                          callbackAction: () {},
+                                        ),
+                                      ),
+                                    ),
+                                    DataCell(Center(child: Text("10:15"))),
+                                    DataCell(Center(child: Text("Mua"))),
+                                    DataCell(Center(child: Text("20/11/2020"))),
+                                    DataCell(Center(child: Text("1000"))),
+                                    DataCell(Center(child: Text("87"))),
+                                    DataCell(Center(child: Text("20/11/2020"))),
+                                    DataCell(Center(child: Text("100"))),
+                                    DataCell(Center(child: Text("84"))),
                                   ],
                                 ),
-                              ),
-                            ),
-                            DataCell(
-                              Center(
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: <Widget>[
-                                    DataTableButtonWidget(
-                                      title: "Mua",
-                                      backgroundColor: Color(0xFF1EE654),
-                                      callbackAction: () {},
-                                    ),
-                                    SizedBoxResponsive(width: 20.sp),
-                                    DataTableButtonWidget(
-                                      title: "Bán",
-                                      backgroundColor: Color(0xFFED6060),
-                                      callbackAction: () {},
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
-                            DataCell(Center(child: Text(""))),
-                            DataCell(Center(child: Text("200"))),
-                            DataCell(Center(child: Text("10.15"))),
-                            DataCell(Center(child: Text("+8%"))),
-                            DataCell(Center(child: Text("Tăng"))),
-                            DataCell(Center(child: Text("123"))),
-                            DataCell(
-                              Center(
-                                child: ContainerResponsive(
-                                  width: 250,
-                                  height: 120,
-                                  child: SimpleLineChartV2(
-                                      SimpleLineChartV2.withSampleData()
-                                          .seriesList),
-                                ),
-                              ),
-                            )
-                          ]),
-                      ],
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
