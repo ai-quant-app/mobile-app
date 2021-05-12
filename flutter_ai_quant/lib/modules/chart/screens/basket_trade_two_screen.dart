@@ -27,7 +27,7 @@ class _BasketTradeTwoScreenState extends State<BasketTradeTwoScreen> {
           centerTitle: true,
           backgroundColor: Color(0xFF074784),
           title: Text(
-            "Giỏ lệnh",
+            "Lệnh Sinh Ra",
             style: TextStyle(fontSize: 65.sp, color: Colors.white),
           ),
           iconTheme: IconThemeData(color: Colors.white),
@@ -88,86 +88,73 @@ class _BasketTradeTwoScreenState extends State<BasketTradeTwoScreen> {
               ),
 
               // Group Button
-              FittedBox(
-                child: Container(
-                  margin: EdgeInsetsResponsive.only(
-                      left: 20, right: 20, top: 25, bottom: 25),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      Container(
-                        height: 120.sp,
-                        width: 250.sp,
-                        child: OutlinedButton(
-                            child:
-                                Text("Mua", style: TextStyle(fontSize: 45.sp)),
-                            style: OutlinedButton.styleFrom(
-                              primary: Colors.black,
-                              backgroundColor: Color(0xFF0DCA70),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(40.sp)),
-                            ),
-                            onPressed: () {
-                              showDialog(
-                                context: context,
-                                builder: (context) => DialogWidget(),
-                              );
-                            }),
-                      ),
-                      SizedBoxResponsive(width: 20),
-                      Container(
-                        height: 120.sp,
-                        width: 250.sp,
-                        child: OutlinedButton(
-                          child: Text("Bán", style: TextStyle(fontSize: 45.sp)),
-                          style: OutlinedButton.styleFrom(
-                            primary: Colors.black,
-                            backgroundColor: Color(0xFFED6060),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40.sp)),
+              Container(
+                margin: EdgeInsetsResponsive.only(
+                    left: 20, right: 20, top: 25, bottom: 25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    GestureDetector(
+                      onTap: () => showDialog(
+                          context: context,
+                          builder: (context) => DialogWidget()),
+                      child: Container(
+                        height: 100.sp,
+                        width: 300.sp,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.white),
+                          borderRadius: BorderRadius.circular(40.sp),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Tất Cả",
+                            style:
+                                TextStyle(fontSize: 45.sp, color: Colors.white),
                           ),
-                          onPressed: () {
-                            showDialog(
-                              context: context,
-                              builder: (context) => DialogWidget(),
-                            );
-                          },
                         ),
                       ),
-                      SizedBoxResponsive(width: 20),
-                      Container(
-                        height: 120.sp,
-                        width: 250.sp,
-                        child: OutlinedButton(
-                            child: Text("Làm Lại",
-                                style: TextStyle(fontSize: 45.sp)),
-                            style: OutlinedButton.styleFrom(
-                              primary: Colors.black,
-                              backgroundColor: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(40.sp)),
-                            ),
-                            onPressed: () {}),
-                      ),
-                      SizedBoxResponsive(width: 20),
-                      Container(
-                        height: 120.sp,
-                        width: 250.sp,
-                        child: OutlinedButton(
-                          child: Text("Giỏ Lệnh",
-                              style: TextStyle(fontSize: 45.sp)),
-                          style: OutlinedButton.styleFrom(
-                            primary: Colors.white,
-                            backgroundColor: Color(0xFF26B1FB),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40.sp)),
+                    ),
+                    GestureDetector(
+                      onTap: () => showDialog(
+                          context: context,
+                          builder: (context) => DialogWidget()),
+                      child: Container(
+                        height: 100.sp,
+                        width: 300.sp,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.white),
+                          borderRadius: BorderRadius.circular(40.sp),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Lệnh mua",
+                            style:
+                                TextStyle(fontSize: 45.sp, color: Colors.white),
                           ),
-                          onPressed: () => Navigator.pushNamed(
-                              context, "basket_trade_screen"),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                    GestureDetector(
+                      onTap: () => showDialog(
+                          context: context,
+                          builder: (context) => DialogWidget()),
+                      child: Container(
+                        height: 100.sp,
+                        width: 300.sp,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.white),
+                          borderRadius: BorderRadius.circular(40.sp),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Tất bán",
+                            style:
+                                TextStyle(fontSize: 45.sp, color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
               ),
 
