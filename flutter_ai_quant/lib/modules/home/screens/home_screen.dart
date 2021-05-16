@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ai_quant/modules/chart/widgets/dialog_widget.dart';
 
 import 'package:responsive_widgets/responsive_widgets.dart';
 
@@ -42,10 +43,385 @@ class HomeScreen extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: <Widget>[
+              //
               HighLightStocks(),
+
+              //
               Categories(),
+
+              //
               RecommendedStocks(),
-              News(),
+              // News(),
+
+              // News
+              Container(
+                margin:
+                    EdgeInsetsResponsive.only(left: 20, right: 20, bottom: 25),
+                alignment: Alignment.topLeft,
+                child: Text(
+                  "Tin Tức",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 45.sp,
+                  ),
+                ),
+              ),
+
+              // Button
+              Container(
+                margin:
+                    EdgeInsetsResponsive.only(left: 20, right: 20, bottom: 25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: <Widget>[
+                    GestureDetector(
+                      onTap: () => showDialog(
+                          context: context,
+                          builder: (context) => DialogWidget()),
+                      child: Container(
+                        height: 100.sp,
+                        width: 300.sp,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.white),
+                          borderRadius: BorderRadius.circular(40.sp),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Nhận định",
+                            style:
+                                TextStyle(fontSize: 45.sp, color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () => showDialog(
+                          context: context,
+                          builder: (context) => DialogWidget()),
+                      child: Container(
+                        height: 100.sp,
+                        width: 300.sp,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.white),
+                          borderRadius: BorderRadius.circular(40.sp),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Tài chính",
+                            style:
+                                TextStyle(fontSize: 45.sp, color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () => showDialog(
+                          context: context,
+                          builder: (context) => DialogWidget()),
+                      child: Container(
+                        height: 100.sp,
+                        width: 300.sp,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.white),
+                          borderRadius: BorderRadius.circular(40.sp),
+                        ),
+                        child: Center(
+                          child: Text(
+                            "Doanh nghiệp",
+                            style:
+                                TextStyle(fontSize: 45.sp, color: Colors.white),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+
+              // Rows
+              FittedBox(
+                child: Container(
+                  margin: EdgeInsetsResponsive.only(bottom: 5),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      // Image
+                      Container(
+                        child: Image.asset(
+                          "assets/images/stock_news.png",
+                          height: 150.sp,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+
+                      // Text News
+                      Container(
+                        margin: EdgeInsetsResponsive.only(left: 25),
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              child: Text(
+                                "Asian shares lower, US futures up after S&P 500 sinks 3.5%",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              child: Text(
+                                "Asian shares lower, US futures up after S&P 500 sinks 3.5%",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              child: Text(
+                                "Asian shares lower, US futures up after S&P 500 sinks 3.5%",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              child: Text(
+                                "Asian shares lower, US futures up after S&P 500 sinks 3.5%",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              child: Text(
+                                "Asian shares lower, US futures up after S&P 500 sinks 3.5%",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                child: Divider(
+                  color: Colors.grey,
+                  thickness: 2.sp,
+                ),
+              ),
+
+              //
+              FittedBox(
+                child: Container(
+                  margin: EdgeInsetsResponsive.only(bottom: 5),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      // Image
+                      Container(
+                        child: Image.asset(
+                          "assets/images/stock_news.png",
+                          height: 150.sp,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+
+                      // Text News
+                      Container(
+                        margin: EdgeInsetsResponsive.only(left: 25),
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              child: Text(
+                                "Asian shares lower, US futures up after S&P 500 sinks 3.5%",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              child: Text(
+                                "Asian shares lower, US futures up after S&P 500 sinks 3.5%",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              child: Text(
+                                "Asian shares lower, US futures up after S&P 500 sinks 3.5%",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              child: Text(
+                                "Asian shares lower, US futures up after S&P 500 sinks 3.5%",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              child: Text(
+                                "Asian shares lower, US futures up after S&P 500 sinks 3.5%",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                child: Divider(
+                  color: Colors.grey,
+                  thickness: 2.sp,
+                ),
+              ),
+
+              //
+              FittedBox(
+                child: Container(
+                  margin: EdgeInsetsResponsive.only(bottom: 5),
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      // Image
+                      Container(
+                        child: Image.asset(
+                          "assets/images/stock_news.png",
+                          height: 150.sp,
+                          fit: BoxFit.contain,
+                        ),
+                      ),
+
+                      // Text News
+                      Container(
+                        margin: EdgeInsetsResponsive.only(left: 25),
+                        child: Column(
+                          children: <Widget>[
+                            Container(
+                              child: Text(
+                                "Asian shares lower, US futures up after S&P 500 sinks 3.5%",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              child: Text(
+                                "Asian shares lower, US futures up after S&P 500 sinks 3.5%",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              child: Text(
+                                "Asian shares lower, US futures up after S&P 500 sinks 3.5%",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              child: Text(
+                                "Asian shares lower, US futures up after S&P 500 sinks 3.5%",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                            Container(
+                              child: Text(
+                                "Asian shares lower, US futures up after S&P 500 sinks 3.5%",
+                                maxLines: 2,
+                                overflow: TextOverflow.ellipsis,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 30.sp,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+              Container(
+                child: Divider(
+                  color: Colors.grey,
+                  thickness: 2.sp,
+                ),
+              ),
             ],
           ),
         ),

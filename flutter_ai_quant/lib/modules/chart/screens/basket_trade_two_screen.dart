@@ -147,7 +147,7 @@ class _BasketTradeTwoScreenState extends State<BasketTradeTwoScreen> {
                         ),
                         child: Center(
                           child: Text(
-                            "Tất bán",
+                            "Lệnh bán",
                             style:
                                 TextStyle(fontSize: 45.sp, color: Colors.white),
                           ),
