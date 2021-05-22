@@ -4,7 +4,7 @@ import 'package:responsive_widgets/responsive_widgets.dart';
 import 'package:flutter_ai_quant/common/widgets/home/line_chart_v2_widget.dart';
 import 'package:flutter_ai_quant/common/widgets/home/table_cell_custom_widget.dart';
 
-class RecommendedStocks extends StatelessWidget {
+class RecommendedStocksWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ResponsiveWidgets.init(
