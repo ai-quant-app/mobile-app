@@ -15,13 +15,13 @@ class DrawerWidget extends StatelessWidget {
                     top: 15,
                     left: 220,
                     child: CircleAvatar(
-                      backgroundImage: AssetImage('assets/gai1.jpg'),
+                      backgroundImage: AssetImage('assets/images/gai1.jpg'),
                     ),
                   ),
                   Positioned(
                     top: 11,
                     child: Image.asset(
-                      'assets/logo_transparent.png',
+                      'assets/images/logo_transparent.png',
                       fit: BoxFit.contain,
                       height: 55,
                     ),

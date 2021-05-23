@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: Theme.of(context).backgroundColor,
         appBar: AppBar(
           title: Image.asset(
-            'assets/logo_transparent.png',
+            'assets/images/logo_transparent.png',
             height: 180.sp,
           ),
           centerTitle: true,
