@@ -64,8 +64,7 @@ class NewsWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 GestureDetector(
-                  onTap: () => showDialog(
-                      context: context, builder: (context) => DialogWidget()),
+                  onTap: () {},
                   child: Container(
                     height: 100.sp,
                     width: 300.sp,
@@ -83,8 +82,7 @@ class NewsWidget extends StatelessWidget {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () => showDialog(
-                      context: context, builder: (context) => DialogWidget()),
+                  onTap: () {},
                   child: Container(
                     height: 100.sp,
                     width: 300.sp,
@@ -102,8 +100,7 @@ class NewsWidget extends StatelessWidget {
                   ),
                 ),
                 GestureDetector(
-                  onTap: () => showDialog(
-                      context: context, builder: (context) => DialogWidget()),
+                  onTap: () {},
                   child: Container(
                     height: 100.sp,
                     width: 300.sp,
