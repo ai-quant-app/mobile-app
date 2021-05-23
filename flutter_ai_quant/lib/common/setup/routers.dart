@@ -8,12 +8,15 @@ import 'package:flutter_ai_quant/ai_quant/chart_module/buy/screen/buy_screen.dar
 import 'package:flutter_ai_quant/ai_quant/chart_module/condition_command/screen/condition_command_screen.dart';
 import 'package:flutter_ai_quant/ai_quant/chart_module/sell/sell_screen.dart';
 
+import 'package:flutter_ai_quant/ai_quant/home_module/prepare_n_stock/screen/prepare_n_stock_screen.dart';
+
 import 'package:flutter_ai_quant/main.dart';
 
 class SetupRoutes {
   static Future manageRoutes() async {
     final FluroRouter router = getIt.get<FluroRouter>();
     await ChartRoutes.setupChartRoutes(router);
+    await HomeRoutes.setupHomeRoutes(router);
   }
 }
 
@@ -21,7 +24,17 @@ class CategoryRoutes {}
 
 class PriceListRoutes {}
 
-class HomeRoutes {}
+class HomeRoutes {
+  static Future setupHomeRoutes(FluroRouter router) async {
+    router.define(
+      "prepare_n_stock_screen",
+      transitionType: TransitionType.fadeIn,
+      handler: Handler(
+          handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
+              PrepareNStockScreen()),
+    );
+  }
+}
 
 class ChartRoutes {
   static Future setupChartRoutes(FluroRouter router) async {

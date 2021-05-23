@@ -69,13 +69,93 @@ class DrawerWidget extends StatelessWidget {
                     color: Color(0xFF074782),
                     thickness: 0.5,
                   ),
-                  new ListTile(
+                  new ExpansionTile(
                     title: new Text('PHÂN TÍCH CƠ BẢN',
                         style: TextStyle(color: Colors.white, fontSize: 35.sp)),
-                    leading: new Icon( Icons.bar_chart,
+                    leading: new Icon(Icons.bar_chart,
                         size: 70.sp, color: Colors.white),
                     trailing: new Icon(Icons.keyboard_arrow_down,
                         size: 70.sp, color: Colors.white),
+                    children: <Widget>[
+                      Container(
+                        alignment: Alignment.topLeft,
+                        margin:
+                            EdgeInsetsResponsive.only(left: 180, bottom: 30),
+                        child: Text(
+                          "Công ty",
+                          style: TextStyle(
+                            color: Color(0xFFBBC5D0),
+                            fontSize: 45.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.topLeft,
+                        margin:
+                            EdgeInsetsResponsive.only(left: 180, bottom: 30),
+                        child: Text(
+                          "Ngân hàng",
+                          style: TextStyle(
+                            color: Color(0xFFBBC5D0),
+                            fontSize: 40.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.topLeft,
+                        margin:
+                            EdgeInsetsResponsive.only(left: 180, bottom: 30),
+                        child: Text(
+                          "Bảo hiểm",
+                          style: TextStyle(
+                            color: Color(0xFFBBC5D0),
+                            fontSize: 40.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.topLeft,
+                        margin:
+                            EdgeInsetsResponsive.only(left: 180, bottom: 30),
+                        child: Text(
+                          "Chứng khoán",
+                          style: TextStyle(
+                            color: Color(0xFFBBC5D0),
+                            fontSize: 40.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.topLeft,
+                        margin:
+                            EdgeInsetsResponsive.only(left: 180, bottom: 30),
+                        child: Text(
+                          "Quỹ",
+                          style: TextStyle(
+                            color: Color(0xFFBBC5D0),
+                            fontSize: 40.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.topLeft,
+                        margin:
+                            EdgeInsetsResponsive.only(left: 180, bottom: 30),
+                        child: Text(
+                          "Danh sách mã",
+                          style: TextStyle(
+                            color: Color(0xFFBBC5D0),
+                            fontSize: 40.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   Divider(
                     color: Color(0xFF074782),
@@ -84,14 +164,16 @@ class DrawerWidget extends StatelessWidget {
                   new ListTile(
                     title: new Text('SO SÁNH N CỔ PHIẾU',
                         style: TextStyle(color: Colors.white, fontSize: 35.sp)),
-                    leading:
-                        new Icon(Icons.sticky_note_2, size: 70.sp, color: Colors.white),
+                    leading: new Icon(Icons.sticky_note_2,
+                        size: 70.sp, color: Colors.white),
+                    onTap: () =>
+                        Navigator.pushNamed(context, "prepare_n_stock_screen"),
                   ),
                   Divider(
                     color: Color(0xFF074782),
                     thickness: 0.5,
                   ),
-                  new ListTile(
+                  new ExpansionTile(
                     title: new Text('PHÂN TÍCH KỸ THUẬT',
                         style: TextStyle(color: Colors.white, fontSize: 35.sp)),
                     leading: new Icon(
@@ -101,17 +183,125 @@ class DrawerWidget extends StatelessWidget {
                     ),
                     trailing: new Icon(Icons.keyboard_arrow_down,
                         size: 70.sp, color: Colors.white),
+                    children: <Widget>[
+                      Container(
+                        alignment: Alignment.topLeft,
+                        margin:
+                            EdgeInsetsResponsive.only(left: 180, bottom: 30),
+                        child: Text(
+                          "Market Scan",
+                          style: TextStyle(
+                            color: Color(0xFFBBC5D0),
+                            fontSize: 40.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.topLeft,
+                        margin:
+                            EdgeInsetsResponsive.only(left: 180, bottom: 30),
+                        child: Text(
+                          "Lọc theo trend",
+                          style: TextStyle(
+                            color: Color(0xFFBBC5D0),
+                            fontSize: 40.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.topLeft,
+                        margin:
+                            EdgeInsetsResponsive.only(left: 180, bottom: 30),
+                        child: Text(
+                          "Nhận dạng mẫu hình",
+                          style: TextStyle(
+                            color: Color(0xFFBBC5D0),
+                            fontSize: 40.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   Divider(
                     color: Color(0xFF074782),
                     thickness: 0.5,
                   ),
-                  new ListTile(
+                  new ExpansionTile(
                     title: new Text('SMARTSCREENER',
                         style: TextStyle(color: Colors.white, fontSize: 35.sp)),
                     leading: new Icon(Icons.smartphone, color: Colors.white),
                     trailing: new Icon(Icons.keyboard_arrow_down,
                         size: 70.sp, color: Colors.white),
+                    children: <Widget>[
+                      Container(
+                        alignment: Alignment.topLeft,
+                        margin:
+                            EdgeInsetsResponsive.only(left: 180, bottom: 30),
+                        child: Text(
+                          "Market Screener",
+                          style: TextStyle(
+                            color: Color(0xFFBBC5D0),
+                            fontSize: 40.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.topLeft,
+                        margin:
+                            EdgeInsetsResponsive.only(left: 180, bottom: 30),
+                        child: Text(
+                          "Market Strategies",
+                          style: TextStyle(
+                            color: Color(0xFFBBC5D0),
+                            fontSize: 40.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.topLeft,
+                        margin:
+                            EdgeInsetsResponsive.only(left: 180, bottom: 30),
+                        child: Text(
+                          "Chiến lược theo đà pt kỹ thuật",
+                          style: TextStyle(
+                            color: Color(0xFFBBC5D0),
+                            fontSize: 40.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.topLeft,
+                        margin:
+                            EdgeInsetsResponsive.only(left: 180, bottom: 30),
+                        child: Text(
+                          "Chiến lược già trị",
+                          style: TextStyle(
+                            color: Color(0xFFBBC5D0),
+                            fontSize: 40.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                      Container(
+                        alignment: Alignment.topLeft,
+                        margin:
+                            EdgeInsetsResponsive.only(left: 180, bottom: 30),
+                        child: Text(
+                          "Watchlist Dashboard",
+                          style: TextStyle(
+                            color: Color(0xFFBBC5D0),
+                            fontSize: 40.sp,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                   Divider(
                     color: Color(0xFF074782),
