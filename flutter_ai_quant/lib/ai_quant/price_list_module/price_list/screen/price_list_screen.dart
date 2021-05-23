@@ -74,51 +74,321 @@ class _PriceListScreenState extends State<PriceListScreen> {
                             DataColumn(
                                 label: Text("Tổng KI",
                                     textAlign: TextAlign.center)),
+
+                            //
+                            DataColumn(
+                              label: Column(
+                                children: <Widget>[
+                                  Text("Bên mua", textAlign: TextAlign.center),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      Container(
+                                        margin: EdgeInsetsResponsive.only(
+                                            right: 60),
+                                        child: Text("Giá 3",
+                                            textAlign: TextAlign.center),
+                                      ),
+                                      Container(
+                                          margin: EdgeInsetsResponsive.only(
+                                              right: 60),
+                                          child: Text("KL3",
+                                              textAlign: TextAlign.center)),
+                                      Container(
+                                        margin: EdgeInsetsResponsive.only(
+                                            right: 60),
+                                        child: Text("Giá 2",
+                                            textAlign: TextAlign.center),
+                                      ),
+                                      Container(
+                                          margin: EdgeInsetsResponsive.only(
+                                              right: 60),
+                                          child: Text("KL2",
+                                              textAlign: TextAlign.center)),
+                                      Container(
+                                        margin: EdgeInsetsResponsive.only(
+                                            right: 60),
+                                        child: Text("Giá 1",
+                                            textAlign: TextAlign.center),
+                                      ),
+                                      Container(
+                                          child: Text("KL1",
+                                              textAlign: TextAlign.center)),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+
+                            //
+                            DataColumn(
+                              label: Column(
+                                children: <Widget>[
+                                  Text("Khớp lệnh",
+                                      textAlign: TextAlign.center),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      Container(
+                                        margin: EdgeInsetsResponsive.only(
+                                            right: 60),
+                                        child: Text("Giá",
+                                            textAlign: TextAlign.center),
+                                      ),
+                                      Container(
+                                          margin: EdgeInsetsResponsive.only(
+                                              right: 60),
+                                          child: Text("KL",
+                                              textAlign: TextAlign.center)),
+                                      Container(
+                                        margin: EdgeInsetsResponsive.only(
+                                            right: 60),
+                                        child: Text("+/-",
+                                            textAlign: TextAlign.center),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+
+                            //
+                            DataColumn(
+                              label: Column(
+                                children: <Widget>[
+                                  Text("Giá", textAlign: TextAlign.center),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      Container(
+                                        margin: EdgeInsetsResponsive.only(
+                                            right: 60),
+                                        child: Text("Cao",
+                                            textAlign: TextAlign.center),
+                                      ),
+                                      Container(
+                                          margin: EdgeInsetsResponsive.only(
+                                              right: 60),
+                                          child: Text("TB",
+                                              textAlign: TextAlign.center)),
+                                      Container(
+                                        margin: EdgeInsetsResponsive.only(
+                                            right: 60),
+                                        child: Text("Thấp",
+                                            textAlign: TextAlign.center),
+                                      ),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+
+                            //
+                            DataColumn(
+                              label: Column(
+                                children: <Widget>[
+                                  Text("Dư", textAlign: TextAlign.center),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      Container(
+                                        margin: EdgeInsetsResponsive.only(
+                                            right: 60),
+                                        child: Text("Mua",
+                                            textAlign: TextAlign.center),
+                                      ),
+                                      Container(
+                                          margin: EdgeInsetsResponsive.only(
+                                              right: 60),
+                                          child: Text("Bán",
+                                              textAlign: TextAlign.center)),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
+
+                            //
+                            DataColumn(
+                              label: Column(
+                                children: <Widget>[
+                                  Text("ĐTNN", textAlign: TextAlign.center),
+                                  Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceBetween,
+                                    children: <Widget>[
+                                      Container(
+                                        margin: EdgeInsetsResponsive.only(
+                                            right: 60),
+                                        child: Text("Mua",
+                                            textAlign: TextAlign.center),
+                                      ),
+                                      Container(
+                                          margin: EdgeInsetsResponsive.only(
+                                              right: 60),
+                                          child: Text("Bán",
+                                              textAlign: TextAlign.center)),
+                                    ],
+                                  ),
+                                ],
+                              ),
+                            ),
                           ],
                           rows: [
-                            DataRow(cells: [
-                              DataCell(
-                                Center(child: Text("LCG")),
-                              ),
-                              DataCell(
-                                Center(
-                                  child: Row(
-                                    mainAxisAlignment: MainAxisAlignment.center,
+                            DataRow(
+                              cells: [
+                                DataCell(
+                                  Center(child: Text("LCG")),
+                                ),
+                                DataCell(
+                                  Center(
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: <Widget>[
+                                        DataTableButtonWidget(
+                                          title: "Mua",
+                                          backgroundColor: Color(0xFF1EE654),
+                                          callbackAction: () {},
+                                        ),
+                                        SizedBoxResponsive(width: 20.sp),
+                                        DataTableButtonWidget(
+                                          title: "Bán",
+                                          backgroundColor: Color(0xFFED6060),
+                                          callbackAction: () {},
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                DataCell(
+                                  Center(
+                                    child: ContainerResponsive(
+                                      width: 250,
+                                      height: 120,
+                                      child: SimpleLineChartV2(
+                                          SimpleLineChartV2.withSampleData()
+                                              .seriesList),
+                                    ),
+                                  ),
+                                ),
+                                DataCell(Center(child: Text("10.15"))),
+                                DataCell(Center(child: Text("10.15"))),
+                                DataCell(Center(child: Text("10.15"))),
+                                DataCell(Center(child: Text("10.15"))),
+
+                                //
+                                DataCell(
+                                  Row(
                                     children: <Widget>[
-                                      DataTableButtonWidget(
-                                        title: "Mua",
-                                        backgroundColor: Color(0xFF1EE654),
-                                        callbackAction: () {},
+                                      Container(
+                                          margin: EdgeInsetsResponsive.only(
+                                              right: 40),
+                                          child: Center(child: Text("10.15"))),
+                                      Container(
+                                        margin: EdgeInsetsResponsive.only(
+                                            right: 40),
+                                        child: Center(child: Text("10.15")),
                                       ),
-                                      SizedBoxResponsive(width: 20.sp),
-                                      DataTableButtonWidget(
-                                        title: "Bán",
-                                        backgroundColor: Color(0xFFED6060),
-                                        callbackAction: () {},
+                                      Container(
+                                          margin: EdgeInsetsResponsive.only(
+                                              right: 40),
+                                          child: Center(child: Text("10.15"))),
+                                      Container(
+                                          margin: EdgeInsetsResponsive.only(
+                                              right: 40),
+                                          child: Center(child: Text("10.15"))),
+                                      Container(
+                                          margin: EdgeInsetsResponsive.only(
+                                              right: 40),
+                                          child: Center(child: Text("10.15"))),
+                                      Container(
+                                          child: Center(child: Text("10.15"))),
+                                    ],
+                                  ),
+                                ),
+
+                                //
+                                DataCell(
+                                  Row(
+                                    children: <Widget>[
+                                      Container(
+                                          margin: EdgeInsetsResponsive.only(
+                                              right: 30),
+                                          child: Center(child: Text("10.15"))),
+                                      Container(
+                                        margin: EdgeInsetsResponsive.only(
+                                            right: 40),
+                                        child: Center(child: Text("10.15")),
+                                      ),
+                                      Container(
+                                          margin: EdgeInsetsResponsive.only(
+                                              right: 40),
+                                          child: Center(child: Text("10.15"))),
+                                    ],
+                                  ),
+                                ),
+
+                                //
+                                DataCell(
+                                  Row(
+                                    children: <Widget>[
+                                      Container(
+                                          margin: EdgeInsetsResponsive.only(
+                                              right: 30),
+                                          child: Center(child: Text("10.15"))),
+                                      Container(
+                                        margin: EdgeInsetsResponsive.only(
+                                            right: 40),
+                                        child: Center(child: Text("10.15")),
+                                      ),
+                                      Container(
+                                          margin: EdgeInsetsResponsive.only(
+                                              right: 40),
+                                          child: Center(child: Text("10.15"))),
+                                    ],
+                                  ),
+                                ),
+
+                                //
+                                DataCell(
+                                  Row(
+                                    children: <Widget>[
+                                      Container(
+                                          margin: EdgeInsetsResponsive.only(
+                                              right: 30),
+                                          child: Center(child: Text("10.15"))),
+                                      Container(
+                                        margin: EdgeInsetsResponsive.only(
+                                            right: 40),
+                                        child: Center(child: Text("10.15")),
                                       ),
                                     ],
                                   ),
                                 ),
-                              ),
-                              DataCell(
-                                Center(
-                                  child: ContainerResponsive(
-                                    width: 250,
-                                    height: 120,
-                                    child: SimpleLineChartV2(
-                                        SimpleLineChartV2.withSampleData()
-                                            .seriesList),
+
+                                //
+                                DataCell(
+                                  Row(
+                                    children: <Widget>[
+                                      Container(
+                                          margin: EdgeInsetsResponsive.only(
+                                              right: 30),
+                                          child: Center(child: Text("10.15"))),
+                                      Container(
+                                        margin: EdgeInsetsResponsive.only(
+                                            right: 40),
+                                        child: Center(child: Text("10.15")),
+                                      ),
+                                    ],
                                   ),
                                 ),
-                              ),
-                              DataCell(Center(child: Text("10.15"))),
-                              DataCell(Center(child: Text("10.15"))),
-                              DataCell(Center(child: Text("10.15"))),
-                              DataCell(Center(child: Text("10.15"))),
-
-                              // DataCell(Center(child: Text("10.15"))),
-                              // DataCell(Center(child: Text("10.15"))),
-                            ]),
+                              ],
+                            ),
                           ],
                         ),
                       ],
