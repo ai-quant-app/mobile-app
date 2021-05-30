@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
 import 'package:fluro/fluro.dart';
+// import 'package:flutter/services.dart';
 import 'package:get_it/get_it.dart';
 import 'package:device_preview/device_preview.dart';
 
-import 'package:flutter_ai_quant/common/setup/get_it.dart';
-import 'package:flutter_ai_quant/common/setup/routers.dart';
+import 'package:flutter_ai_quant/common/set_up/get_it.dart';
+import 'package:flutter_ai_quant/common/set_up/routers.dart';
 
 import 'package:flutter_ai_quant/ai_quant/main_screen.dart';
 
@@ -13,13 +14,16 @@ final GetIt getIt = GetIt.instance;
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  // SystemChrome.setSystemUIOverlayStyle(
+  //   SystemUiOverlayStyle(statusBarBrightness: Brightness.dark),
+  // );
 
   await SetupGetIt.manageGetIt();
   await SetupRoutes.manageRoutes();
 
   runApp(
     DevicePreview(
-      enabled: true,
+      enabled: false,
       builder: (context) => App(),
     ),
   );

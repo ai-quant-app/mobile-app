@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_ai_quant/common/set_up/theme.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 
 import 'package:flutter_ai_quant/common/widgets/button/data_table_button_widget.dart';
@@ -35,16 +36,7 @@ class _PriceListScreenState extends State<PriceListScreen> {
                 child: Theme(
                   data: Theme.of(context).copyWith(
                       dividerColor: Color(0xFF4C6C8A),
-                      dataTableTheme: DataTableThemeData(
-                        headingTextStyle: TextStyle(
-                          fontSize: 55.sp,
-                          color: Colors.white,
-                        ),
-                        dataTextStyle: TextStyle(
-                          fontSize: 50.sp,
-                          color: Colors.white,
-                        ),
-                      )),
+                      dataTableTheme: CustomTheme.kThemeDataTable),
                   child: IntrinsicWidth(
                     child: Stack(
                       children: <Widget>[

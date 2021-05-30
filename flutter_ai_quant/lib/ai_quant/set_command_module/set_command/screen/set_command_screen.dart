@@ -26,6 +26,7 @@ class _SetCommandScreenState extends State<SetCommandScreen> {
         backgroundColor: Color(0xFF062D52),
         appBar: AppBar(
           backgroundColor: Color(0xFF074884),
+          centerTitle: true,
           title: Text(
             "ĐĂNG NHẬP",
             style: TextStyle(fontSize: 50.sp, color: Colors.white),
