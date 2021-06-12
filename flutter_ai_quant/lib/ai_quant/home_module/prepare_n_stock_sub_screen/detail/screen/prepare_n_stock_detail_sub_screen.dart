@@ -11,9 +11,22 @@ class _PrepareNStockDetailSubScreenState
     extends State<PrepareNStockDetailSubScreen> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: <Widget>[],
+    ResponsiveWidgets.init(
+      context,
+      height: 1920,
+      width: 1080,
+      allowFontScaling: false,
+    );
+
+    return ResponsiveWidgets.builder(
+      height: 1920,
+      width: 1080,
+      allowFontScaling: false,
+      child: Scaffold(
+        backgroundColor: Color(0xFF062D52),
+        body: ListView(
+          children: <Widget>[],
+        ),
       ),
     );
   }
