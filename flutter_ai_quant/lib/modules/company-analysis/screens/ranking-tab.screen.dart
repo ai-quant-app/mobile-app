@@ -15,9 +15,9 @@ import 'package:charts_flutter/flutter.dart' as charts;
 
 class RankingTab extends StatefulWidget {
   final Map<String, ChartData> totalScoreData = {
-    "sale1": ChartData(1, 59.9, charts.Color.fromHex(code: "#FFFE99")),
-    "sale2": ChartData(2, 5.5, charts.Color.fromHex(code: "#FECC99")),
-    "sale3": ChartData(3, 35.7, charts.Color.fromHex(code: "#FD8080")),
+    "sale1": ChartData(1, 59.9, color: charts.Color.fromHex(code: "#FFFE99")),
+    "sale2": ChartData(2, 5.5, color: charts.Color.fromHex(code: "#FECC99")),
+    "sale3": ChartData(3, 35.7, color: charts.Color.fromHex(code: "#FD8080")),
   };
 
   final Map<String, String> sectionData = {
@@ -43,20 +43,20 @@ class RankingTab extends StatefulWidget {
 
   final dataMultiLineChart = {
     'Desktop': [
-      new ChartData(0, 0, charts.MaterialPalette.blue.shadeDefault),
-      new ChartData(1, 10, charts.MaterialPalette.blue.shadeDefault),
-      new ChartData(2, 20, charts.MaterialPalette.blue.shadeDefault),
-      new ChartData(3, 30, charts.MaterialPalette.blue.shadeDefault),
-      new ChartData(4, 40, charts.MaterialPalette.blue.shadeDefault),
-      new ChartData(5, 50, charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(0, 0, color: charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(1, 10, color: charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(2, 20, color: charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(3, 30, color: charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(4, 40, color: charts.MaterialPalette.blue.shadeDefault),
+      new ChartData(5, 50, color: charts.MaterialPalette.blue.shadeDefault),
     ],
     'Tablet': [
-      new ChartData(0, 0, charts.MaterialPalette.red.shadeDefault),
-      new ChartData(1, 15, charts.MaterialPalette.red.shadeDefault),
-      new ChartData(2, 25, charts.MaterialPalette.red.shadeDefault),
-      new ChartData(3, 35, charts.MaterialPalette.red.shadeDefault),
-      new ChartData(4, 46, charts.MaterialPalette.red.shadeDefault),
-      new ChartData(5, 57, charts.MaterialPalette.red.shadeDefault),
+      new ChartData(0, 0, color: charts.MaterialPalette.red.shadeDefault),
+      new ChartData(1, 15, color: charts.MaterialPalette.red.shadeDefault),
+      new ChartData(2, 25, color: charts.MaterialPalette.red.shadeDefault),
+      new ChartData(3, 35, color: charts.MaterialPalette.red.shadeDefault),
+      new ChartData(4, 46, color: charts.MaterialPalette.red.shadeDefault),
+      new ChartData(5, 57, color: charts.MaterialPalette.red.shadeDefault),
     ]
   };
 
@@ -71,16 +71,16 @@ class RankingTab extends StatefulWidget {
   ];
 
   final Map<String, ChartData> peerData = {
-    "LCG": ChartData("LCG", 61.13, charts.Color.fromHex(code: "#FD7F7D")),
-    "DIG": ChartData("DIG", 28.65, charts.Color.fromHex(code: "#FECD95")),
-    "D2D": ChartData("D2D", 29.13, charts.Color.fromHex(code: "#FFFE93")),
-    "CII": ChartData("CII", 54.60, charts.Color.fromHex(code: "#CAFFFF")),
-    "CNT": ChartData("CNT", 51.37, charts.Color.fromHex(code: "#60D6BB")),
-    "SC5": ChartData("SC5", 30.77, charts.Color.fromHex(code: "#FD7F7D")),
-    "BT6": ChartData("BT6", 38.70, charts.Color.fromHex(code: "#0E62CF")),
-    "VNE": ChartData("VNE", 15.87, charts.Color.fromHex(code: "#CCCBFE")),
-    "L10": ChartData("L10", 48.27, charts.Color.fromHex(code: "#676FC9")),
-    "DCC": ChartData("DCC", 31.73, charts.Color.fromHex(code: "#F89AC6")),
+    "LCG": ChartData("LCG", 61.13, color: charts.Color.fromHex(code: "#FD7F7D")),
+    "DIG": ChartData("DIG", 28.65, color: charts.Color.fromHex(code: "#FECD95")),
+    "D2D": ChartData("D2D", 29.13, color: charts.Color.fromHex(code: "#FFFE93")),
+    "CII": ChartData("CII", 54.60, color: charts.Color.fromHex(code: "#CAFFFF")),
+    "CNT": ChartData("CNT", 51.37, color: charts.Color.fromHex(code: "#60D6BB")),
+    "SC5": ChartData("SC5", 30.77, color: charts.Color.fromHex(code: "#FD7F7D")),
+    "BT6": ChartData("BT6", 38.70, color: charts.Color.fromHex(code: "#0E62CF")),
+    "VNE": ChartData("VNE", 15.87, color: charts.Color.fromHex(code: "#CCCBFE")),
+    "L10": ChartData("L10", 48.27, color: charts.Color.fromHex(code: "#676FC9")),
+    "DCC": ChartData("DCC", 31.73, color: charts.Color.fromHex(code: "#F89AC6")),
   };
   @override
   _RankingTabState createState() => _RankingTabState();

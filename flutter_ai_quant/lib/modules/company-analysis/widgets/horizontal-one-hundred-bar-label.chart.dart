@@ -2,7 +2,15 @@
 import 'package:charts_flutter/flutter.dart' as charts;
 import 'package:flutter/material.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/models/chart-data.model.dart';
-
+// class TickPercent {
+//   final String zero;
+//   final String twenty;
+//   final String forty;
+//   final String sixty;
+//   final String eighty;
+//   final String oneHundred;
+//   TickPercent(this.zero, this.twenty, this.forty, this.sixty, this.eighty, this.oneHundred);
+// }
 class HorizontalOneHundredBarLabelChart extends StatelessWidget {
   final Map<String, ChartData> data;
   final bool animate;
@@ -56,9 +64,50 @@ class HorizontalOneHundredBarLabelChart extends StatelessWidget {
             )
         ),
       ),
+      // primaryMeasureAxis: new charts.PercentAxisSpec(
+      //   tickProviderSpec: charts.BasicNumericTickProviderSpec(
+      //     desiredTickCount: 5,
+      //     desiredMinTickCount: 5,
+      //     desiredMaxTickCount: 5
+      //   ),
+      //   renderSpec: charts.GridlineRendererSpec(
+      //       lineStyle: charts.LineStyleSpec(
+      //           color: charts.Color.white
+      //       ),
+      //       labelStyle:charts.TextStyleSpec(
+      //           color: charts.Color.white
+      //       )
+      //   ),
+      //   tickFormatterSpec: charts.BasicNumericTickFormatterSpec((value) => _generateLabelTick(value))
+      // ),
     );
   }
 
+  // String _generateLabelTick(double value) {
+  //   String ret = '';
+  //   num tmp = value * 100;
+  //   switch (tmp) {
+  //     case 0:
+  //       ret = '0' + ticks.zero;
+  //       break;
+  //     case 20:
+  //       ret = '20' + ticks.twenty;
+  //       break;
+  //     case 40:
+  //       ret = '40' + ticks.forty;
+  //       break;
+  //     case 60:
+  //       ret = '60' + ticks.sixty;
+  //       break;
+  //     case 80:
+  //       ret = '80' + ticks.eighty;
+  //       break;
+  //     case 100:
+  //       ret = '100' + ticks.oneHundred;
+  //       break;
+  //   }
+  //   return ret;
+  // }
   List<charts.Series<ChartData, String>> _generateData() {
     List<charts.Series<ChartData, String>> ret = [];
     data.forEach((key, value) {

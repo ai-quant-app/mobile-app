@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ai_quant/common/constants/app-dimension.constant.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/models/gages-chart-data.model.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/screens/summary-tab.screen.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/screens/pricing-tab.screen.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/screens/ranking-tab.screen.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/screens/technical-analysis-tab.screen.dart';
@@ -290,7 +291,7 @@ class _TestState extends State<Test> {
                             Container(
                               child: TabBarView(
                                 children: [
-                                  Icon(Icons.directions_car),
+                                  SummaryTab(),
                                   RankingTab(),
                                   TechnicalAnalysisTab(),
                                   PricingTab(),

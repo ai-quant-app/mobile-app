@@ -7,7 +7,12 @@ class TwoSectionsTable extends StatefulWidget {
   final List<TwoSectionsTableModel> data;
   final String firstSectionTitle;
   final String secondSectionTitle;
-  TwoSectionsTable(this.firstSectionTitle, this.secondSectionTitle, this.data, {Key key}) : super(key: key);
+  final double leftFlex;
+  final double rightFlex;
+  final bool isShowTopBorder;
+  final bool hasMarginBottom;
+  TwoSectionsTable(this.firstSectionTitle, this.secondSectionTitle, this.data,
+      {this.leftFlex = 1.0, this.rightFlex = 1.0, this.isShowTopBorder =  true, this.hasMarginBottom = true, Key key}) : super(key: key);
   @override
   _TwoSectionsTableState createState() => _TwoSectionsTableState();
 }
@@ -51,13 +56,19 @@ class _TwoSectionsTableState extends State<TwoSectionsTable> {
     return Container(
       decoration: BoxDecoration(
         border: Border(
-            top: BorderSide(width: 10.sp, color: Colors.grey),
+            top: widget.isShowTopBorder ? BorderSide(width: 10.sp, color: Colors.grey) : BorderSide.none,
             bottom: BorderSide(width: 10.sp, color: Colors.grey)
         ),
       ),
-      margin: EdgeInsetsResponsive.only(top: 50.sp, bottom: 100.sp),
+      margin: EdgeInsetsResponsive.only(top: 50.sp, bottom: widget.hasMarginBottom ? 100.sp : 0),
       padding: EdgeInsetsResponsive.only(top: 50.sp, bottom: 100.sp, left: 50.sp, right: 50.sp),
-      child: Table(children: _generate()),
+      child: Table(
+        children: _generate(),
+        columnWidths:{
+          0: FlexColumnWidth(widget.leftFlex),
+          1: FlexColumnWidth(widget.rightFlex)
+        },
+      ),
     );
   }
 }
