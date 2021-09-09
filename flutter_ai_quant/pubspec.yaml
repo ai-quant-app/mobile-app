@@ -18,13 +18,18 @@ dependencies:
   k_chart: ^0.1.1
 
   # Responsive Layout
-  device_preview: ^0.6.2-beta
+  # device_preview: 0.5.5
+  flutter_speedometer: ^1.0.2
+  fl_chart: ^0.20.1
+  syncfusion_flutter_treemap: ^19.1.55-beta
+
+  # Responsive Layout
   responsive_widgets: ^2.0.1
 
   # Management State
-  provider: ^4.3.2+2
-  bloc: ^6.1.0
-  flutter_bloc: ^6.1.0
+  # provider: ^6.0.0
+  bloc: ^6.0.0
+  flutter_bloc: ^6.0.0
 
   # Management Route
   fluro: ^1.7.7
