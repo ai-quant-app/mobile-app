@@ -81,13 +81,12 @@ class DrawerWidget extends StatelessWidget {
                         alignment: Alignment.topLeft,
                         margin:
                             EdgeInsetsResponsive.only(left: 180, bottom: 30),
-                        child: Text(
-                          "Công ty",
-                          style: TextStyle(
-                            color: Color(0xFFBBC5D0),
-                            fontSize: 45.sp,
-                            fontWeight: FontWeight.w600,
-                          ),
+                        child: new ListTile(
+                          title: new Text('CÔNG TY',
+                              style: TextStyle(color: Colors.white, fontSize: 25.sp)),
+                          onTap: () =>
+                              // Navigator.pushNamed(context, "companies.screen"),
+                              Navigator.pushNamed(context, "pricing-tab.screen"),
                         ),
                       ),
                       Container(
@@ -362,6 +361,8 @@ class DrawerWidget extends StatelessWidget {
                         style: TextStyle(color: Colors.white)),
                     leading:
                         new Icon(Icons.assistant_rounded, color: Colors.white),
+                    onTap: () =>
+                        Navigator.pushNamed(context, "utilities"),
                   ),
                   Divider(
                     color: Color(0xFF074782),

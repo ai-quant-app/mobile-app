@@ -6,13 +6,14 @@ import 'package:flutter_ai_quant/modules/market-signal/screens/market-signal.scr
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: new ThemeData(
-            primaryColor: Color(0xFFF0F2FC),
-            canvasColor: Color(0xff062D52),
-            textTheme: TextTheme(bodyText2: TextStyle(color: Colors.white))),
-        home: MarketSignalScreen());
+    // return MaterialApp(
+        // debugShowCheckedModeBanner: false,
+        // theme: new ThemeData(
+        //     primaryColor: Color(0xFFF0F2FC),
+        //     canvasColor: Color(0xff062D52),
+        //     textTheme: TextTheme(bodyText2: TextStyle(color: Colors.white))
+        // ),
+        // home: MarketSignalScreen());
 
   }
 }

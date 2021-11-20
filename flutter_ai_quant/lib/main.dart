@@ -25,10 +25,10 @@ class App extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       onGenerateRoute: getIt.get<FluroRouter>().generator,
-      theme: ThemeData(
-        primaryColor: Color(0xFFF0F2FC),
-        backgroundColor: Color(0xFF062D52),
-      ),
+      // theme: ThemeData(
+      //   primaryColor: Color(0xFFF0F2FC),
+      //   backgroundColor: Color(0xFF062D52),
+      // ),
       home: MainScreen(),
     );
   }
