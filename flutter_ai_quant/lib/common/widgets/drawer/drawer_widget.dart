@@ -41,7 +41,6 @@ class DrawerWidget extends StatelessWidget {
                 ),
               ),
             ),
-
             // Body
             Container(
               color: Color(0xFF062D52),
@@ -86,7 +85,7 @@ class DrawerWidget extends StatelessWidget {
                               style: TextStyle(color: Colors.white, fontSize: 25.sp)),
                           onTap: () =>
                               // Navigator.pushNamed(context, "companies.screen"),
-                              Navigator.pushNamed(context, "pricing-tab.screen"),
+                              Navigator.pushNamed(context, "companies.screen"),
                         ),
                       ),
                       Container(

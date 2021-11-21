@@ -19,30 +19,30 @@ class NewsWidget extends StatelessWidget {
       allowFontScaling: false,
       child: Column(
         children: <Widget>[
-          Container(
-            margin: EdgeInsetsResponsive.only(bottom: 25),
-            height: 550.sp,
-            width: MediaQuery.of(context).size.width,
-            child: Carousel(
-              boxFit: BoxFit.fitWidth,
-              autoplay: true,
-              showIndicator: true,
-              animationCurve: Curves.easeIn,
-              dotIncreasedColor: Color(0xFF074986),
-              dotBgColor: Colors.transparent,
-              dotPosition: DotPosition.bottomCenter,
-              indicatorBgPadding: 0,
-              dotVerticalPadding: 0,
-              images: [
-                // NetworkImage(
-                //     'https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
-                // NetworkImage(
-                //     'https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
-                // NetworkImage(
-                //     'https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
-              ],
-            ),
-          ),
+          // Container(
+          //   margin: EdgeInsetsResponsive.only(bottom: 25),
+          //   height: 550.sp,
+          //   width: MediaQuery.of(context).size.width,
+          //   child: Carousel(
+          //     boxFit: BoxFit.fitWidth,
+          //     autoplay: true,
+          //     showIndicator: true,
+          //     animationCurve: Curves.easeIn,
+          //     dotIncreasedColor: Color(0xFF074986),
+          //     dotBgColor: Colors.transparent,
+          //     dotPosition: DotPosition.bottomCenter,
+          //     indicatorBgPadding: 0,
+          //     dotVerticalPadding: 0,
+          //     images: [
+          //       // NetworkImage(
+          //       //     'https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
+          //       // NetworkImage(
+          //       //     'https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
+          //       // NetworkImage(
+          //       //     'https://cdn-images-1.medium.com/max/2000/1*GqdzzfB_BHorv7V2NV7Jgg.jpeg'),
+          //     ],
+          //   ),
+          // ),
 
           // News
           Container(

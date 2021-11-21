@@ -15,7 +15,7 @@ import 'package:flutter_ai_quant/ai_quant/home_module/utilities/utilities.dart';
 import 'package:flutter_ai_quant/main.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/screens/companies.screen.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/screens/pricing-tab.screen.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/screens/ranking-tab.screen.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/screens/summary-tab.screen.dart';
 
 class SetupRoutes {
   static Future manageRoutes() async {
@@ -56,11 +56,11 @@ class HomeRoutes {
     );
 
     router.define(
-      "pricing-tab.screen",
+      "summary-tab.screen",
       transitionType: TransitionType.fadeIn,
       handler: Handler(
           handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
-              RankingTab()),
+              SummaryTab()),
     );
   }
 }

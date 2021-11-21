@@ -1,25 +1,29 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ai_quant/common/constants/app-dimension.constant.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/widgets/smooth-line.chart.dart';
-import 'package:flutter_speedometer/flutter_speedometer.dart';
-
+import 'package:flutter_ai_quant/modules/company-analysis/models/gages-chart-data.model.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/screens/summary-tab.screen.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/screens/pricing-tab.screen.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/screens/ranking-tab.screen.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/screens/technical-analysis-tab.screen.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/widgets/custom-tab.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/widgets/gauge.chart.dart';
+import 'package:charts_common/common.dart' as charts;
 import 'package:responsive_widgets/responsive_widgets.dart';
 
 class CompaniesScreen extends StatefulWidget {
+  final gauge = [
+    GaugeChartData('0-45', 45, charts.Color.fromHex(code:"#E8313A")),
+    GaugeChartData('45-70', 25, charts.Color.fromHex(code:"#FFED64")),
+    GaugeChartData('70-100', 30, charts.Color.fromHex(code:"#92BE28")),
+  ];
   @override
   _CompaniesScreenState createState() => _CompaniesScreenState();
 }
 
-/// Sample linear data type.
-class LinearSales {
-  final int year;
-  final int sales;
-
-  LinearSales(this.year, this.sales);
-}
 
 class _CompaniesScreenState extends State<CompaniesScreen> {
+  int _index = 0;
   @override
   Widget build(BuildContext context) {
     ResponsiveWidgets.init(
@@ -45,10 +49,6 @@ class _CompaniesScreenState extends State<CompaniesScreen> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(
-                        Icons.arrow_back,
-                        color: Colors.white,
-                      ),
                       Row(
                         children: [
                           Text(
@@ -121,10 +121,10 @@ class _CompaniesScreenState extends State<CompaniesScreen> {
           ),
         ),
 
-        body: SingleChildScrollView(
-          child: Container(
+        body: Container(
             padding: EdgeInsets.all(30.sp),
             child: Column(
+              // crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -176,25 +176,40 @@ class _CompaniesScreenState extends State<CompaniesScreen> {
                     ),
                     Expanded(
                       child: Container(
-                        child: Speedometer(
-                          size: 250.sp,
-                          minValue: 0,
-                          maxValue: 100,
-                          currentValue: 82,
-                          warningValue: 45,
-                          backgroundColor: Color(0xff062D52),
-                          meterColor: Colors.orange,
-                          warningColor: Colors.green,
-                          kimColor: Colors.white,
-                          displayNumericStyle: TextStyle(
-                              fontFamily: 'Digital-Display',
-                              color: Colors.white,
-                              fontSize: 50.sp),
-                          displayText: '%',
-                          displayTextStyle: TextStyle(color: Colors.white, fontSize: 30.sp),
+                        height: 250.sp,
+                        child: OverflowBox(
+                            alignment: Alignment.topLeft,
+                            maxHeight: 500.sp,
+                            child:
+                              SizedBox(
+                                  height: 500.sp,
+                                  child:GaugeChart(widget.gauge, 250.sp, 80)
+                              ),
+
                         ),
-                      ),
+                      )
                     ),
+                    // Expanded(
+                    //   child: Container(
+                    //     child: Speedometer(
+                    //       size: 250.sp,
+                    //       minValue: 0,
+                    //       maxValue: 100,
+                    //       currentValue: 82,
+                    //       warningValue: 45,
+                    //       backgroundColor: Color(0xff062D52),
+                    //       meterColor: Colors.orange,
+                    //       warningColor: Colors.green,
+                    //       kimColor: Colors.white,
+                    //       displayNumericStyle: TextStyle(
+                    //           fontFamily: 'Digital-Display',
+                    //           color: Colors.white,
+                    //           fontSize: 50.sp),
+                    //       displayText: '%',
+                    //       displayTextStyle: TextStyle(color: Colors.white, fontSize: 30.sp),
+                    //     ),
+                    //   ),
+                    // ),
                     Container(
                       child: Column(
                         children: [
@@ -234,12 +249,60 @@ class _CompaniesScreenState extends State<CompaniesScreen> {
                   ],
                 ),
                 SizedBox(height: 100.sp,),
-                SmoothLineChart(),
+                Expanded(
+                  child: DefaultTabController(
+                    // The number of tabs / content sections to display.
+                      length: 4,
+                      initialIndex: _index,
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            TabBar(
+                              onTap: (index){
+                                setState(() {
+                                  _index = index;
+                                });
+                              },
+                              indicatorSize: TabBarIndicatorSize.tab,
+                              indicatorWeight: 0,
+                              indicator: BoxDecoration(
+                                borderRadius: BorderRadius.circular(
+                                  25.0,
+                                ),
+                                color: Colors.blue,
+
+                              ),
+                              isScrollable: true,
+                              labelColor: Colors.white,
+                              unselectedLabelColor: Colors.black,
+                              tabs: [
+                                CustomTab("Tổng hợp", 0 == this._index),
+                                CustomTab("Xếp hạng", 1 == this._index),
+                                CustomTab("P/t kỹ thuật", 2 == this._index),
+                                CustomTab("Định giá", 3 == this._index),
+                              ],
+                            ),
+                            Expanded(child:
+                            Container(
+                              child: TabBarView(
+                                children: [
+                                  SummaryTab(),
+                                  RankingTab(),
+                                  TechnicalAnalysisTab(),
+                                  PricingTab(),
+                                ],
+                              ),
+                            )
+                            )
+                          ],
+                        ) // Complete this code in the next step.
+                  ),
+                )
+                // LineChartSample7(),
               ],
             ),
           ),
         ),
-      ),
     );
   }
 }
