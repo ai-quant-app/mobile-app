@@ -81,15 +81,21 @@ class DrawerWidget extends StatelessWidget {
                     trailing: new Icon(Icons.keyboard_arrow_down,
                         size: 70.sp, color: Colors.white),
                     children: <Widget>[
-                      Container(
-                        alignment: Alignment.topLeft,
-                        margin:
-                            EdgeInsetsResponsive.only(left: 180, bottom: 30),
-                        child: new ListTile(
-                          title: new Text('CÔNG TY',
-                              style: TextStyle(color: Colors.white, fontSize: 25.sp)),
-                          onTap: () => Navigator.pushNamed(context, "companies.screen"),
+                      InkWell(
+                        child: Container(
+                          alignment: Alignment.topLeft,
+                          margin:
+                              EdgeInsetsResponsive.only(left: 180, bottom: 30),
+                          child: Text(
+                            "Công ty",
+                            style: TextStyle(
+                              color: Color(0xFFBBC5D0),
+                              fontSize: 40.sp,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
                         ),
+                        onTap: () => Navigator.pushNamed(context, "companies.screen"),
                       ),
                       Container(
                         alignment: Alignment.topLeft,
