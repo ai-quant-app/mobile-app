@@ -59,10 +59,15 @@ class DrawerWidget extends StatelessWidget {
                     thickness: 0.5,
                   ),
                   new ListTile(
-                    title: new Text('TÍN HIỆU THỊ TRƯỜNG',
-                        style: TextStyle(color: Colors.white, fontSize: 35.sp)),
-                    leading: new Icon(Icons.shopping_cart,
-                        size: 70.sp, color: Colors.white),
+                    title: new Text(
+                      'TÍN HIỆU THỊ TRƯỜNG',
+                      style: TextStyle(color: Colors.white, fontSize: 35.sp)
+                    ),
+                    leading: new Icon(
+                      Icons.shopping_cart,
+                      size: 70.sp, color: Colors.white
+                    ),
+                    onTap: () => Navigator.pushNamed(context, "market-signal.screen"),
                   ),
                   Divider(
                     color: Color(0xFF074782),
@@ -83,9 +88,7 @@ class DrawerWidget extends StatelessWidget {
                         child: new ListTile(
                           title: new Text('CÔNG TY',
                               style: TextStyle(color: Colors.white, fontSize: 25.sp)),
-                          onTap: () =>
-                              // Navigator.pushNamed(context, "companies.screen"),
-                              Navigator.pushNamed(context, "companies.screen"),
+                          onTap: () => Navigator.pushNamed(context, "companies.screen"),
                         ),
                       ),
                       Container(

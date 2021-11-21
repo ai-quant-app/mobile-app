@@ -16,6 +16,7 @@ import 'package:flutter_ai_quant/main.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/screens/companies.screen.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/screens/pricing-tab.screen.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/screens/summary-tab.screen.dart';
+import 'package:flutter_ai_quant/modules/market-signal/screens/market-signal.screen.dart';
 
 class SetupRoutes {
   static Future manageRoutes() async {
@@ -56,11 +57,11 @@ class HomeRoutes {
     );
 
     router.define(
-      "summary-tab.screen",
+      "market-signal.screen",
       transitionType: TransitionType.fadeIn,
       handler: Handler(
           handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
-              SummaryTab()),
+              MarketSignalScreen()),
     );
   }
 }
