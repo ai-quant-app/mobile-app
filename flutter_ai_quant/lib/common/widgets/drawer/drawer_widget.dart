@@ -95,7 +95,7 @@ class DrawerWidget extends StatelessWidget {
                             ),
                           ),
                         ),
-                        onTap: () => Navigator.pushNamed(context, "companies.screen"),
+                        onTap: () => Navigator.pushNamed(context, "company_list.screen"),
                       ),
                       Container(
                         alignment: Alignment.topLeft,

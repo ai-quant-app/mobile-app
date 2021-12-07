@@ -105,14 +105,6 @@ class _CompaniesScreenState extends State<CompaniesScreen> {
                             color: Colors.white.withOpacity(0.58),
                             fontSize: 40.sp),
                       ),
-                      // OutlineButton(
-                      //   onPressed: null,
-                      //   child: Text(
-                      //     'Đặt lệnh',
-                      //     style: new TextStyle(color: Colors.white),
-                      //   ),
-                      //   highlightedBorderColor: Colors.red,
-                      // )
                     ],
                   ),
                 ],
