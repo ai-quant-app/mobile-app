@@ -2,14 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ai_quant/common/constants/app-dimension.constant.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/models/chart-data.model.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/models/two-sections-card.model.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/models/two-sections-table.model.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/widgets/fixed-one-hundred-measure-axis-line.chart.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/widgets/basic_info.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/horizontal-charts-card.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/horizontal-one-hundred-bar-label.chart.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/info-table.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/widgets/two_columns_card.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/widgets/two_sections_table.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 import 'package:charts_flutter/flutter.dart' as charts;
 
@@ -25,11 +21,6 @@ class RankingTab extends StatefulWidget {
     "Sub Sector": "Construction & Materials",
     "Industry": "Contruction &Materials",
   };
-  final List<TwoSectionsTableModel> dataTable1 = [
-    TwoSectionsTableModel("Day’s Close","76", "52W High", "106.00"),
-    TwoSectionsTableModel("Day’s High","76","52W Low","24.40"),
-    TwoSectionsTableModel("Day’s Low","76","AvgVol/1l","161"),
-  ];
 
   final List<String> goalColumnHeaders = ['ID', 'Stock', 'Price', 'TotalS', 'ValueS', 'GrowthS', 'ProfitS', 'FinS', 'AssetS', 'ManageS', 'MarketCap*'];
 
@@ -40,25 +31,6 @@ class RankingTab extends StatefulWidget {
     ['ID', 'Stock', 'Price', 'TotalS', 'ValueS', 'GrowthS', 'ProfitS', 'FinS', 'AssetS', 'ManageS', 'MarketCap*'],
     ['ID', 'Stock', 'Price', 'TotalS', 'ValueS', 'GrowthS', 'ProfitS', 'FinS', 'AssetS', 'ManageS', 'MarketCap*'],
   ];
-
-  final dataMultiLineChart = {
-    'Desktop': [
-      new ChartData(0, 0, color: charts.MaterialPalette.blue.shadeDefault),
-      new ChartData(1, 10, color: charts.MaterialPalette.blue.shadeDefault),
-      new ChartData(2, 20, color: charts.MaterialPalette.blue.shadeDefault),
-      new ChartData(3, 30, color: charts.MaterialPalette.blue.shadeDefault),
-      new ChartData(4, 40, color: charts.MaterialPalette.blue.shadeDefault),
-      new ChartData(5, 50, color: charts.MaterialPalette.blue.shadeDefault),
-    ],
-    'Tablet': [
-      new ChartData(0, 0, color: charts.MaterialPalette.red.shadeDefault),
-      new ChartData(1, 15, color: charts.MaterialPalette.red.shadeDefault),
-      new ChartData(2, 25, color: charts.MaterialPalette.red.shadeDefault),
-      new ChartData(3, 35, color: charts.MaterialPalette.red.shadeDefault),
-      new ChartData(4, 46, color: charts.MaterialPalette.red.shadeDefault),
-      new ChartData(5, 57, color: charts.MaterialPalette.red.shadeDefault),
-    ]
-  };
 
 
   final peerTick = <charts.TickSpec<num>>[
@@ -107,14 +79,7 @@ class _RankingTabState extends State<RankingTab> {
             // padding: EdgeInsetsResponsive.all(30.sp),
             child: Column(
               children: [
-                SizedBox(
-                    width: 1100.sp,
-                    height: 500.sp,
-                    child:
-                    FixedOneHundredMeasureAxisLineChart(widget.dataMultiLineChart)
-                ),
-                TwoColumnsCard(widget.sectionData),
-                TwoSectionsTable("PRICE", "P/E", widget.dataTable1),
+                BasicInfo(),
                 Align(
                   child: Text("SMART FINANCIAL RANK", style: TextStyle(color: Colors.blue),),
                   alignment: Alignment.topLeft,

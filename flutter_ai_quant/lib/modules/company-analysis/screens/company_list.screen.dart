@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ai_quant/common/constants/app-dimension.constant.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/screens/companies.screen.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 
 class CompanyListScreen extends StatefulWidget {
@@ -74,22 +75,27 @@ class _CompanyListScreenState extends State<CompanyListScreen> {
                         itemBuilder: (context, index){
                           return Column(
                             children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Text(
-                                    "LCG - CTCP Licogi 16",
-                                    style: TextStyle(
-                                      color: Colors.white,
-                                      letterSpacing: 1
+                              GestureDetector(
+                                onTap: (){
+                                  Navigator.push(context, MaterialPageRoute(builder: (_) => CompaniesScreen()));
+                                },
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Text(
+                                      "LCG - CTCP Licogi 16",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        letterSpacing: 1
+                                      ),
                                     ),
-                                  ),
-                                  IconButton(
-                                    onPressed: (){}, 
-                                    icon: Icon(Icons.star_border_outlined),
-                                    color: Colors.white,
-                                  )
-                                ],
+                                    IconButton(
+                                      onPressed: (){}, 
+                                      icon: Icon(Icons.star_border_outlined),
+                                      color: Colors.white,
+                                    )
+                                  ],
+                                ),
                               ),
                               Divider(
                                 color: Colors.white,

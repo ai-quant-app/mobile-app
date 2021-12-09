@@ -47,5 +47,3 @@ class _TwoColumnsCardState extends State<TwoColumnsCard> {
     );
   }
 }
-
-

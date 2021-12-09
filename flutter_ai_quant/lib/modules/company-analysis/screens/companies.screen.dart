@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ai_quant/common/constants/app-dimension.constant.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/models/gages-chart-data.model.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/screens/index_tab.screen.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/screens/summary-tab.screen.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/screens/pricing-tab.screen.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/screens/ranking-tab.screen.dart';
@@ -244,7 +245,7 @@ class _CompaniesScreenState extends State<CompaniesScreen> {
                 Expanded(
                   child: DefaultTabController(
                     // The number of tabs / content sections to display.
-                      length: 4,
+                      length: 5,
                       initialIndex: _index,
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -272,22 +273,24 @@ class _CompaniesScreenState extends State<CompaniesScreen> {
                                 CustomTab("Xếp hạng", 1 == this._index),
                                 CustomTab("P/t kỹ thuật", 2 == this._index),
                                 CustomTab("Định giá", 3 == this._index),
+                                CustomTab("Chỉ số", 4 == this._index),
                               ],
                             ),
                             Expanded(child:
-                            Container(
-                              child: TabBarView(
-                                children: [
-                                  SummaryTab(),
-                                  RankingTab(),
-                                  TechnicalAnalysisTab(),
-                                  PricingTab(),
-                                ],
-                              ),
-                            )
+                              Container(
+                                child: TabBarView(
+                                  children: [
+                                    SummaryTab(),
+                                    RankingTab(),
+                                    TechnicalAnalysisTab(),
+                                    PricingTab(),
+                                    IndexTab(),
+                                  ],
+                                ),
+                              )
                             )
                           ],
-                        ) // Complete this code in the next step.
+                        )
                   ),
                 )
                 // LineChartSample7(),
