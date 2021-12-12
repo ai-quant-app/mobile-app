@@ -15,8 +15,7 @@ import 'package:flutter_ai_quant/ai_quant/home_module/utilities/utilities.dart';
 import 'package:flutter_ai_quant/main.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/screens/companies.screen.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/screens/company_list.screen.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/screens/pricing-tab.screen.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/screens/summary-tab.screen.dart';
+
 import 'package:flutter_ai_quant/modules/market-signal/screens/market-signal.screen.dart';
 
 class SetupRoutes {

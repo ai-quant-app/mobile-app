@@ -2,13 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ai_quant/common/constants/app-dimension.constant.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/models/gages-chart-data.model.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/index_tab.screen.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/overview_tab.screen.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/shareholder_tab.screen.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/summary-tab.screen.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/pricing-tab.screen.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/ranking-tab.screen.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/technical-analysis-tab.screen.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/index.tab.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/news.tab.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/overview.tab.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/shareholder.tab.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/summary.tab.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/pricing.tab.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/ranking.tab.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/technical-analysis.tab.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/custom-tab.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/gauge.chart.dart';
 import 'package:charts_common/common.dart' as charts;
@@ -247,7 +248,7 @@ class _CompaniesScreenState extends State<CompaniesScreen> {
                 Expanded(
                   child: DefaultTabController(
                     // The number of tabs / content sections to display.
-                      length: 7,
+                      length: 8,
                       initialIndex: _index,
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -276,8 +277,9 @@ class _CompaniesScreenState extends State<CompaniesScreen> {
                                 CustomTab("P/t kỹ thuật", 2 == this._index),
                                 CustomTab("Định giá", 3 == this._index),
                                 CustomTab("Chỉ số", 4 == this._index),
-                                CustomTab("Tổng quan", 5 == this._index),
-                                CustomTab("Cổ đông", 6 == this._index),
+                                CustomTab("Tin tức", 5 == this._index),
+                                CustomTab("Tổng quan", 6 == this._index),
+                                CustomTab("Cổ đông", 7 == this._index),
                               ],
                             ),
                             Expanded(child:
@@ -289,6 +291,7 @@ class _CompaniesScreenState extends State<CompaniesScreen> {
                                     TechnicalAnalysisTab(),
                                     PricingTab(),
                                     IndexTab(),
+                                    NewsTab(),
                                     OverviewTab(),
                                     ShareholderTab()
                                   ],

@@ -25,7 +25,8 @@ class IndexTab extends StatelessWidget {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              BasicInfo()
+              BasicInfo(),
+              
             ],
           ),
         )
