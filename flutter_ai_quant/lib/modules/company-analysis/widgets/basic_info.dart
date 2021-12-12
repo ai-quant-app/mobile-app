@@ -74,7 +74,7 @@ class _BasicInfoState extends State<BasicInfo> {
               child: FixedOneHundredMeasureAxisLineChart(widget.dataMultiLineChart)
           ),
           TwoColumnsCard(widget.sectionData),
-          TwoSectionsTable("PRICE", "P/E", widget.dataTable1, hasMarginBottom: false,),
+          TwoSectionsTable("PRICE", "P/E", widget.dataTable1, hasMarginBottom: false),
         ],
       ),
     );

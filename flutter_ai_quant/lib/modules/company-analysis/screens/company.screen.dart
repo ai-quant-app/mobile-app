@@ -15,18 +15,18 @@ import 'package:flutter_ai_quant/modules/company-analysis/widgets/gauge.chart.da
 import 'package:charts_common/common.dart' as charts;
 import 'package:responsive_widgets/responsive_widgets.dart';
 
-class CompaniesScreen extends StatefulWidget {
+class CompanyScreen extends StatefulWidget {
   final gauge = [
     GaugeChartData('0-45', 45, charts.Color.fromHex(code:"#E8313A")),
     GaugeChartData('45-70', 25, charts.Color.fromHex(code:"#FFED64")),
     GaugeChartData('70-100', 30, charts.Color.fromHex(code:"#92BE28")),
   ];
   @override
-  _CompaniesScreenState createState() => _CompaniesScreenState();
+  _CompanyScreenState createState() => _CompanyScreenState();
 }
 
 
-class _CompaniesScreenState extends State<CompaniesScreen> {
+class _CompanyScreenState extends State<CompanyScreen> {
   int _index = 0;
   @override
   Widget build(BuildContext context) {
@@ -46,6 +46,9 @@ class _CompaniesScreenState extends State<CompaniesScreen> {
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(170.sp),
           child: AppBar(
+            iconTheme: IconThemeData(
+              color: Theme.of(context).primaryColor
+            ),
             backgroundColor: Color(0xff074884),
             title: Container(
               child: Column(
@@ -130,40 +133,82 @@ class _CompaniesScreenState extends State<CompaniesScreen> {
                       width: 190.sp,
                       child: Column(
                         children: [
-                          Text('AI Score',
-                              style: TextStyle(
-                                  fontSize: 45.sp,
-                                  fontWeight: FontWeight.w600)),
+                          Text(
+                            'AI Score',
+                            style: TextStyle(
+                                fontSize: 45.sp,
+                                fontWeight: FontWeight.w600,
+                                color: Theme.of(context).primaryColor
+                              )
+                            ),
                           SizedBox(height: 5.sp),
-                          Text('A+',
-                              style: TextStyle(
-                                  fontSize: 70.sp,
-                                  fontWeight: FontWeight.w700)),
+                          Text(
+                            'A+',
+                            style: TextStyle(
+                                fontSize: 70.sp,
+                                fontWeight: FontWeight.w700,
+                                color: Theme.of(context).primaryColor
+                              )
+                            ),
                           SizedBox(height: 5.sp),
                           Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('Total Score',
-                                  style: TextStyle(fontSize: 25.sp)),
-                              Text('0.0', style: TextStyle(fontSize: 25.sp))
+                              Text(
+                                'Total Score',
+                                style: TextStyle(
+                                  fontSize: 25.sp,
+                                  color: Theme.of(context).primaryColor
+                                )
+                              ),
+                              Text(
+                                '0.0', 
+                                style: TextStyle(
+                                  fontSize: 25.sp,
+                                  color: Theme.of(context).primaryColor
+                                )
+                              )
                             ],
                           ),
                           SizedBox(height: 5.sp),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('P/E', style: TextStyle(fontSize: 25.sp)),
-                              Text('0.0', style: TextStyle(fontSize: 25.sp))
+                              Text(
+                                'P/E', 
+                                style: TextStyle(
+                                  fontSize: 25.sp,
+                                  color: Theme.of(context).primaryColor
+                                )
+                              ),
+                              Text(
+                                '0.0', 
+                                style: TextStyle(
+                                  fontSize: 25.sp,
+                                  color: Theme.of(context).primaryColor
+                                )
+                              )
                             ],
                           ),
                           SizedBox(height: 5.sp),
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Text('EPS(4Q*)',
-                                  style: TextStyle(fontSize: 25.sp)),
-                              Text('0.0', style: TextStyle(fontSize: 25.sp))
+                              Text(
+                                'EPS(4Q*)',
+                                style: TextStyle(
+                                  fontSize: 25.sp,
+                                  color: Theme.of(context).primaryColor
+                                )
+                              ),
+                              Text(
+                                '0.0', 
+                                style: TextStyle(
+                                  fontSize: 25.sp,
+                                  color: Theme.of(context).primaryColor
+                                )
+                              )
                             ],
                           ),
                         ],
@@ -185,34 +230,17 @@ class _CompaniesScreenState extends State<CompaniesScreen> {
                         ),
                       )
                     ),
-                    // Expanded(
-                    //   child: Container(
-                    //     child: Speedometer(
-                    //       size: 250.sp,
-                    //       minValue: 0,
-                    //       maxValue: 100,
-                    //       currentValue: 82,
-                    //       warningValue: 45,
-                    //       backgroundColor: Color(0xff062D52),
-                    //       meterColor: Colors.orange,
-                    //       warningColor: Colors.green,
-                    //       kimColor: Colors.white,
-                    //       displayNumericStyle: TextStyle(
-                    //           fontFamily: 'Digital-Display',
-                    //           color: Colors.white,
-                    //           fontSize: 50.sp),
-                    //       displayText: '%',
-                    //       displayTextStyle: TextStyle(color: Colors.white, fontSize: 30.sp),
-                    //     ),
-                    //   ),
-                    // ),
                     Container(
                       child: Column(
                         children: [
-                          Text('AI QUANT',
-                              style: TextStyle(
-                                  fontSize: 40.sp,
-                                  fontWeight: FontWeight.w600)),
+                          Text(
+                            'AI QUANT',
+                            style: TextStyle(
+                                fontSize: 40.sp,
+                                fontWeight: FontWeight.w600,
+                                color: Theme.of(context).primaryColor
+                              )
+                            ),
                           SizedBox(height: 10.sp),
                           Container(
                             padding:
@@ -229,10 +257,12 @@ class _CompaniesScreenState extends State<CompaniesScreen> {
                                 )),
                           ),
                           SizedBox(height: 10.sp),
-                          Text('14:25:03',
-                              style: TextStyle(
-                                fontSize: 35.sp,
-                              )),
+                          Text(
+                            '14:25:03',
+                            style: TextStyle(
+                              fontSize: 35.sp,
+                              color: Theme.of(context).primaryColor
+                            )),
                           SizedBox(height: 20.sp),
                           Text('Xem chi tiết',
                               style: TextStyle(

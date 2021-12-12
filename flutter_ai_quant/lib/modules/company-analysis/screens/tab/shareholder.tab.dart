@@ -35,30 +35,21 @@ class ShareholderTab extends StatelessWidget {
       ['Don Di Lam', 'Board member'],
     ];
 
-    // officers data
-    final List<List<String>> companyScaleColumnData = [
-      ['Charter Capital (VND)', '136,000,000,000'],
-      ['Common Shares', '13,600,000'],
-      ['Common Shares Outstanding', '13,383,500'],
-      ['Branch(es)', '1'],
-      ['Number of Employees', '155'],
+    // company sale
+    final List<TwoSectionsCardModel> companySaleData = [
+        TwoSectionsCardModel('Charter Capital (VND)', '136,000,000,000'),
+        TwoSectionsCardModel('Common Shares', '13,600,000'),
+        TwoSectionsCardModel('Common Shares Outstanding', '13,383,500'),
+        TwoSectionsCardModel('Branch(es)', '1'),
+        TwoSectionsCardModel('Number of Employees', '155'),
     ];
 
-  // company sale
-  final List<TwoSectionsCardModel> companySaleData = [
-      TwoSectionsCardModel('Charter Capital (VND)', '136,000,000,000'),
-      TwoSectionsCardModel('Common Shares', '13,600,000'),
-      TwoSectionsCardModel('Common Shares Outstanding', '13,383,500'),
-      TwoSectionsCardModel('Branch(es)', '1'),
-      TwoSectionsCardModel('Number of Employees', '155'),
-  ];
-
-  final List<TwoSectionsCardModel> ownershipStructureData = [
-      TwoSectionsCardModel('Owner', 'Ration'),
-      TwoSectionsCardModel('State', '11.7%'),
-      TwoSectionsCardModel('Foreign Ownership', '27.6%'),
-      TwoSectionsCardModel('Other', '60.8%'),
-  ];
+    final List<TwoSectionsCardModel> ownershipStructureData = [
+        TwoSectionsCardModel('Owner', 'Ration'),
+        TwoSectionsCardModel('State', '11.7%'),
+        TwoSectionsCardModel('Foreign Ownership', '27.6%'),
+        TwoSectionsCardModel('Other', '60.8%'),
+    ];
 
     return ResponsiveWidgets.builder(
       height: AppDimension.screenHeight,

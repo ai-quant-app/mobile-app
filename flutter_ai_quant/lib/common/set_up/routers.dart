@@ -13,7 +13,7 @@ import 'package:flutter_ai_quant/ai_quant/home_module/prepare_n_stock/screen/pre
 import 'package:flutter_ai_quant/ai_quant/home_module/utilities/utilities.dart';
 
 import 'package:flutter_ai_quant/main.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/screens/companies.screen.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/screens/company.screen.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/screens/company_list.screen.dart';
 
 import 'package:flutter_ai_quant/modules/market-signal/screens/market-signal.screen.dart';
@@ -61,7 +61,7 @@ class HomeRoutes {
       transitionType: TransitionType.fadeIn,
       handler: Handler(
           handlerFunc: (BuildContext context, Map<String, dynamic> params) =>
-              CompaniesScreen()),
+              CompanyScreen()),
     );
 
     router.define(

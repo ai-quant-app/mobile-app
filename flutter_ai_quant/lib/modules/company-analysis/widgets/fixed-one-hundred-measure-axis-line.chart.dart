@@ -22,6 +22,8 @@ class FixedOneHundredMeasureAxisLineChart extends StatelessWidget {
     charts.TickSpec(90),
     charts.TickSpec(100),
   ];
+
+  
   List<charts.Series<ChartData, int>> _generateData() {
     List<charts.Series<ChartData, int>> ret = [];
     this.data.forEach((key, value) {
@@ -40,8 +42,6 @@ class FixedOneHundredMeasureAxisLineChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
     return new charts.LineChart(
       _generateData(),
       animate: animate,

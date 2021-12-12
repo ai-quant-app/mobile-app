@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ai_quant/common/constants/app-dimension.constant.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/screens/companies.screen.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/screens/company.screen.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 
 class CompanyListScreen extends StatefulWidget {
@@ -27,6 +27,9 @@ class _CompanyListScreenState extends State<CompanyListScreen> {
       child: Scaffold(
         backgroundColor: Color(0xff062D52),
         appBar: AppBar(
+          iconTheme: IconThemeData(
+            color: Theme.of(context).primaryColor
+          ),
           backgroundColor: Color(0xff062D52),
           title: Container(
             height: 50,
@@ -46,7 +49,7 @@ class _CompanyListScreenState extends State<CompanyListScreen> {
           actions: [
             IconButton(
               onPressed: () {}, 
-              icon: Icon(Icons.filter_alt_outlined)
+              icon: Icon(Icons.filter_alt_outlined, color: Theme.of(context).primaryColor)
             ),
           ],
           elevation: 0,
@@ -77,7 +80,7 @@ class _CompanyListScreenState extends State<CompanyListScreen> {
                             children: [
                               GestureDetector(
                                 onTap: (){
-                                  Navigator.push(context, MaterialPageRoute(builder: (_) => CompaniesScreen()));
+                                  Navigator.push(context, MaterialPageRoute(builder: (_) => CompanyScreen()));
                                 },
                                 child: Row(
                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,

@@ -16,6 +16,7 @@ dependencies:
   # Charts
   charts_flutter: ^0.10.0
   k_chart: ^0.1.1
+  syncfusion_flutter_charts: ^19.3.57
 
   # Responsive Layout
   # device_preview: 0.5.5

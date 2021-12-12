@@ -92,7 +92,6 @@ class _InfoTableState extends State<InfoTable> {
               columns: _generateHeader(),
               rows: _generateRows(),
             ),
-            // ),
           ),
           widget.footerNote != "" ?
           Container(

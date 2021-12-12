@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ai_quant/common/constants/app-dimension.constant.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/widgets/bar-line.chart.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/basic_info.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/widgets/info-table.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 
 
@@ -16,6 +18,23 @@ class IndexTab extends StatelessWidget {
       allowFontScaling: false,
     );
 
+    // holder data
+    final List<String> marketValueColumnHeaders = ['', '2016', '2017', '2018', ''];
+    final List<List<String>> marketValueColumnData = [
+      ['Current common shareholder', '2,500,000', '5,650,000', '13,600,000', 'increase'],
+      ['Common shareholder outstanding', '', '', '', 'none'],
+      ['Earnings per share', '1,182', '12,115', '9,958', 'decrease'],
+      ['Earnings per share Adj', '1,182', '12,115', '9,958', 'decrease'],
+      ['P/E', '1,182', '12,115', '9,958', 'decrease'],
+      ['P/E Adj', '1,182', '12,115', '9,958', 'decrease'],
+      ['PEG', '1,182', '12,115', '9,958', 'decrease'],
+      ['PEG*', '1,182', '12,115', '9,958', 'decrease'],
+      ['P/BV', '1,182', '12,115', '9,958', 'decrease'],
+      ['P/S', '1,182', '12,115', '9,958', 'decrease'],
+      ['P/CF', '1,182', '12,115', '9,958', 'decrease'],
+      ['Earnings per share', '1,182', '12,115', '9,958', 'decrease'],
+    ];
+
     return ResponsiveWidgets.builder(
       height: AppDimension.screenHeight,
       width: AppDimension.screenWidth,
@@ -26,7 +45,13 @@ class IndexTab extends StatelessWidget {
           child: Column(
             children: [
               BasicInfo(),
-              
+              InfoTable("MARKET VALUE RATIOS", marketValueColumnHeaders, marketValueColumnData),
+              Row(
+                children: [
+                  BarLineChart(),
+                  BarLineChart(),
+                ],
+              )
             ],
           ),
         )

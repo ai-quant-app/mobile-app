@@ -19,11 +19,11 @@ class _TwoColumnsCardState extends State<TwoColumnsCard> {
            mainAxisSize: MainAxisSize.min,
            children: <Widget>[
              Expanded(
-               child: Text(key, style: TextStyle(fontWeight: FontWeight.bold)),
+               child: Text(key, style: TextStyle(fontWeight: FontWeight.bold, color: Theme.of(context).primaryColor)),
                flex: 4,
              ),
              Expanded(
-               child: Text(value),
+               child: Text(value, style: TextStyle(color: Theme.of(context).primaryColor)),
                flex: 6,
              ),
            ],
