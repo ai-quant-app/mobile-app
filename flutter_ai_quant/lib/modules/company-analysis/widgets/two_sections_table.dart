@@ -33,16 +33,16 @@ class _TwoSectionsTableState extends State<TwoSectionsTable> {
          Container(
              margin: EdgeInsetsResponsive.only(top: 20.sp),
              child: Row(children: [
-               Expanded(child: Text(item.firstColumn)),
-               Expanded(child: Text(item.secondColumn)),
+               Expanded(child: Text(item.firstColumn, style: TextStyle(color: Theme.of(context).primaryColor))),
+               Expanded(child: Text(item.secondColumn, style: TextStyle(color: Theme.of(context).primaryColor))),
              ],
              )
          ),
          Container(
              margin: EdgeInsetsResponsive.only(top: 20.sp),
              child: Row(children: [
-               Expanded(child: Text(item.thirdColumn)),
-               Expanded(child: Text(item.fourthColumn)),
+               Expanded(child: Text(item.thirdColumn, style: TextStyle(color: Theme.of(context).primaryColor))),
+               Expanded(child: Text(item.fourthColumn, style: TextStyle(color: Theme.of(context).primaryColor))),
              ],
              )
          ),

@@ -9,10 +9,21 @@ class InfoTable extends StatefulWidget {
   final List<List<String>> data;
   final bool hasTopBorder;
   final bool hasBottomBorder;
+  final bool hasHeaders;
 
-  InfoTable(this.title, this.columnHeaders, this.data,
-      {this.footerNote = "", this.footerColor = const Color(0xFFC17325), this.hasTopBorder = true
-        , this.hasBottomBorder = true, Key key}) : super(key: key);
+  InfoTable(
+    this.title, 
+    this.columnHeaders, 
+    this.data,
+    {
+      this.footerNote = "", 
+      this.footerColor = const Color(0xFFC17325), 
+      this.hasTopBorder = true, 
+      this.hasBottomBorder = true,
+      this.hasHeaders = true,
+      Key key
+    }
+  ) : super(key: key);
   @override
   _InfoTableState createState() => _InfoTableState();
 }
@@ -21,11 +32,13 @@ class _InfoTableState extends State<InfoTable> {
   List<DataColumn> _generateHeader(){
     List<DataColumn> headers = [];
     widget.columnHeaders.forEach((text){
-      headers.add(DataColumn(
-          label: Text(
+      headers.add(
+        DataColumn(
+          label: Visibility(child: Text(
             text,
             style: TextStyle(color: Colors.white),
-          ),
+          ),)
+          ,
         )
       );
     });
@@ -36,7 +49,14 @@ class _InfoTableState extends State<InfoTable> {
     widget.data.forEach((row){
       List<DataCell> tmps = [];
       row.forEach((text){
-        tmps.add(DataCell(Text(text)));
+        tmps.add(
+          DataCell(
+            Text(
+              text,
+              style: TextStyle(color: Theme.of(context).primaryColor),
+            )
+          )
+        );
       });
       rows.add( DataRow(
           cells: tmps
@@ -55,6 +75,7 @@ class _InfoTableState extends State<InfoTable> {
         ),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Container(
               margin: EdgeInsetsResponsive.only(left: 50.sp, top: 50.sp, bottom: 50.sp),
