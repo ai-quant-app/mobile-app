@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_ai_quant/common/constants/app-dimension.constant.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/models/gages-chart-data.model.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/finance.tab.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/index.tab.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/news.tab.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/overview.tab.dart';
@@ -278,7 +279,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                 Expanded(
                   child: DefaultTabController(
                     // The number of tabs / content sections to display.
-                      length: 8,
+                      length: 9,
                       initialIndex: _index,
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -307,9 +308,10 @@ class _CompanyScreenState extends State<CompanyScreen> {
                                 CustomTab("P/t kỹ thuật", 2 == this._index),
                                 CustomTab("Định giá", 3 == this._index),
                                 CustomTab("Chỉ số", 4 == this._index),
-                                CustomTab("Tin tức", 5 == this._index),
-                                CustomTab("Tổng quan", 6 == this._index),
-                                CustomTab("Cổ đông", 7 == this._index),
+                                CustomTab("Tài chính", 5 == this._index),
+                                CustomTab("Tin tức", 6 == this._index),
+                                CustomTab("Tổng quan", 7 == this._index),
+                                CustomTab("Cổ đông", 8 == this._index),
                               ],
                             ),
                             Expanded(child:
@@ -321,6 +323,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                                     TechnicalAnalysisTab(),
                                     PricingTab(),
                                     IndexTab(),
+                                    FinanceTab(),
                                     NewsTab(),
                                     OverviewTab(),
                                     ShareholderTab()
