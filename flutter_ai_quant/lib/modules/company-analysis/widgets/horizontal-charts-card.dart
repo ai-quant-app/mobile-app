@@ -32,7 +32,13 @@ class _HorizontalChartCardState extends State<HorizontalChartCard> {
                     child: HorizontalBarLabelChart(widget.data),
                   )
               ),
-              Expanded(child: Text(widget.description), flex: 6,),
+              Expanded(
+                child: Text(
+                  widget.description,
+                  style: TextStyle(color: Theme.of(context).primaryColor),
+                ), 
+                flex: 6,
+              ),
             ],
           )
         ],

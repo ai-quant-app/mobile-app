@@ -84,7 +84,12 @@ class _RankingTabState extends State<RankingTab> {
                   child: Text("SMART FINANCIAL RANK", style: TextStyle(color: Colors.blue),),
                   alignment: Alignment.topLeft,
                 ),
-                Text("These Thần Kinh scores compare various aspects of LCG with its industry and relevant benchmarks. The scores are percentile rankings form 0 to 99.9. Higher scores are better."),
+                Text(
+                  "These Thần Kinh scores compare various aspects of LCG with its industry and relevant benchmarks. The scores are percentile rankings form 0 to 99.9. Higher scores are better.",
+                  style: TextStyle(
+                    color: Theme.of(context).primaryColor
+                  ),
+                ),
                 HorizontalChartCard(
                     "Total Score (TotalS)",
                     "The Than Kinh AI Total Score reflects a company’s rank 59.85. The higher the score, the better the combined performance of these key measures. With a Than Kinh AI Total Score 59.85, is well above the average of its industry group,which has a Than Kinh AI Total Score of 14.73.",

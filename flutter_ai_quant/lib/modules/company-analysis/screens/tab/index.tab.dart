@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ai_quant/common/constants/app-dimension.constant.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/models/two-sections-card.model.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/bar-line.chart.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/basic_info.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/info-table.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/widgets/two_sections_card.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 
 
@@ -35,6 +37,14 @@ class IndexTab extends StatelessWidget {
       ['Earnings per share', '1,182', '12,115', '9,958', 'decrease'],
     ];
 
+    // growth data
+    final List<TwoSectionsCardModel> growthRatiosData = [
+        TwoSectionsCardModel('%Sale', 'Ration'),
+        TwoSectionsCardModel('%Earnings per share (EPS)', '11.7%'),
+        TwoSectionsCardModel('Foreign Ownership', '27.6%'),
+        TwoSectionsCardModel('Other', '60.8%'),
+    ];
+
     return ResponsiveWidgets.builder(
       height: AppDimension.screenHeight,
       width: AppDimension.screenWidth,
@@ -51,7 +61,14 @@ class IndexTab extends StatelessWidget {
                   BarLineChart(),
                   BarLineChart(),
                 ],
-              )
+              ),
+              Row(
+                children: [
+                  BarLineChart(),
+                  BarLineChart(),
+                ],
+              ),
+              TwoSectionsCard("GROWTH RATIOS", growthRatiosData),
             ],
           ),
         )

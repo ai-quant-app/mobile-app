@@ -27,7 +27,10 @@ class BarLineChartState extends State<BarLineChart> {
 
   @override
   Widget build(BuildContext context) {
+    final Size size = MediaQuery.of(context).size;
     return Container(
+      width: size.width * 0.45,
+      height: size.width * 0.45,
       child: SfCartesianChart(
         primaryXAxis: CategoryAxis(),
         primaryYAxis: NumericAxis(minimum: 0, maximum: 40, interval: 10),
