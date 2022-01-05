@@ -6,6 +6,7 @@ import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/finance.ta
 import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/index.tab.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/news.tab.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/overview.tab.dart';
+import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/risk.tab.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/shareholder.tab.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/summary.tab.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/screens/tab/pricing.tab.dart';
@@ -279,7 +280,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                 Expanded(
                   child: DefaultTabController(
                     // The number of tabs / content sections to display.
-                      length: 9,
+                      length: 10,
                       initialIndex: _index,
                       child: Column(
                           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -309,9 +310,10 @@ class _CompanyScreenState extends State<CompanyScreen> {
                                 CustomTab("Định giá", 3 == this._index),
                                 CustomTab("Chỉ số", 4 == this._index),
                                 CustomTab("Tài chính", 5 == this._index),
-                                CustomTab("Tin tức", 6 == this._index),
-                                CustomTab("Tổng quan", 7 == this._index),
-                                CustomTab("Cổ đông", 8 == this._index),
+                                CustomTab("Rủi ro", 6 == this._index),
+                                CustomTab("Tin tức", 7 == this._index),
+                                CustomTab("Tổng quan", 8 == this._index),
+                                CustomTab("Cổ đông", 9 == this._index),
                               ],
                             ),
                             Expanded(child:
@@ -324,6 +326,7 @@ class _CompanyScreenState extends State<CompanyScreen> {
                                     PricingTab(),
                                     IndexTab(),
                                     FinanceTab(),
+                                    RiskTab(),
                                     NewsTab(),
                                     OverviewTab(),
                                     ShareholderTab()

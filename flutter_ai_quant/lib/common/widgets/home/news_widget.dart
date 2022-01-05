@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:carousel_pro/carousel_pro.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 
-import 'package:flutter_ai_quant/common/widgets/dialog/dialog_widget.dart';
 
 class NewsWidget extends StatelessWidget {
   @override

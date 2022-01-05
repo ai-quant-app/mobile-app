@@ -55,7 +55,7 @@ class _HighlightTableState extends State<HighlightTable> {
             Text(
               ceil['text'],
               style: TextStyle(
-                color: ceil['isHighlight'] == true ? Colors.blue : Theme.of(context).primaryColor
+                color: ceil['color'] != null ? ceil['color'] : Theme.of(context).primaryColor
               ),
             )
           )

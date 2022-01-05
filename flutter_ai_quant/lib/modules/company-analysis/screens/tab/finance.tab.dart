@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ai_quant/common/constants/app-dimension.constant.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/models/two-sections-card.model.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/basic_info.dart';
 import 'package:flutter_ai_quant/modules/company-analysis/widgets/highlight_table.dart';
-import 'package:flutter_ai_quant/modules/company-analysis/widgets/two_sections_card.dart';
 import 'package:responsive_widgets/responsive_widgets.dart';
 
 
@@ -23,9 +21,9 @@ class FinanceTab extends StatelessWidget {
     final List<String> balanceSheetColumnHeaders = ['', '2016', '2017'];
     final List<List<Map<String, dynamic>>> balanceSheetColumnData = [
       [
-        { 'text': 'A. SHORT-TERM ASSETS', 'isHighlight': true }, 
-        { 'text': '249,567', 'isHighlight': true }, 
-        { 'text': '787,824', 'isHighlight': true },
+        { 'text': 'A. SHORT-TERM ASSETS', 'color': Colors.blue }, 
+        { 'text': '249,567', 'color': Colors.blue }, 
+        { 'text': '787,824', 'color': Colors.blue },
       ],
       [
         { 'text': 'I. Cash and Equivalent Cash' }, 
@@ -53,9 +51,9 @@ class FinanceTab extends StatelessWidget {
         { 'text': '17,292' },
       ],
       [
-        { 'text': 'B. FIXED ASSETS AND LT INVESTMENTS', 'isHighlight': true }, 
-        { 'text': '56,480', 'isHighlight': true }, 
-        { 'text': '334,690', 'isHighlight': true },
+        { 'text': 'B. FIXED ASSETS AND LT INVESTMENTS', 'color': Colors.blue }, 
+        { 'text': '56,480', 'color': Colors.blue }, 
+        { 'text': '334,690', 'color': Colors.blue },
       ],
       [
         { 'text': 'I. Long-term receivables' }, 
@@ -93,14 +91,14 @@ class FinanceTab extends StatelessWidget {
         { 'text': '17,292' },
       ],
       [
-        { 'text': 'TOTAL ASSETS', 'isHighlight': true }, 
-        { 'text': '306,047', 'isHighlight': true }, 
-        { 'text': '1,122,514', 'isHighlight': true },
+        { 'text': 'TOTAL ASSETS', 'color': Colors.blue }, 
+        { 'text': '306,047', 'color': Colors.blue }, 
+        { 'text': '1,122,514', 'color': Colors.blue },
       ],
       [
-        { 'text': 'A. LIABILITIES', 'isHighlight': true }, 
-        { 'text': '56,480', 'isHighlight': true }, 
-        { 'text': '334,690', 'isHighlight': true },
+        { 'text': 'A. LIABILITIES', 'color': Colors.blue }, 
+        { 'text': '56,480', 'color': Colors.blue }, 
+        { 'text': '334,690', 'color': Colors.blue },
       ],
       [
         { 'text': 'I. Current liabilities' }, 
@@ -113,9 +111,9 @@ class FinanceTab extends StatelessWidget {
         { 'text': '17,292' },
       ],
       [
-        { 'text': 'B. OWNERS EQUITY', 'isHighlight': true }, 
-        { 'text': '56,480', 'isHighlight': true }, 
-        { 'text': '334,690', 'isHighlight': true },
+        { 'text': 'B. OWNERS EQUITY', 'color': Colors.blue }, 
+        { 'text': '56,480', 'color': Colors.blue }, 
+        { 'text': '334,690', 'color': Colors.blue },
       ],
       [
         { 'text': 'I. Capital sources and funds' }, 
@@ -128,14 +126,14 @@ class FinanceTab extends StatelessWidget {
         { 'text': '17,292' },
       ],
       [
-        { 'text': 'C. MINORITY INTEREST', 'isHighlight': true }, 
-        { 'text': '-', 'isHighlight': true }, 
-        { 'text': '-', 'isHighlight': true },
+        { 'text': 'C. MINORITY INTEREST', 'color': Colors.blue }, 
+        { 'text': '-', 'color': Colors.blue }, 
+        { 'text': '-', 'color': Colors.blue },
       ],
       [
-        { 'text': 'TOTAL ASSETS', 'isHighlight': true }, 
-        { 'text': '306,047', 'isHighlight': true }, 
-        { 'text': '1,122,514', 'isHighlight': true },
+        { 'text': 'TOTAL ASSETS', 'color': Colors.blue }, 
+        { 'text': '306,047', 'color': Colors.blue }, 
+        { 'text': '1,122,514', 'color': Colors.blue },
       ],
     ];
 
@@ -153,7 +151,7 @@ class FinanceTab extends StatelessWidget {
         { 'text': '787,824' },
       ],
       [
-        { 'text': '3. Not revenue', 'isHighlight': true }, 
+        { 'text': '3. Not revenue', 'color': Colors.blue }, 
         { 'text': '249,567' }, 
         { 'text': '787,824' },
       ],
@@ -163,7 +161,7 @@ class FinanceTab extends StatelessWidget {
         { 'text': '787,824' },
       ],
       [
-        { 'text': '5. Gross profit', 'isHighlight': true }, 
+        { 'text': '5. Gross profit', 'color': Colors.blue }, 
         { 'text': '249,567' }, 
         { 'text': '787,824' },
       ],
@@ -193,7 +191,7 @@ class FinanceTab extends StatelessWidget {
         { 'text': '787,824' },
       ],
       [
-        { 'text': '10. Not operating profit', 'isHighlight': true }, 
+        { 'text': '10. Not operating profit', 'color': Colors.blue }, 
         { 'text': '249,567' }, 
         { 'text': '787,824' },
       ],
@@ -203,7 +201,7 @@ class FinanceTab extends StatelessWidget {
         { 'text': '787,824' },
       ],
       [
-        { 'text': '12. Other expenses', 'isHighlight': true }, 
+        { 'text': '12. Other expenses', 'color': Colors.blue }, 
         { 'text': '249,567' }, 
         { 'text': '787,824' },
       ],
@@ -218,7 +216,7 @@ class FinanceTab extends StatelessWidget {
         { 'text': '787,824' },
       ],
       [
-        { 'text': '15. Gross accounting income before tax', 'isHighlight': true }, 
+        { 'text': '15. Gross accounting income before tax', 'color': Colors.blue }, 
         { 'text': '249,567' }, 
         { 'text': '787,824' },
       ],

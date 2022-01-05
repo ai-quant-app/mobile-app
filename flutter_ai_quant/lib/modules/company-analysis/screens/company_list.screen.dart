@@ -74,7 +74,7 @@ class _CompanyListScreenState extends State<CompanyListScreen> {
                     ),
                     Expanded(
                       child: ListView.builder(
-                        itemCount: 20,
+                        itemCount: 3,
                         itemBuilder: (context, index){
                           return Column(
                             children: [

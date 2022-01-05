@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_ai_quant/common/widgets/old/fab_bottom_app_bar_widget.dart';
-import 'package:flutter_ai_quant/modules/market-signal/screens/market-signal.screen.dart';
 
 
 class MyApp extends StatelessWidget {
   @override
+  // ignore: missing_return
   Widget build(BuildContext context) {
     // return MaterialApp(
         // debugShowCheckedModeBanner: false,
